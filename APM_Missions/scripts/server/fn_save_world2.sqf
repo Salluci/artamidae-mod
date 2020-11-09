@@ -45,4 +45,11 @@ profileNamespace setVariable [format ["APM_budget_%1", worldName], APM_budget];
 
 saveProfileNamespace;
 
+//Save all player data
+{
+	_uid = getPlayerUID _x;
+	_loadout = getUnitLoadout _x;
+	_result = "extDB3" callExtension format ["0:SQL:UPDATE users SET loadout = %1 WHERE uid = %2",str str _loadout, str _uid];
+} forEach allPlayers;
+
 [fnc_save_world, [_minutes], _minutes * 60] call CBA_fnc_waitAndExecute;
