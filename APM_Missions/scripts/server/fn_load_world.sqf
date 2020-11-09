@@ -60,4 +60,4 @@ if ((count _objects_array) == 0) exitWith {};
 APM_budget = profileNamespace getVariable [format ["APM_budget_%1", worldName], 1500000];
 publicVariable "APM_budget";
 
-"Server loading done" remoteExec ["systemChat", 0];
+"Server loading done." remoteExec ["systemChat", 0];
