@@ -1,4 +1,1 @@
-﻿//<'APM_Factions.pbo' properties via Mikero's dos tools, dll version 7.46>
-prefix=APM_Factions;
-PboType=Arma Addon;
-//</properties>
+x\APM\addons\Factions
