@@ -171,6 +171,8 @@ class B_LSV_01_armed_F: LSV_01_armed_base_F
   {
     class TopTurret;
     class CodRiverTurret;
+		class CargoTurret_02;
+		class CargoTurret_03;
   };
 };
 class LSV_01_light_base_F: LSV_01_base_F
@@ -204,6 +206,8 @@ class B_LSV_01_AT_F: LSV_01_AT_base_F
 	{
 		class CodRiverTurret;
 		class TopTurret;
+		class CargoTurret_02;
+		class CargoTurret_03;
 	};
 };
 class LSV_02_base_F: Car_F
@@ -236,573 +240,47 @@ class O_LSV_02_AT_F: LSV_02_AT_base_F
   class Turrets;
 };
 class rhsusf_m998_w_4dr_fulltop;
-class rhsusf_m1025_w: rhsusf_m998_w_4dr_fulltop
-{
-  class Turrets;
-  class textureSources
-  {
-    class standard
-    {
-      factions[] = {};
-    };
-    class Desert
-    {
-      factions[] = {};
-    };
-    class Olive
-    {
-      factions[] = {};
-    };
-    class APM
-    {
-      author = "Crowmedic & SkunySpliff";
-      displayName = "APM";
-      textures[] =
-      {
-        "APM_Factions\data\hmmvv\m998_exterior_g_co.paa",
-        "APM_Factions\data\hmmvv\m998_interior_w_co.paa",
-        "APM_Factions\data\hmmvv\A2_parts_WD_co.paa",
-        "APM_Factions\data\hmmvv\wheel_wranglermt_b_co.paa",
-        "rhsusf_hmmwv\textures\m998_mainbody_co.paa",
-        "APM_Factions\data\hmmvv\gratting_w_co.paa",
-        "APM_Factions\data\hmmvv\tile_exmetal_co.paa",
-        "APM_Factions\data\hmmvv\m1025_g_co.paa",
-        ""
-      };
-      factions[] = {};
-    };
-    class Black
-    {
-      author = "LinkIsParking";
-      displayName = "Black";
-      textures[] =
-      {
-        "APM_Factions\data\hmmvv\a_exterior_black.paa",
-        "APM_Factions\data\hmmvv\b_interior_black.paa",
-        "APM_Factions\data\hmmvv\c_a2_black.paa",
-        "APM_Factions\data\hmmvv\d_wheels_black.paa",
-        "APM_Factions\data\hmmvv\e_mainbody_black.paa",
-        "APM_Factions\data\hmmvv\f_gratting_black.paa",
-        "APM_Factions\data\hmmvv\g_camo1_tile_black.paa",
-        "APM_Factions\data\hmmvv\h_camo2_m1025_black.paa",
-        ""
-      };
-      factions[] = {};
-    };
-  };
-};
-class rhsusf_m1025_APM: rhsusf_m1025_w
-{
-  scope = 1;
-  editorPreview = "APM_Factions\previews\B_APM_HMMVV.jpg";
-  hiddenSelectionsTextures[] =
-  {
-    "APM_Factions\data\hmmvv\m998_exterior_g_co.paa",
-    "APM_Factions\data\hmmvv\m998_interior_w_co.paa",
-    "APM_Factions\data\hmmvv\A2_parts_WD_co.paa",
-    "APM_Factions\data\hmmvv\wheel_wranglermt_b_co.paa",
-    "rhsusf_hmmwv\textures\m998_mainbody_co.paa",
-    "APM_Factions\data\hmmvv\gratting_w_co.paa",
-    "APM_Factions\data\hmmvv\tile_exmetal_co.paa",
-    "APM_Factions\data\hmmvv\m1025_g_co.paa",
-    ""
-  };
-  textureList[] = {APM,1};
-};
-class rhsusf_m1025_black: rhsusf_m1025_w
-{
-  scope = 1;
-  editorPreview = "APM_Factions\previews\I_Mayhem_HMMWV.jpg";
-  hiddenSelectionsTextures[] =
-  {
-    "APM_Factions\data\hmmvv\a_exterior_black.paa",
-    "APM_Factions\data\hmmvv\b_interior_black.paa",
-    "APM_Factions\data\hmmvv\c_a2_black.paa",
-    "APM_Factions\data\hmmvv\d_wheels_black.paa",
-    "APM_Factions\data\hmmvv\e_mainbody_black.paa",
-    "APM_Factions\data\hmmvv\f_gratting_black.paa",
-    "APM_Factions\data\hmmvv\g_camo1_tile_black.paa",
-    "APM_Factions\data\hmmvv\h_camo2_m1025_black.paa",
-    ""
-  };
-  textureList[] = {Black,1};
-};
-class rhsusf_m1025_w_m2: rhsusf_m1025_w
-{
-  class Turrets;
-  class textureSources
-  {
-    class standard
-    {
-      factions[] = {};
-    };
-    class Desert
-    {
-      factions[] = {};
-    };
-    class Olive
-    {
-      factions[] = {};
-    };
-    class APM
-    {
-      author = "Crowmedic & SkunySpliff";
-      displayName = "APM";
-      textures[] =
-      {
-        "APM_Factions\data\hmmvv\m998_exterior_g_co.paa",
-        "APM_Factions\data\hmmvv\m998_interior_w_co.paa",
-        "APM_Factions\data\hmmvv\A2_parts_WD_co.paa",
-        "APM_Factions\data\hmmvv\wheel_wranglermt_b_co.paa",
-        "rhsusf_hmmwv\textures\m998_mainbody_co.paa",
-        "APM_Factions\data\hmmvv\gratting_w_co.paa",
-        "APM_Factions\data\hmmvv\tile_exmetal_co.paa",
-        "APM_Factions\data\hmmvv\m1025_g_co.paa",
-        "APM_Factions\data\hmmvv\mk64mount_w_co.paa"
-      };
-      factions[] = {};
-    };
-    class Black
-    {
-      author = "LinkIsParking";
-      displayName = "Black";
-      textures[] =
-      {
-        "APM_Factions\data\hmmvv\a_exterior_black.paa",
-        "APM_Factions\data\hmmvv\b_interior_black.paa",
-        "APM_Factions\data\hmmvv\c_a2_black.paa",
-        "APM_Factions\data\hmmvv\d_wheels_black.paa",
-        "APM_Factions\data\hmmvv\e_mainbody_black.paa",
-        "APM_Factions\data\hmmvv\f_gratting_black.paa",
-        "APM_Factions\data\hmmvv\g_camo1_tile_black.paa",
-        "APM_Factions\data\hmmvv\h_camo2_m1025_black.paa",
-        "APM_Factions\data\hmmvv\mk64mount_w_co.paa"
-      };
-      factions[] = {};
-    };
-  };
-};
-class rhsusf_m1025_APM_m2: rhsusf_m1025_w_m2
-{
-  scope = 1;
-  editorPreview = "APM_Factions\previews\B_APM_HMMVV_M2.jpg";
-  class Turrets: Turrets
-  {
-    class M2_Turret;
-  };
-  hiddenSelectionsTextures[] =
-  {
-    "APM_Factions\data\hmmvv\m998_exterior_g_co.paa",
-    "APM_Factions\data\hmmvv\m998_interior_w_co.paa",
-    "APM_Factions\data\hmmvv\A2_parts_WD_co.paa",
-    "APM_Factions\data\hmmvv\wheel_wranglermt_b_co.paa",
-    "rhsusf_hmmwv\textures\m998_mainbody_co.paa",
-    "APM_Factions\data\hmmvv\gratting_w_co.paa",
-    "APM_Factions\data\hmmvv\tile_exmetal_co.paa",
-    "APM_Factions\data\hmmvv\m1025_g_co.paa",
-    "APM_Factions\data\hmmvv\mk64mount_w_co.paa"
-  };
-  textureList[] = {APM,1};
-};
-class rhsusf_m1025_black_m2: rhsusf_m1025_w_m2
-{
-  scope = 1;
-  editorPreview = "APM_Factions\previews\I_Mayhem_HMMWV_M2.jpg";
-  hiddenSelectionsTextures[] =
-  {
-    "APM_Factions\data\hmmvv\a_exterior_black.paa",
-    "APM_Factions\data\hmmvv\b_interior_black.paa",
-    "APM_Factions\data\hmmvv\c_a2_black.paa",
-    "APM_Factions\data\hmmvv\d_wheels_black.paa",
-    "APM_Factions\data\hmmvv\e_mainbody_black.paa",
-    "APM_Factions\data\hmmvv\f_gratting_black.paa",
-    "APM_Factions\data\hmmvv\g_camo1_tile_black.paa",
-    "APM_Factions\data\hmmvv\h_camo2_m1025_black.paa",
-    "APM_Factions\data\hmmvv\mk64mount_w_co.paa"
-  };
-  textureList[] = {Black,1};
-};
-class rhsusf_m1025_w_mk19: rhsusf_m1025_w
-{
-  class Turrets;
-  class textureSources
-  {
-    class standard
-    {
-      factions[] = {};
-    };
-    class Desert
-    {
-      factions[] = {};
-    };
-    class Olive
-    {
-      factions[] = {};
-    };
-    class APM
-    {
-      author = "Crowmedic & SkunySpliff";
-      displayName = "APM";
-      textures[] =
-      {
-        "APM_Factions\data\hmmvv\m998_exterior_g_co.paa",
-        "APM_Factions\data\hmmvv\m998_interior_w_co.paa",
-        "APM_Factions\data\hmmvv\A2_parts_WD_co.paa",
-        "APM_Factions\data\hmmvv\wheel_wranglermt_b_co.paa",
-        "rhsusf_hmmwv\textures\m998_mainbody_co.paa",
-        "APM_Factions\data\hmmvv\gratting_w_co.paa",
-        "APM_Factions\data\hmmvv\tile_exmetal_co.paa",
-        "APM_Factions\data\hmmvv\m1025_g_co.paa",
-        "APM_Factions\data\hmmvv\mk64mount_w_co.paa"
-      };
-      factions[] = {};
-    };
-    class Black
-    {
-      author = "LinkIsParking";
-      displayName = "Black";
-      textures[] =
-      {
-        "APM_Factions\data\hmmvv\a_exterior_black.paa",
-        "APM_Factions\data\hmmvv\b_interior_black.paa",
-        "APM_Factions\data\hmmvv\c_a2_black.paa",
-        "APM_Factions\data\hmmvv\d_wheels_black.paa",
-        "APM_Factions\data\hmmvv\e_mainbody_black.paa",
-        "APM_Factions\data\hmmvv\f_gratting_black.paa",
-        "APM_Factions\data\hmmvv\g_camo1_tile_black.paa",
-        "APM_Factions\data\hmmvv\h_camo2_m1025_black.paa",
-        "APM_Factions\data\hmmvv\mk64mount_w_co.paa"
-      };
-      factions[] = {};
-    };
-  };
-};
-class rhsusf_m1025_APM_mk19: rhsusf_m1025_w_mk19
-{
-  scope = 1;
-  editorPreview = "APM_Factions\previews\B_APM_HMMVV_Mk19.jpg";
-  class Turrets: Turrets
-  {
-    class M2_Turret;
-  };
-  hiddenSelectionsTextures[] =
-  {
-    "APM_Factions\data\hmmvv\m998_exterior_g_co.paa",
-    "APM_Factions\data\hmmvv\m998_interior_w_co.paa",
-    "APM_Factions\data\hmmvv\A2_parts_WD_co.paa",
-    "APM_Factions\data\hmmvv\wheel_wranglermt_b_co.paa",
-    "rhsusf_hmmwv\textures\m998_mainbody_co.paa",
-    "APM_Factions\data\hmmvv\gratting_w_co.paa",
-    "APM_Factions\data\hmmvv\tile_exmetal_co.paa",
-    "APM_Factions\data\hmmvv\m1025_g_co.paa",
-    "APM_Factions\data\hmmvv\mk64mount_w_co.paa"
-  };
-  textureList[] = {APM,1};
-};
-class rhsusf_m1025_black_mk19: rhsusf_m1025_w_mk19
-{
-  scope = 1;
-  editorPreview = "APM_Factions\previews\I_Mayhem_HMMWV_MK19.jpg";
-  hiddenSelectionsTextures[] =
-  {
-    "APM_Factions\data\hmmvv\a_exterior_black.paa",
-    "APM_Factions\data\hmmvv\b_interior_black.paa",
-    "APM_Factions\data\hmmvv\c_a2_black.paa",
-    "APM_Factions\data\hmmvv\d_wheels_black.paa",
-    "APM_Factions\data\hmmvv\e_mainbody_black.paa",
-    "APM_Factions\data\hmmvv\f_gratting_black.paa",
-    "APM_Factions\data\hmmvv\g_camo1_tile_black.paa",
-    "APM_Factions\data\hmmvv\h_camo2_m1025_black.paa",
-    "APM_Factions\data\hmmvv\mk64mount_w_co.paa"
-  };
-  textureList[] = {Black,1};
-};
+class rhsusf_m1025_w;
+class rhsusf_m1025_w_m2;
+class rhsusf_m1025_w_mk19;
 class B_Truck_01_box_F;
-class Wheeled_APC_F;
+class Wheeled_APC_F: Car_F
+{
+	class NewTurret;
+	class Turrets
+	{
+		class MainTurret: NewTurret
+		{
+			class CommanderOptics;
+		};
+	};
+};
 class APC_Wheeled_01_Base_F: Wheeled_APC_F
 {
-	class textureSources
-	{
-		class Sand
-		{
-			Vehicles[] = {};
-		};
-		class Olive
-		{
-			Vehicles[] = {};
-		};
-		class Charcoal
-		{
-			author = "LinkIsParking";
-			displayName = "Charcoal";
-			textures[] =
-			{
-				"APM_Vehicles\data\APC_Wheeled_01\APC_Wheeled_01_base_charcoal_co.paa",
-				"APM_Vehicles\data\APC_Wheeled_01\APC_Wheeled_01_adds_charcoal_co.paa",
-				"APM_Vehicles\data\APC_Wheeled_01\APC_Wheeled_01_tows_charcoal_co.paa",
-				"a3\Armor_F\Data\camonet_NATO_Green_CO.paa",
-				"APM_Vehicles\data\cage_charcoal.paa"
-			};
-		};
-		class Tan
-		{
-			author = "LinkIsParking";
-			displayName = "Tan";
-			textures[] =
-			{
-				"APM_Vehicles\data\APC_Wheeled_01\APC_Wheeled_01_base_Tan_co.paa",
-				"APM_Vehicles\data\APC_Wheeled_01\APC_Wheeled_01_adds_Tan_co.paa",
-				"APM_Vehicles\data\APC_Wheeled_01\APC_Wheeled_01_tows_Tan_co.paa",
-				"a3\Armor_F\Data\camonet_NATO_desert_CO.paa",
-				"APM_Vehicles\data\cage_tan.paa"
-			};
-		};
-		class OliveGreen
-		{
-			author = "LinkIsParking";
-			displayName = "Olive Green";
-			textures[] =
-			{
-				"APM_Vehicles\data\APC_Wheeled_01\APC_Wheeled_01_base_Green_co.paa",
-				"APM_Vehicles\data\APC_Wheeled_01\APC_Wheeled_01_adds_Green_co.paa",
-				"APM_Vehicles\data\APC_Wheeled_01\APC_Wheeled_01_tows_Green_co.paa",
-				"a3\Armor_F\Data\camonet_NATO_Green_CO.paa",
-				"APM_Vehicles\data\cage_green.paa"
-			};
-		};
-	};
+	class EventHandlers;
+	class Turrets;
 };
-class B_APC_Wheeled_01_cannon_F;
-class AFV_Wheeled_01_base_F: Wheeled_APC_F
+class B_APC_Wheeled_01_Base_F: APC_Wheeled_01_Base_F
 {
-  class Turrets;
-  class textureSources
-  {
-    class Sand
-    {
-      factions[] = {};
-    };
-    class Green
-    {
-      factions[] = {};
-    };
-		class Charcoal
-    {
-      displayName = "Charcoal";
-      author = "LinkIsParking";
-      textures[] =
-      {
-				"APM_Vehicles\data\afv_wheeled_01\afv_wheeled_01_ext1_charcoal_CO.paa",
-		    "APM_Vehicles\data\afv_wheeled_01\afv_wheeled_01_ext2_charcoal_CO.paa",
-		    "APM_Vehicles\data\afv_wheeled_01\afv_wheeled_01_wheel_CO.paa",
-		    "a3\Armor_F\Data\camonet_NATO_Green_CO.paa",
-		    "APM_Vehicles\data\cage_charcoal.paa"
-      };
-      factions[] = {};
-    };
-    class Tan
-    {
-      displayName = "Tan";
-      author = "LinkIsParking";
-      textures[] =
-      {
-				"APM_Vehicles\data\afv_wheeled_01\afv_wheeled_01_ext1_tan_CO.paa",
-		    "APM_Vehicles\data\afv_wheeled_01\afv_wheeled_01_ext2_tan_CO.paa",
-		    "APM_Vehicles\data\afv_wheeled_01\afv_wheeled_01_wheel_CO.paa",
-		    "a3\Armor_F\Data\camonet_NATO_Green_CO.paa",
-		    "APM_Vehicles\data\cage_charcoal.paa"
-      };
-      factions[] = {};
-    };
-    class OliveGreen
-    {
-      displayName = "Olive Green";
-      author = "LinkIsParking";
-      textures[] =
-      {
-				"APM_Vehicles\data\afv_wheeled_01\afv_wheeled_01_ext1_green_CO.paa",
-		    "APM_Vehicles\data\afv_wheeled_01\afv_wheeled_01_ext2_green_CO.paa",
-		    "APM_Vehicles\data\afv_wheeled_01\afv_wheeled_01_wheel_CO.paa",
-		    "a3\Armor_F\Data\camonet_NATO_Green_CO.paa",
-		    "APM_Vehicles\data\cage_charcoal.paa"
-      };
-      factions[] = {};
-    };
-  };
+	class EventHandlers;
+	class Turrets;
 };
-class AFV_Wheeled_01_up_base_F: AFV_Wheeled_01_base_F
+class B_APC_Wheeled_01_cannon_F: B_APC_Wheeled_01_Base_F
 {
-	class textureSources: textureSources
-	{
-		class Sand
-		{
-			factions[] = {};
-		};
-		class Green
-		{
-			factions[] = {};
-		};
-		class Charcoal
-		{
-			displayName = "Charcoal";
-			author = "LinkIsParking";
-			textures[] =
-			{
-				"APM_Vehicles\data\afv_wheeled_01\afv_wheeled_01_ext1_charcoal_CO.paa",
-				"APM_Vehicles\data\afv_wheeled_01\afv_wheeled_01_ext2_charcoal_CO.paa",
-				"APM_Vehicles\data\afv_wheeled_01\afv_wheeled_01_wheel_CO.paa",
-				"APM_Vehicles\data\cage_charcoal.paa",
-				"APM_Vehicles\data\afv_wheeled_01\afv_commander_tow_charcoal_CO.paa",
-				"a3\Armor_F\Data\camonet_NATO_Green_CO.paa",
-				"APM_Vehicles\data\cage_charcoal.paa"
-			};
-		factions[] = {};
-		};
-		class Tan
-		{
-			displayName = "Tan";
-			author = "LinkIsParking";
-			textures[] =
-			{
-				"APM_Vehicles\data\afv_wheeled_01\afv_wheeled_01_ext1_tan_CO.paa",
-				"APM_Vehicles\data\afv_wheeled_01\afv_wheeled_01_ext2_tan_CO.paa",
-				"APM_Vehicles\data\afv_wheeled_01\afv_wheeled_01_wheel_CO.paa",
-				"APM_Vehicles\data\cage_tan.paa",
-				"APM_Vehicles\data\afv_wheeled_01\afv_commander_tow_tan_CO.paa",
-				"a3\Armor_F\Data\camonet_NATO_Green_CO.paa",
-				"APM_Vehicles\data\cage_tan.paa"
-			};
-			factions[] = {};
-		};
-		class OliveGreen
-		{
-			displayName = "Olive Green";
-			author = "LinkIsParking";
-			textures[] =
-			{
-				"APM_Vehicles\data\afv_wheeled_01\afv_wheeled_01_ext1_green_CO.paa",
-				"APM_Vehicles\data\afv_wheeled_01\afv_wheeled_01_ext2_green_CO.paa",
-				"APM_Vehicles\data\afv_wheeled_01\afv_wheeled_01_wheel_CO.paa",
-				"APM_Vehicles\data\cage_green.paa",
-				"APM_Vehicles\data\afv_wheeled_01\afv_commander_tow_green_CO.paa",
-				"a3\Armor_F\Data\camonet_NATO_Green_CO.paa",
-				"APM_Vehicles\data\cage_green.paa"
-			};
-		factions[] = {};
-		};
-	};
+	class EventHandlers;
 };
-class B_AFV_Wheeled_01_cannon_F: AFV_Wheeled_01_base_F
-{
-  class Turrets: Turrets
-	{
-		class MainTurret;
-	};
-};
-class B_AFV_Wheeled_01_up_cannon_F: AFV_Wheeled_01_up_base_F
-{
-	class Turrets: Turrets
-	{
-		class MainTurret;
-	};
-};
+class B_AFV_Wheeled_01_cannon_F;
+class B_AFV_Wheeled_01_up_cannon_F;
 class APC_Wheeled_03_base_F: Wheeled_Apc_F
 {
-	class TextureSources
-	{
-		class Charcoal
-		{
-			displayName = "Charcoal";
-			author = "LinkIsParking";
-			textures[] =
-			{
-				"APM_Vehicles\data\apc_wheeled_03\apc_wheeled_03_ext_charcoal_co.paa",
-				"APM_Vehicles\data\apc_wheeled_03\apc_wheeled_03_ext2_charcoal_co.paa",
-				"APM_Vehicles\data\RCWS30_charcoal_co.paa",
-				"APM_Vehicles\data\apc_wheeled_03\apc_wheeled_03_ext_alpha_charcoal_co.paa",
-				"a3\Armor_F\Data\camonet_NATO_Green_CO.paa",
-				"APM_Vehicles\data\cage_charcoal.paa"
-			};
-			Vehicles[] = {};
-		};
-		class OliveGreen
-		{
-			displayName = "Olive Green";
-			author = "LinkIsParking";
-			textures[] =
-			{
-				"APM_Vehicles\data\apc_wheeled_03\apc_wheeled_03_ext_Green_co.paa",
-				"APM_Vehicles\data\apc_wheeled_03\apc_wheeled_03_ext2_Green_co.paa",
-				"APM_Vehicles\data\RCWS30_green_co.paa",
-				"APM_Vehicles\data\apc_wheeled_03\apc_wheeled_03_ext_alpha_Green_co.paa",
-				"a3\Armor_F\Data\camonet_NATO_Green_CO.paa",
-				"APM_Vehicles\data\cage_green.paa"
-			};
-			Vehicles[] = {};
-		};
-		class Tan
-		{
-			displayName = "Tan";
-			author = "LinkIsParking";
-			textures[] =
-			{
-				"APM_Vehicles\data\apc_wheeled_03\apc_wheeled_03_ext_tan_co.paa",
-				"APM_Vehicles\data\apc_wheeled_03\apc_wheeled_03_ext2_tan_co.paa",
-				"APM_Vehicles\data\RCWS30_tan_co.paa",
-				"APM_Vehicles\data\apc_wheeled_03\apc_wheeled_03_ext_alpha_tan_co.paa",
-				"a3\Armor_F\Data\camonet_NATO_desert_CO.paa",
-				"APM_Vehicles\data\cage_tan.paa"
-			};
-			Vehicles[] = {};
-		};
-	};
+	class Turrets;
 };
 class Tank_F;
 class APC_Tracked_03_base_F: Tank_F
 {
-	class TextureSources
-	{
-		class Charcoal
-		{
-			displayName = "Charcoal";
-			author = "LinkIsParking";
-			textures[] =
-			{
-				"APM_Factions\data\apc_tracked_03\apc_tracked_03_ext_charcoal_co.paa",
-				"APM_Factions\data\apc_tracked_03\apc_tracked_03_ext2_charcoal_co.paa",
-				"A3\Armor_F\Data\camonet_AAF_Digi_Green_CO.paa",
-				"A3\armor_f\data\cage_aaf_co.paa"
-			};
-			factions[] = {};
-		};
-		class OliveDrab
-		{
-			displayName = "Olive Drab";
-			author = "LinkIsParking";
-			textures[] =
-			{
-				"APM_Factions\data\apc_tracked_03\apc_tracked_03_ext_green_co.paa",
-				"APM_Factions\data\apc_tracked_03\apc_tracked_03_ext2_green_co.paa",
-				"A3\Armor_F\Data\camonet_AAF_Digi_Green_CO.paa",
-				"A3\armor_f\data\cage_aaf_co.paa"
-			};
-			factions[] = {};
-		};
-		class Tan
-		{
-			displayName = "Tan";
-			author = "LinkIsParking";
-			textures[] =
-			{
-				"APM_Factions\data\apc_tracked_03\apc_tracked_03_ext_tan_co.paa",
-				"APM_Factions\data\apc_tracked_03\apc_tracked_03_ext2_tan_co.paa",
-				"A3\Armor_F\Data\camonet_AAF_Digi_Green_CO.paa",
-				"A3\armor_f\data\cage_aaf_co.paa"
-			};
-			factions[] = {};
-		};
-	};
+	class Turrets;
 };
+class I_APC_tracked_03_cannon_F;
 class Air;
 class Helicopter: Air
 {
@@ -836,7 +314,7 @@ class RHS_MELB_Base: Helicopter_Base_H
 			author = "LinkIsParking";
 			textures[] =
 			{
-				"APM_Factions\data\melb\melb_ext_co.paa",
+				"x\APM\addons\Factions\data\melb\melb_ext_co.paa",
 				"rhsusf\addons\rhsusf_melb\data\decals\SN\blank_ca.paa"
 			};
 			factions[] = {};
@@ -859,16 +337,13 @@ class RHS_MELB_MH6M: RHS_MELB_Base
   class Turrets: Turrets
   {
     class CopilotTurret;
+		class CargoTurret_03;
+		class CargoTurret_04;
+		class CargoTurret_05;
+		class CargoTurret_06;
+		class CargoTurret_07;
+		class CargoTurret_08;
   };
-};
-class RHS_MELB_APM_MH6M: RHS_MELB_MH6M
-{
-	scope = 1;
-	hiddenSelectionsTextures[] =
-	{
-		"APM_Factions\data\melb\melb_ext_co.paa",
-		"rhsusf\addons\rhsusf_melb\data\decals\SN\blank_ca.paa"
-	};
 };
 class RHS_MELB_AH6M: RHS_MELB_Base
 {
@@ -876,15 +351,6 @@ class RHS_MELB_AH6M: RHS_MELB_Base
   {
     class CopilotTurret;
   };
-};
-class RHS_MELB_APM_AH6M: RHS_MELB_AH6M
-{
-	scope = 1;
-	hiddenSelectionsTextures[] =
-	{
-		"APM_Factions\data\melb\melb_ext_co.paa",
-		"rhsusf\addons\rhsusf_melb\data\decals\SN\blank_ca.paa"
-	};
 };
 class RHS_UH60M_base;
 class RHS_UH60M_US_base: RHS_UH60M_base
@@ -906,9 +372,9 @@ class RHS_UH60M: RHS_UH60M_US_base
       author = "Crowmedic & SkunySpliff";
       textures[] =
       {
-        "APM_Factions\Data\UH-60\uh60m_fuselage_co.paa",
-        "APM_Factions\Data\UH-60\uh60m_engine_co.paa",
-        "APM_Factions\Data\UH-60\default_co.paa",
+        "x\APM\addons\factions\data\UH-60\uh60m_fuselage_co.paa",
+        "x\APM\addons\factions\data\UH-60\uh60m_engine_co.paa",
+        "x\APM\addons\factions\data\UH-60\default_co.paa",
         "rhsusf\addons\rhsusf_a2port_air\uh60m\data\uh60m_dust_filter_co.paa"
       };
       factions[] = {};
@@ -919,6 +385,10 @@ class RHS_UH60M: RHS_UH60M_US_base
     class CopilotTurret;
     class MainTurret;
     class RightDoorGun;
+		class CargoTurret_01;
+		class CargoTurret_02;
+		class CargoTurret_03;
+		class CargoTurret_04;
   };
 };
 class Heli_Transport_02_base_F;
@@ -940,8 +410,8 @@ class RHS_CH_47F_base: Heli_Transport_02_base_F
       author = "Crowmedic & SkunySpliff";
       textures[] =
       {
-        "APM_Factions\data\ch-47\ch47_ext_1_co.paa",
-        "APM_Factions\data\ch-47\ch47_ext_2_co.paa",
+        "x\APM\addons\factions\data\ch-47\ch47_ext_1_co.paa",
+        "x\APM\addons\factions\data\ch-47\ch47_ext_2_co.paa",
         "rhsusf\addons\rhsusf_a2port_air\ch47\data\ch47f_nalepky_ca.paa",
         "rhsusf\addons\rhsusf_a2port_air\ch47\data\ch47_ext_mlod_co.paa"
       };
@@ -964,7 +434,7 @@ class rhsusf_CH53E_USMC: Helicopter_Base_H
       author = "Crowmedic & SkunySpliff";
       textures[] =
       {
-        "APM_Factions\data\ch-53\ch53_1_co.paa",
+        "x\APM\addons\factions\data\ch-53\ch53_1_co.paa",
         "rhsusf\addons\rhsusf_decals\Data\Numbers\USMCBlackShadow\5_ca.paa",
         "rhsusf\addons\rhsusf_decals\Data\Numbers\USMCBlackShadow\5_ca.paa"
       };
@@ -990,9 +460,9 @@ class MBT_02_base_F: Tank_F
 			author = "Crowmedic & SkunySpliff";
 			textures[] =
 			{
-				"APM_Factions\data\MBT_02k\mbt_02_body_co.paa",
-				"APM_Factions\data\MBT_02k\mbt_02_turret_co.paa",
-				"APM_Factions\data\MBT_02k\mbt_02_turret_co.paa",
+				"x\APM\addons\factions\data\MBT_02k\mbt_02_body_co.paa",
+				"x\APM\addons\factions\data\MBT_02k\mbt_02_turret_co.paa",
+				"x\APM\addons\factions\data\MBT_02k\mbt_02_turret_co.paa",
 				"A3\Armor_F\Data\camonet_CSAT_HEX_Desert_CO.paa"
 			};
 			factions[] = {};
@@ -1010,9 +480,9 @@ class MBT_03_base_F: Tank_F
       author = "Crowmedic & SkunySpliff";
       textures[] =
       {
-        "APM_Factions\data\MBT_03\mbt_03_ext01_co.paa",
-        "APM_Factions\data\MBT_03\mbt_03_ext02_co.paa",
-        "APM_Factions\data\MBT_03\mbt_03_rcws_co.paa",
+        "x\APM\addons\factions\data\MBT_03\mbt_03_ext01_co.paa",
+        "x\APM\addons\factions\data\MBT_03\mbt_03_ext02_co.paa",
+        "x\APM\addons\factions\data\MBT_03\mbt_03_rcws_co.paa",
         "A3\Armor_F\Data\camonet_AAF_Digi_Green_CO.paa"
       };
       factions[] = {};
@@ -1030,8 +500,8 @@ class MBT_04_base_F: Tank_F
 			author = "Crowmedic & SkunySpliff";
 			textures[] =
 			{
-				"APM_Factions\data\MBT_04\MBT_04_exterior_green_hex_1_CO.paa",
-				"APM_Factions\data\MBT_04\MBT_04_exterior_green_hex_2_CO.paa",
+				"x\APM\addons\factions\data\MBT_04\MBT_04_exterior_green_hex_1_CO.paa",
+				"x\APM\addons\factions\data\MBT_04\MBT_04_exterior_green_hex_2_CO.paa",
 				"a3\armor_f\Data\camonet_CSAT_HEX_Desert_CO.paa"
 			};
 			factions[] = {};

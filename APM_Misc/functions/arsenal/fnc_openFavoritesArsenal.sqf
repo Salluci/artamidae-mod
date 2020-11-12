@@ -3,7 +3,8 @@
  * Opens the Favorites Arsenal
  *
  * Arguments:
- * None.
+ * 0: Target <<OBJECT>>
+ * 1: Blacklist <<ARRAY of STRINGS or BOOL>>
  *
  * Return Value:
  * None.
@@ -13,14 +14,17 @@
  *
  * Public: Yes
 */
+params [["_target",player,[player]],["_blacklist",false,[false,[""]]]];
+
 
 _favorites = profileNamespace getVariable ["APM_arsenal_favorites", []];
-_blacklist = missionNamespace getVariable ["APM_Gear_shop_blacklist", false];
+_blacklistMission = missionNamespace getVariable ["APM_GearShop_Blacklist",[]];
 
-[player, true, false] call ace_arsenal_fnc_removeVirtualItems;
-[player, _favorites, false] call ace_arsenal_fnc_addVirtualItems;
-[player, _blacklist, false] call ace_arsenal_fnc_removeVirtualItems;
-[player, player] call ace_arsenal_fnc_openBox;
+[_target, true, false] call ace_arsenal_fnc_removeVirtualItems;
+[_target, _favorites, false] call ace_arsenal_fnc_addVirtualItems;
+[_target, _blacklist, false] call ace_arsenal_fnc_removeVirtualItems;
+[_target, _blacklistMission, false] call ace_arsenal_fnc_removeVirtualItems;
+[_target, _target] call ace_arsenal_fnc_openBox;
 
 //Hook Arsenal on Open
 [] spawn

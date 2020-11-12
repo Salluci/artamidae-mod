@@ -1,4 +1,3 @@
-#include "BIS_AddonInfo.hpp"
 class CfgPatches
 {
 	class APM_Factions
@@ -18,6 +17,10 @@ class CfgPatches
 	};
 };
 
+class DefaultEventHandlers
+{
+	init = "if (local (_this select 0)) then {[(_this select 0), """", [], false] call bis_fnc_initVehicle;};";
+};
 class CBA_Extended_EventHandlers_base;
 
 #include "CfgVehicles.hpp"
@@ -44,7 +47,7 @@ class CfgFunctions
 		class loadout
 		{
 			tag = "APM";
-			file = "\APM_Factions\fnc";
+			file = "x\APM\addons\Factions\fnc";
 			class loadoutApply {};
 		};
 	};

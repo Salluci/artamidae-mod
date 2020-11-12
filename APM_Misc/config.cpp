@@ -13,42 +13,26 @@ class CfgPatches
 			"A3_Data_F_Oldman_Loadorder",
 			"ace_medical",
 			"ace_ballistics",
-			"ace_advanced_ballistics"
+			"ace_advanced_ballistics",
+			"ace_interaction",
+			"ace_interact_menu"
 		};
-		author="Crowmedic";
+		author="LinkIsParking";
 		name="APM Scripting & Misc";
-	};
-};
-class CfgFunctions
-{
-	class real
-	{
-		tag="real";
-		class real_armor
-		{
-			file="APM_Misc\functions";
-			class hitPart
-			{
-			};
-			class init
-			{
-				preInit=1;
-			};
-		};
 	};
 };
 class Extended_PreInit_EventHandlers
 {
-  class apm_arsenal
+  class apm_functions
 	{
-    init = "call compile preprocessFileLineNumbers ""APM_Misc\XEH_preInit.sqf""";
+    init = "call compile preprocessFileLineNumbers ""x\APM\Addons\Misc\XEH_preInit.sqf""";
   };
 };
 class Extended_PostInit_EventHandlers
 {
-  class apm_arsenal
+  class apm_functions
 	{
-    init = "call compile preprocessFileLineNumbers ""APM_Misc\XEH_postInit.sqf""";
+    init = "call compile preprocessFileLineNumbers ""x\APM\Addons\Misc\XEH_postInit.sqf""";
   };
 };
 class CfgInventoryGlobalVariable
@@ -99,6 +83,32 @@ class cfgVehicles
 	{
 		maximumLoad=999999;
 		displayName="Cargo Net (Very Large)";
+	};
+	class Man;
+  class CAManBase: Man
+	{
+		class ACE_Actions
+		{
+			class APM_knockout
+			{
+				displayName = "Punch";
+				condition = "if (isPlayer _target) then {((call APM_Punch_cond) and (alive _target))} else {((call APM_Punch_condAI) and (alive _target))}";
+				icon = "x\APM\addons\Misc\Data\UI\knock.paa";
+				statement = "[_player, _target] call apm_knockout_fnc_punchHead";
+				distance = 4.5;
+				selection = "pilot";
+			};
+			class ACE_MainActions
+			{
+				class APM_knockoutPassenger
+				{
+					displayName = "Punch Passenger";
+					icon = "x\APM\addons\Misc\Data\UI\knock.paa";
+					condition = "if (isPlayer _target) then {((call APM_Punch_cond) and (alive _target) and (vehicle _target != _target))} else {((call APM_Punch_condAI) and (alive _target) and (vehicle _target != _target))}";
+					statement = "[_player, _target] call apm_knockout_fnc_punchHead";
+				};
+			};
+		};
 	};
 };
 class CfgBrains //Turrets accuracy decrease
@@ -151,10 +161,12 @@ class cfgWeapons
 	};
 	class FirstAidKit: ItemCore
 	{
+		scope = 1;
 		scopeArsenal = 0;
 	};
 	class Medikit: ItemCore
 	{
+		scope = 1;
 		scopeArsenal = 0;
 	};
 	#include "ACE_Weight.hpp"
@@ -357,14 +369,10 @@ class CfgSounds
 		name="BRIDGE_PunchSound";
 		sound[]=
 		{
-			"\APM_Misc\Data\Sounds\punchSound.ogg",
+			"x\APM\Addons\Misc\Data\Sounds\punchSound.ogg",
 			3,
 			1
 		};
 		titles[]={};
 	};
-};
-class DefaultEventHandlers
-{
-	hitpart="_this call real_fnc_hitPart;";
 };

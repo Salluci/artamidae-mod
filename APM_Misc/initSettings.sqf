@@ -59,9 +59,19 @@
 ] call CBA_Settings_fnc_init;
 
 [
-	"apm_knockout_time",
+	"apm_knockout_time_player",
 	"SLIDER",
-	["Set Knockout time", "Changes the amount of time (seconds) when knocking someone out. Only available if you are a C2.+ rank for AI, SRC.+ for players."],
+	["Set Player Knockout Time", "Changes the amount of time (seconds) when knocking someone out. Only available if you are a SRC.+ rank."],
+	["APM Options", "Misc Options"],
+	[1, 90, 30, 0],
+	2,
+	{}
+] call CBA_Settings_fnc_init;
+
+[
+	"apm_knockout_time_AI",
+	"SLIDER",
+	["Set AI Knockout Time", "Changes the amount of time (seconds) when knocking AI out. Only available if you are a C2.+ rank."],
 	["APM Options", "Misc Options"],
 	[1, 90, 30, 0],
 	2,

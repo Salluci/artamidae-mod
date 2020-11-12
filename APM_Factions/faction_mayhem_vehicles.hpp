@@ -100,29 +100,32 @@
 			"rhsafrf\addons\rhs_btr70\habar\data\sa_gear_02_co.paa"
 		};
 	};
-	class I_Mayhem_HMMWV: rhsusf_m1025_black
+	class I_Mayhem_HMMWV: rhsusf_m1025_w
 	{
 		side = 2;
 		scope = 2;
 		faction="I_faction_MayhemPMC";
 		displayName = "HMMWV (Unarmed)";
 		crew="I_Contractor_Mayhem_Rifleman2";
+		texturelist[] = {"Black",1};
 	};
-	class I_Mayhem_HMMWV_m2: rhsusf_m1025_black_m2
+	class I_Mayhem_HMMWV_M2: rhsusf_m1025_w_m2
 	{
 		side = 2;
 		scope = 2;
 		faction="I_faction_MayhemPMC";
 		displayName = "HMMWV (M2)";
 		crew="I_Contractor_Mayhem_Rifleman2";
+		texturelist[] = {"Black",1};
 	};
-	class I_Mayhem_HMMWV_MK19: rhsusf_m1025_black_mk19
+	class I_Mayhem_HMMWV_MK19: rhsusf_m1025_w_mk19
 	{
 		side = 2;
 		scope = 2;
 		faction="I_faction_MayhemPMC";
 		displayName = "HMMWV (Mk19)";
 		crew="I_Contractor_Mayhem_Rifleman2";
+		texturelist[] = {"Black",1};
 	};
 	class I_Mayhem_UH60M: RHS_UH60M
 	{
@@ -150,25 +153,23 @@
 	class I_Mayhem_AH64D: RHS_AH64D_wd_OCimport_02
 	{
 		author = "Crowmedic";
-        scope = 2;
-        scopeCurator = 2;
-        displayName = "AH64D";
-        side = 2;
-        faction = "I_faction_MayhemPMC";
-        crew = "I_Contractor_Mayhem_Pilot";
-        class Turrets: Turrets
-				{
-            class MainTurret: MainTurret {gunnerType = "I_Contractor_Mayhem_Pilot";};
-        };
+    scope = 2;
+    scopeCurator = 2;
+  	displayName = "AH64D";
+    side = 2;
+    faction = "I_faction_MayhemPMC";
+    crew = "I_Contractor_Mayhem_Pilot";
+    class Turrets: Turrets
+		{
+      class MainTurret: MainTurret {gunnerType = "I_Contractor_Mayhem_Pilot";};
+    };
 	};
-	class I_Mayhem_M113_m2: rhsgref_hidf_m113a3_m2
+	class I_Mayhem_FV510: I_APC_tracked_03_cannon_F
 	{
-		side = 2;
 		faction="I_faction_MayhemPMC";
-		vehicleClass = "apm_class_generic_tracked";
-		editorSubcategory = "apm_generic_tracked";
-		displayName = "M113A3 (M2)";
 		crew="I_Contractor_Mayhem_Rifleman2";
+		textureList[] = {"OliveGreen",1};
+		animationList[] = {"ShowSLATHull",0.5,"ShowTools",1};
 	};
 	class I_Mayhem_BMD1: rhsgref_cdf_bmd1
 	{

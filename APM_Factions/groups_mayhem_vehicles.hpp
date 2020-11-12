@@ -128,8 +128,8 @@
                     };
                 };
 
-                class o_omayhemf_mechanized_m113_team {
-                    name = "M113 Team";
+                class o_omayhemf_mechanized_warrior_team {
+                    name = "Warrior Team";
                     side = 2;
                     faction = "I_faction_MayhemPMC";
                     icon = "\A3\ui_f\data\map\markers\nato\o_mech_inf.paa";
@@ -139,7 +139,7 @@
                         position[] = {0,0,0};
                         rank = "SERGEANT";
                         side = 2;
-                        vehicle = "I_Mayhem_M113_m2";
+                        vehicle = "I_Mayhem_FV510";
                     };
                     class Unit1 {
                         position[] = {5,-5,0};

@@ -16,7 +16,7 @@
  * Public: Yes
 */
 
-params ["_box", ["_clearInventory",false]];
+params [["_box", objNull, [objNull]], ["_clearInventory",false,[false]],["_blacklist",false,[false,[]]]];
 
 if (_clearInventory) then {
   clearBackpackCargoGlobal _box;
@@ -26,14 +26,14 @@ if (_clearInventory) then {
 };
 
 
-_action = ["APM_Arsenal", "Open Full Arsenal", ["APM_Misc\Data\UI\ui_arsenal.paa","#FFABAB"], {
-   call apm_arsenal_fnc_openFullArsenal;
+_action = ["APM_Arsenal", "Open Full Arsenal", ["x\APM\addons\Misc\Data\UI\ui_arsenal.paa","#FFABAB"], {
+  [player, _blacklist] call apm_arsenal_fnc_openFullArsenal;
 }, {true}] call ace_interact_menu_fnc_createAction;
 
 [_box, 0, ["ACE_MainActions"], _action] call ace_interact_menu_fnc_addActionToObject;
 
-_action = ["APM_Arsenal", "Open Favorite Arsenal", ["APM_Misc\Data\UI\ui_arsenal.paa","#ABABFF"], {
-   call apm_arsenal_fnc_openFavoritesArsenal;
+_action = ["APM_Arsenal", "Open Favorite Arsenal", ["x\APM\addons\Misc\Data\UI\ui_arsenal.paa","#ABABFF"], {
+    [player, _blacklist] call apm_arsenal_fnc_openFavoritesArsenal;
 }, {true}] call ace_interact_menu_fnc_createAction;
 
 [_box, 0, ["ACE_MainActions"], _action] call ace_interact_menu_fnc_addActionToObject;
