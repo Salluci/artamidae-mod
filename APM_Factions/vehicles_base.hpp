@@ -13,6 +13,9 @@ class Car_F: Car
 		};
 	};
 };
+class I_G_Offroad_01_F;
+class I_G_Offroad_01_armed_F;
+class I_G_Offroad_01_AT_F;
 class LSV_01_base_F: Car_F //Add camo to all factions, add APM camo
 {
 	class textureSources
@@ -243,6 +246,28 @@ class rhsusf_m998_w_4dr_fulltop;
 class rhsusf_m1025_w;
 class rhsusf_m1025_w_m2;
 class rhsusf_m1025_w_mk19;
+class rhs_tigr_base;
+class rhs_tigr_vdv: rhs_tigr_base
+{
+	class Turrets;
+};
+class rhs_tigr_m_vdv: rhs_tigr_vdv
+{
+	class Turrets: Turrets
+	{
+		class MainTurret;
+		class CargoTurret_01;
+		class CargoTurret_02;
+	};
+};
+class rhs_tigr_sts_vdv: rhs_tigr_vdv
+{
+	class Turrets: Turrets
+	{
+		class MainTurret;
+		class AGS_Turret;
+	};
+};
 class B_Truck_01_box_F;
 class Wheeled_APC_F: Car_F
 {
@@ -357,9 +382,17 @@ class RHS_UH60M_US_base: RHS_UH60M_base
 {
   class Turrets;
 	class textureSources;
+	class EventHandlers;
 };
 class RHS_UH60M: RHS_UH60M_US_base
 {
+	class EventHandlers: EventHandlers
+	{
+		class APM_EventHandlers
+		{
+			init = "_this call ace_fastroping_fnc_equipFRIES";
+		};
+	};
 	class textureSources: textureSources
   {
     class Standard
@@ -390,6 +423,24 @@ class RHS_UH60M: RHS_UH60M_US_base
 		class CargoTurret_03;
 		class CargoTurret_04;
   };
+};
+class Heli_Transport_01_base_F: Helicopter_Base_H
+{
+	class EventHandlers
+	{
+		fired = "";
+		class APM_EventHandlers
+		{
+			init = "_this call ace_fastroping_fnc_equipFRIES";
+		};
+	};
+};
+class Heli_Light_01_base_F;
+class Heli_Light_01_unarmed_base_F: Heli_Light_01_base_F
+{
+	ace_fastroping_enabled = 1;
+	ace_fastroping_friesAttachmentPoint[] = {0.583, 0.79, -0.01};
+	ace_fastroping_ropeOrigins[] = {[1.116, 0.79, -0.01],[-1.116, 0.79, -0.01]};
 };
 class Heli_Transport_02_base_F;
 class RHS_CH_47F_base: Heli_Transport_02_base_F
@@ -450,64 +501,23 @@ class rhsusf_CH53E_USMC_GAU21: rhsusf_CH53E_USMC
     class GAU21;
   };
 };
-class MBT_02_base_F: Tank_F
+class Heli_Attack_02_base_F;
+class RHS_Mi24_base: Heli_Attack_02_base_F
 {
-	class textureSources
-	{
-		class APM
-		{
-			displayName = "APM";
-			author = "Crowmedic & SkunySpliff";
-			textures[] =
-			{
-				"x\APM\addons\factions\data\MBT_02k\mbt_02_body_co.paa",
-				"x\APM\addons\factions\data\MBT_02k\mbt_02_turret_co.paa",
-				"x\APM\addons\factions\data\MBT_02k\mbt_02_turret_co.paa",
-				"A3\Armor_F\Data\camonet_CSAT_HEX_Desert_CO.paa"
-			};
-			factions[] = {};
-		};
-	};
+	ace_fastroping_enabled = 1;
 };
+class Heli_Light_02_base_F;
+class RHS_Mi8_base: Heli_Light_02_base_F
+{
+	ace_fastroping_enabled = 1;
+};
+class RHS_AH64D;
+class B_MBT_01_TUSK_F;
+class RHS_M2A3_BUSKIII_wd;
 class O_MBT_02_cannon_F;
-class MBT_03_base_F: Tank_F
-{
-	class textureSources
-	{
-		class APM
-    {
-      displayName = "APM";
-      author = "Crowmedic & SkunySpliff";
-      textures[] =
-      {
-        "x\APM\addons\factions\data\MBT_03\mbt_03_ext01_co.paa",
-        "x\APM\addons\factions\data\MBT_03\mbt_03_ext02_co.paa",
-        "x\APM\addons\factions\data\MBT_03\mbt_03_rcws_co.paa",
-        "A3\Armor_F\Data\camonet_AAF_Digi_Green_CO.paa"
-      };
-      factions[] = {};
-    };
-	};
-};
 class I_MBT_03_cannon_F;
-class MBT_04_base_F: Tank_F
-{
-	class textureSources
-	{
-		class APM
-		{
-			displayName = "APM";
-			author = "Crowmedic & SkunySpliff";
-			textures[] =
-			{
-				"x\APM\addons\factions\data\MBT_04\MBT_04_exterior_green_hex_1_CO.paa",
-				"x\APM\addons\factions\data\MBT_04\MBT_04_exterior_green_hex_2_CO.paa",
-				"a3\armor_f\Data\camonet_CSAT_HEX_Desert_CO.paa"
-			};
-			factions[] = {};
-		};
-	};
-};
-class O_MBT_04_cannon_F;
 class O_MBT_04_command_F;
+class B_T_VTOL_01_infantry_F;
+class B_T_VTOL_01_vehicle_F;
+class B_T_VTOL_01_armed_F;
 class O_T_VTOL_02_infantry_dynamicLoadout_F;

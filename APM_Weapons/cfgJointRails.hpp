@@ -69,6 +69,11 @@ class rhs_western_rifle_laser_slot: rhs_western_rifle_laser_slot_top //for weapo
 		rhsusf_acc_anpeq15_wmx_laser = 0;
 	};
 };
+class rhs_russian_ris_side_slot: rhs_western_rifle_laser_slot
+{
+	class compatibleItems: compatibleItems
+	{};
+};
 class asdg_UnderSlot: asdg_SlotInfo
 {
 	class compatibleItems;
@@ -77,9 +82,6 @@ class asdg_PistolUnderRail: asdg_SlotInfo
 {
 	class compatibleItems
 	{
-		rh_m6x = 1;
-		rh_x2 = 1;
-		rh_x300 = 1;
 	};
 };
 class asdg_MuzzleSlot;
@@ -118,7 +120,6 @@ class asdg_MuzzleSlot_762: asdg_MuzzleSlot
    	rhsusf_acc_m2010s_d = 1;
    	rhsusf_acc_m2010s_sa = 1;
     rhsusf_acc_m2010s_wd = 1;
-		uk3cb_muzzle_snds_M14 = 1;
 		rhsusf_acc_aac_m14dcqd_silencer = 1;
 		rhsusf_acc_aac_m14dcqd_silencer_d = 1;
 		rhsusf_acc_aac_m14dcqd_silencer_wd = 1;

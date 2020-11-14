@@ -70,6 +70,7 @@ class rhs_weap_asval: rhs_weap_ak74m
   {
     dispersion = "((1.6) * 0.00029088)";
   };
+  class WeaponSlotsInfo;
 };
 class rhs_weap_vss: rhs_weap_asval
 {

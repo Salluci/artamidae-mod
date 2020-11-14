@@ -1,251 +1,132 @@
-	class rhs_btr70_vdv;
-	class rhsgref_hidf_m113a3_m2;
-	class rhsgref_cdf_bmd1;
-	class rhsusf_m1a2sep1tuskiiwd_usarmy;
-	class RHS_M2StaticMG_WD;
-  class RHS_M2StaticMG_WD_OCimport_01: RHS_M2StaticMG_WD
+class I_Mayhem_Offroad: I_G_Offroad_01_F
+{
+	faction="I_faction_MayhemPMC";
+	textureList[] = {"Green",1};
+	crew="I_Contractor_Mayhem_Rifleman1";
+	animationList[] = {"HideDoor1",0,"HideDoor2",0,"HideBumper1",1,"HideBumper2",0,"HideBackpacks",0,"HideConstruction",0,"HideDoor3",0};
+};
+class I_Mayhem_Offroad_M2: I_G_Offroad_01_armed_F
+{
+	faction="I_faction_MayhemPMC";
+	textureList[] = {"Green",1};
+	crew="I_Contractor_Mayhem_AR1";
+	animationList[] = {"HideDoor1",0,"HideDoor2",0,"HideBumper1",1,"HideBumper2",0,"HideBackpacks",0,"HideConstruction",0,"HideDoor3",0,"Hide_Shield",0,"Hide_Rail",0};
+};
+class I_Mayhem_Offroad_AT: I_G_Offroad_01_AT_F
+{
+	faction="I_faction_MayhemPMC";
+	textureList[] = {"Green",1};
+	crew="I_Contractor_Mayhem_AT1";
+	animationList[] = {"HideDoor1",0,"HideDoor2",0,"HideBumper1",1,"HideBumper2",0,"HideBackpacks",0,"HideConstruction",0,"HideDoor3",0};
+};
+class I_Mayhem_TIGR: rhs_tigr_m_vdv
+{
+	faction="I_faction_MayhemPMC";
+	side = 2;
+	crew="I_Contractor_Mayhem_AR2";
+	displayName = "GAZ Tigr (Unarmed)";
+	rhs_decalParameters[] = {};
+	editorSubcategory = "EdSubcat_Cars";
+	vehicleClass = "Car";
+	class Turrets: Turrets
 	{
-		class Turrets;
-	};
-  class RHS_M2StaticMG_WD_OCimport_02: RHS_M2StaticMG_WD_OCimport_01
-	{
-    class Turrets : Turrets
+		class CargoTurret_01: CargoTurret_01
 		{
-      class MainTurret;
-    };
-  };
-	class RHS_M2StaticMG_MiniTripod_WD;
-  class RHS_M2StaticMG_MiniTripod_WD_OCimport_01: RHS_M2StaticMG_MiniTripod_WD
-	{
-		class Turrets;
-	};
-  class RHS_M2StaticMG_MiniTripod_WD_OCimport_02: RHS_M2StaticMG_MiniTripod_WD_OCimport_01
-	{
-    class Turrets: Turrets
-		{
-      class MainTurret;
-    };
-  };
-	class rhs_SPG9M_VDV;
-  class rhs_SPG9M_VDV_OCimport_01: rhs_SPG9M_VDV
-	{
-		class Turrets;
-	};
-  class rhs_SPG9M_VDV_OCimport_02: rhs_SPG9M_VDV_OCimport_01
-	{
-    class Turrets: Turrets
-		{
-      class MainTurret;
-    };
-  };
-	class RHS_ZU23_VDV;
-  class RHS_ZU23_VDV_OCimport_01: RHS_ZU23_VDV
-	{
-		class Turrets;
-	};
-  class RHS_ZU23_VDV_OCimport_02: RHS_ZU23_VDV_OCimport_01
-	{
-    class Turrets: Turrets
-		{
-      class MainTurret;
-      class CargoTurret_01;
-    };
-  };
-	class RHS_AH64D_wd;
-  class RHS_AH64D_wd_OCimport_01: RHS_AH64D_wd
-	{
-		class Turrets;
-	};
-  class RHS_AH64D_wd_OCimport_02: RHS_AH64D_wd_OCimport_01
-	{
-    class Turrets: Turrets
-		{
-      class MainTurret;
-    };
-  };
-	class I_Mayhem_btr70: rhs_btr70_vdv
-	{
-		side = 2;
-		faction="I_faction_MayhemPMC";
-		vehicleClass = "apm_class_generic_tracked";
-		editorSubcategory = "apm_generic_tracked";
-		crew="I_Contractor_Mayhem_Rifleman2";
-		hiddenSelectionsTextures[]=
-		{
-			"rhsafrf\addons\rhs_btr70\data\btr70_1_co.paa",
-			"rhsafrf\addons\rhs_btr70\data\btr70_2_co.paa",
-			"rhsafrf\addons\RHS_Decals\Data\Labels\Misc\no_ca.paa",
-			"rhsafrf\addons\RHS_Decals\Data\Labels\Misc\no_ca.paa",
-			"rhsafrf\addons\RHS_Decals\Data\Labels\Misc\no_ca.paa",
-			"rhsafrf\addons\RHS_Decals\Data\Labels\Misc\no_ca.paa",
-			"rhsafrf\addons\RHS_Decals\Data\Labels\Misc\no_ca.paa",
-			"rhsafrf\addons\RHS_Decals\Data\Labels\Misc\no_ca.paa",
-			"rhsafrf\addons\RHS_Decals\Data\Labels\Misc\no_ca.paa",
-			"rhsafrf\addons\RHS_Decals\Data\Labels\Misc\no_ca.paa",
-			"rhsafrf\addons\RHS_Decals\Data\Labels\Misc\no_ca.paa",
-			"rhsafrf\addons\RHS_Decals\Data\Labels\Misc\no_ca.paa",
-			"rhsafrf\addons\RHS_Decals\Data\Labels\Misc\no_ca.paa",
-			"rhsafrf\addons\RHS_Decals\Data\Labels\Misc\no_ca.paa",
-			"rhsafrf\addons\RHS_Decals\Data\Labels\Misc\no_ca.paa",
-			"rhsafrf\addons\RHS_Decals\Data\Labels\Misc\no_ca.paa",
-			"rhsafrf\addons\RHS_Decals\Data\Labels\Misc\no_ca.paa",
-			"rhsafrf\addons\RHS_Decals\Data\Labels\Misc\no_ca.paa",
-			"rhsafrf\addons\RHS_Decals\Data\Labels\Misc\no_ca.paa",
-			"rhsafrf\addons\RHS_Decals\Data\Labels\Misc\no_ca.paa",
-			"rhsafrf\addons\RHS_Decals\Data\Labels\Misc\no_ca.paa",
-			"rhsafrf\addons\RHS_Decals\Data\Labels\Misc\no_ca.paa",
-			"rhsafrf\addons\RHS_Decals\Data\Labels\Misc\no_ca.paa",
-			"rhsafrf\addons\RHS_Decals\Data\Labels\Misc\no_ca.paa",
-			"rhsafrf\addons\rhs_btr70\habar\data\sa_gear_02_co.paa",
-			"rhsafrf\addons\rhs_btr70\habar\data\sa_gear_02_co.paa"
+			dontCreateAi=1;
+			gunnerType = "I_Contractor_Mayhem_AR1";
 		};
 	};
-	class I_Mayhem_HMMWV: rhsusf_m1025_w
+};
+class I_Mayhem_TIGR_Armed: rhs_tigr_sts_vdv
+{
+	faction="I_faction_MayhemPMC";
+	side = 2;
+	crew="I_Contractor_Mayhem_TL2";
+	rhs_decalParameters[] = {};
+	displayName = "GAZ Tigr (STS)";
+	editorSubcategory = "EdSubcat_Cars";
+	vehicleClass = "Car";
+	class Turrets: Turrets
 	{
-		side = 2;
-		scope = 2;
-		faction="I_faction_MayhemPMC";
-		displayName = "HMMWV (Unarmed)";
-		crew="I_Contractor_Mayhem_Rifleman2";
-		texturelist[] = {"Black",1};
-	};
-	class I_Mayhem_HMMWV_M2: rhsusf_m1025_w_m2
-	{
-		side = 2;
-		scope = 2;
-		faction="I_faction_MayhemPMC";
-		displayName = "HMMWV (M2)";
-		crew="I_Contractor_Mayhem_Rifleman2";
-		texturelist[] = {"Black",1};
-	};
-	class I_Mayhem_HMMWV_MK19: rhsusf_m1025_w_mk19
-	{
-		side = 2;
-		scope = 2;
-		faction="I_faction_MayhemPMC";
-		displayName = "HMMWV (Mk19)";
-		crew="I_Contractor_Mayhem_Rifleman2";
-		texturelist[] = {"Black",1};
-	};
-	class I_Mayhem_UH60M: RHS_UH60M
-	{
-    author = "Crowmedic";
-    scope = 2;
-    side = 2;
-    faction = "I_faction_MayhemPMC";
-    crew = "I_Contractor_Mayhem_Pilot";
-    class Turrets: Turrets
+		class MainTurret: MainTurret
 		{
-      class CopilotTurret: CopilotTurret
-			{
-				gunnerType = "I_Contractor_Mayhem_Pilot";
-			};
-      class MainTurret: MainTurret
-			{
-				gunnerType = "I_Contractor_Mayhem_Pilot";
-			};
-      class RightDoorGun: RightDoorGun
-			{
-				gunnerType = "I_Contractor_Mayhem_Pilot";
-			};
-    };
-	};
-	class I_Mayhem_AH64D: RHS_AH64D_wd_OCimport_02
-	{
-		author = "Crowmedic";
-    scope = 2;
-    scopeCurator = 2;
-  	displayName = "AH64D";
-    side = 2;
-    faction = "I_faction_MayhemPMC";
-    crew = "I_Contractor_Mayhem_Pilot";
-    class Turrets: Turrets
+			gunnerType = "I_Contractor_Mayhem_AT1";
+		};
+		class AGS_Turret: AGS_Turret
 		{
-      class MainTurret: MainTurret {gunnerType = "I_Contractor_Mayhem_Pilot";};
-    };
+			gunnerType = "I_Contractor_Mayhem_AT1";
+		};
 	};
-	class I_Mayhem_FV510: I_APC_tracked_03_cannon_F
+};
+class I_Mayhem_UH60M: RHS_UH60M
+{
+	author = "Crowmedic";
+	side = 2;
+	faction = "I_faction_MayhemPMC";
+	crew = "I_Contractor_Mayhem_Pilot";
+	vehicleClass = "Air";
+	editorSubcategory = "EdSubcat_Helicopters";
+	class Turrets: Turrets
 	{
-		faction="I_faction_MayhemPMC";
-		crew="I_Contractor_Mayhem_Rifleman2";
-		textureList[] = {"OliveGreen",1};
-		animationList[] = {"ShowSLATHull",0.5,"ShowTools",1};
+		class CopilotTurret: CopilotTurret
+		{
+			gunnerType = "I_Contractor_Mayhem_Pilot";
+		};
+		class MainTurret: MainTurret
+		{
+			gunnerType = "I_Contractor_Mayhem_Pilot";
+		};
+		class RightDoorGun: RightDoorGun
+		{
+			gunnerType = "I_Contractor_Mayhem_Pilot";
+		};
 	};
-	class I_Mayhem_BMD1: rhsgref_cdf_bmd1
-	{
-		side = 2;
-		faction="I_faction_MayhemPMC";
-		vehicleClass = "apm_class_generic_tracked";
-		editorSubcategory = "apm_generic_tracked";
-		displayName = "BMD-1";
-		crew="I_Contractor_Mayhem_Rifleman2";
-	};
-	class I_Mayhem_m1a2_tuskii: rhsusf_m1a2sep1tuskiiwd_usarmy
-	{
-		side = 2;
-		faction="I_faction_MayhemPMC";
-		vehicleClass = "apm_class_generic_tanks";
-		editorSubcategory = "apm_generic_tanks";
-		displayName = "M1A2 Tusk II";
-		crew="I_Contractor_Mayhem_Rifleman2";
-	};
-	class I_Mayhem_M2Static_Tripod: RHS_M2StaticMG_WD_OCimport_02
-	{
-		author = "Crowmedic";
-        scope = 2;
-        scopeCurator = 2;
-        displayName = "M2 (Tripod)";
-        side = 2;
-        faction = "I_faction_MayhemPMC";
-        crew = "I_Contractor_Mayhem_Rifleman2";
-        class Turrets: Turrets
-				{
-            class MainTurret: MainTurret {gunnerType = "I_Contractor_Mayhem_Rifleman2";};
-        };
-
-    };
-	class I_Mayhem_M2Static: RHS_M2StaticMG_WD_OCimport_02
-	{
-		author = "Crowmedic";
-        scope = 2;
-        scopeCurator = 2;
-        displayName = "M2 (Tripod)";
-        side = 2;
-        faction = "I_faction_MayhemPMC";
-        crew = "I_Contractor_Mayhem_Rifleman2";
-        class Turrets: Turrets
-				{
-            class MainTurret: MainTurret {gunnerType = "I_Contractor_Mayhem_Rifleman2";};
-        };
-
-	};
-	class I_Mayhem_SPG9: rhs_SPG9M_VDV_OCimport_02
-	{
-		author = "Crowmedic";
-        scope = 2;
-        scopeCurator = 2;
-        displayName = "SPG9";
-        side = 2;
-        faction = "I_faction_MayhemPMC";
-        crew = "I_Contractor_Mayhem_Rifleman2";
-        class Turrets: Turrets
-				{
-            class MainTurret: MainTurret {gunnerType = "I_Contractor_Mayhem_Rifleman2";};
-        };
-
-	};
-	class I_Mayhem_ZU23_Static: RHS_ZU23_VDV_OCimport_02
-	{
-		author = "Crowmedic";
-        scope = 2;
-        scopeCurator = 2;
-        displayName = "ZU-23";
-        side = 2;
-        faction = "I_faction_MayhemPMC";
-        crew = "I_Contractor_Mayhem_Rifleman2";
-        class Turrets: Turrets
-				{
-            class MainTurret: MainTurret {gunnerType = "I_Contractor_Mayhem_Rifleman2";};
-            class CargoTurret_01: CargoTurret_01 {gunnerType = "I_Contractor_Mayhem_Rifleman2";};
-        };
-	};
+};
+class I_Mayhem_AH64D: RHS_AH64D
+{
+	author = "Crowmedic";
+	side = 2;
+	faction = "I_faction_MayhemPMC";
+	crew = "I_Contractor_Mayhem_Pilot";
+	vehicleClass = "Air";
+	editorSubcategory = "EdSubcat_Helicopters";
+};
+class I_Mayhem_FV510: I_APC_tracked_03_cannon_F
+{
+	faction="I_faction_MayhemPMC";
+	crew="I_Contractor_Mayhem_Rifleman2";
+	textureList[] = {"OliveGreen",1};
+	animationList[] = {"ShowSLATHull",0.5,"ShowTools",1};
+};
+class I_Mayhem_Merkava: B_MBT_01_TUSK_F
+{
+	faction="I_faction_MayhemPMC";
+	crew = "I_Contractor_Mayhem_AT1";
+	side = 2;
+	textureList[] = {"Olive",1};
+};
+class I_Mayhem_M2A3: RHS_M2A3_BUSKIII_wd
+{
+	faction="I_faction_MayhemPMC";
+	crew = "I_Contractor_Mayhem_AT1";
+	side = 2;
+	textureList[] = {"Olive",1};
+	editorSubcategory = "EdSubcat_APCs";
+	vehicleClass = "Armored";
+};
+class I_Mayhem_MH6M: RHS_MELB_MH6M
+{
+	faction="I_faction_MayhemPMC";
+	crew = "I_Contractor_Mayhem_Pilot";
+	side = 2;
+	editorSubcategory = "EdSubcat_Helicopters";
+	vehicleClass = "Air";
+};
+class I_Mayhem_AH6M: RHS_MELB_AH6M
+{
+	faction="I_faction_MayhemPMC";
+	crew = "I_Contractor_Mayhem_Pilot";
+	side = 2;
+	editorSubcategory = "EdSubcat_Helicopters";
+	vehicleClass = "Air";
+};

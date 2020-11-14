@@ -1,4 +1,3 @@
-#include "BIS_AddonInfo.hpp"
 #include "script_macros.hpp"
 class CfgPatches
 {
@@ -252,8 +251,6 @@ class cfgWeapons
 {
 	class ItemCore;
 	class InventoryItem_Base_F;
-	class InventoryFlashLightItem_Base_F;
-	class acc_flashlight;
 	class acc_pointer_IR;
 	class Rifle;
 	class Pistol;
@@ -276,6 +273,104 @@ class cfgWeapons
 	class bipod_01_F_snd: ItemCore
 	{
 		class ItemInfo;
+	};
+	class InventoryFlashLightItem_Base_F;
+	class acc_flashlight: ItemCore
+	{
+		class ItemInfo: InventoryFlashLightItem_Base_F
+		{
+			class FlashLight
+			{
+			 color[]={600,750,900};
+			 ambient[]={10,7.5,5};
+			 position="flash dir";
+			 direction="flash";
+			 size=1;
+			 innerAngle=24;
+			 outerAngle=30;
+			 coneFadeCoef=3;
+			 intensity=350;
+			 useFlare=1;
+			 dayLight=1;
+			 FlareSize=0.69999999;
+			 flareMaxDistance=250;
+			 onlyInNvg=0;
+			 scale[]={0};
+			 class Attenuation
+			 {
+			  start=40;
+			  constant=80;
+			  linear=50;
+			  quadratic=12;
+			  hardLimitStart=140;
+			  hardLimitEnd=180;
+			 };
+			};
+		};
+	};
+	class acc_flashlight_pistol: ItemCore
+	{
+		class ItemInfo: InventoryFlashLightItem_Base_F
+		{
+			class FlashLight
+			{
+			 color[]={600,750,900};
+			 ambient[]={10,7.5,5};
+			 position="flash dir";
+			 direction="flash";
+			 size=1;
+			 innerAngle=24;
+			 outerAngle=30;
+			 coneFadeCoef=3;
+			 intensity=350;
+			 useFlare=1;
+			 dayLight=1;
+			 FlareSize=0.69999999;
+			 flareMaxDistance=250;
+			 onlyInNvg=0;
+			 scale[]={0};
+			 class Attenuation
+			 {
+			  start=40;
+			  constant=80;
+			  linear=50;
+			  quadratic=12;
+			  hardLimitStart=140;
+			  hardLimitEnd=180;
+			 };
+			};
+		};
+	};
+	class Pistol_Base_F;
+	class ACE_Flashlight_Maglite_ML300L: Pistol_Base_F
+	{
+		class FlashLight
+		{
+		 color[]={600,750,900};
+		 ambient[]={10,7.5,5};
+		 position="flash dir";
+		 direction="flash";
+		 size=1;
+		 innerAngle=24;
+		 outerAngle=30;
+		 coneFadeCoef=3;
+		 intensity=350;
+		 useFlare=1;
+		 dayLight=1;
+		 FlareSize=0.69999999;
+		 flareMaxDistance=250;
+		 onlyInNvg=0;
+		 scale[]={0};
+		 class Attenuation
+		 {
+			start=40;
+			constant=80;
+			linear=50;
+			quadratic=12;
+			hardLimitStart=140;
+			hardLimitEnd=180;
+		 };
+		};
 	};
 
 	//Vanilla Weapons

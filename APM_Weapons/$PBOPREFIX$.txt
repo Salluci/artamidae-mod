@@ -1,4 +1,0 @@
-﻿//<'APM_Weapons.pbo' properties via Mikero's dos tools, dll version 7.46>
-prefix=APM_Weapons;
-PboType=Arma Addon;
-//</properties>

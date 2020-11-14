@@ -360,7 +360,11 @@ class CfgVehicles
   		};
   	};
   };
-  class Tank_F;
+  class Tank;
+  class Tank_F: Tank
+  {
+    class EventHandlers;
+  };
   class APC_Tracked_03_base_F: Tank_F
   {
   	class TextureSources
@@ -405,5 +409,142 @@ class CfgVehicles
   			Vehicles[] = {};
   		};
   	};
+  };
+  class B_MBT_01_base_F;
+  class B_MBT_01_cannon_F: B_MBT_01_base_F
+  {
+    class textureSources
+    {
+      class Olive
+      {
+        factions[] = {};
+      };
+      class Sand
+      {
+        factions[] = {};
+      };
+    };
+  };
+  class MBT_03_base_F: Tank_F
+  {
+    class EventHandlers: EventHandlers
+    {
+      init = "if (local (_this select 0)) then {[(_this select 0), """", [], false] call bis_fnc_initVehicle;};";
+    };
+  	class textureSources
+  	{
+  		class Charcoal
+      {
+        displayName = "Charcoal";
+        author = "LinkIsParking";
+        textures[] =
+        {
+          "x\APM\addons\vehicles\data\MBT_03\mbt_03_ext01_charcoal_co.paa",
+          "x\APM\addons\vehicles\data\MBT_03\mbt_03_ext02_charcoal_co.paa",
+          "x\APM\addons\vehicles\data\MBT_03\mbt_03_rcws_grey_co.paa",
+          "a3\Armor_F\Data\camonet_NATO_Green_CO.paa"
+        };
+        factions[] = {};
+      };
+      class Green
+      {
+        displayName = "Green";
+        author = "LinkIsParking";
+        textures[] =
+        {
+          "x\APM\addons\vehicles\data\MBT_03\mbt_03_ext01_Green_co.paa",
+          "x\APM\addons\vehicles\data\MBT_03\mbt_03_ext02_Green_co.paa",
+          "x\APM\addons\vehicles\data\MBT_03\mbt_03_rcws_Green_co.paa",
+          "a3\Armor_F\Data\camonet_NATO_Green_CO.paa"
+        };
+        factions[] = {};
+      };
+      class Tan
+      {
+        displayName = "Tan";
+        author = "LinkIsParking";
+        textures[] =
+        {
+          "x\APM\addons\vehicles\data\MBT_03\mbt_03_ext01_tan_co.paa",
+          "x\APM\addons\vehicles\data\MBT_03\mbt_03_ext02_tan_co.paa",
+          "x\APM\addons\vehicles\data\MBT_03\mbt_03_rcws_tan_co.paa",
+          "a3\Armor_F\Data\camonet_NATO_desert_CO.paa"
+        };
+        factions[] = {};
+      };
+  	};
+  };
+  class VTOL_Base_F;
+  class VTOL_01_Base_F: VTOL_Base_F
+  {
+  	class textureSources
+  	{
+  		class Blue
+  		{
+  			factions[] = {};
+  		};
+  		class Olive
+  		{
+  			factions[] = {};
+  		};
+      class Black
+      {
+        displayName = "Black";
+        author = "LinkIsParking";
+        factions[] = {};
+        textures[] =
+        {
+          "x\APM\addons\vehicles\data\VTOL_01\VTOL_01_EXT01_black_CO.paa",
+          "x\APM\addons\vehicles\data\VTOL_01\VTOL_01_EXT02_black_CO.paa",
+          "x\APM\addons\vehicles\data\VTOL_01\VTOL_01_EXT03_black_CO.paa",
+          "x\APM\addons\vehicles\data\VTOL_01\VTOL_01_EXT04_black_CO.paa"
+        };
+      };
+  	};
+  };
+  class Helicopter_Base_H;
+  class Heli_Transport_01_base_F: Helicopter_Base_H
+  {
+    class EventHandlers
+    {
+      fired = "";
+      class APM_EventHandlers
+  		{
+  			init = "_this call ace_fastroping_fnc_equipFRIES";
+  		};
+    };
+  };
+  class RHS_UH60M_base;
+  class RHS_UH60M_US_base: RHS_UH60M_base
+  {
+  	class textureSources;
+  	class EventHandlers;
+  };
+  class RHS_UH60M: RHS_UH60M_US_base
+  {
+  	class EventHandlers: EventHandlers
+  	{
+  		class APM_EventHandlers
+  		{
+  			init = "_this call ace_fastroping_fnc_equipFRIES";
+  		};
+  	};
+  };
+  class Heli_Light_01_base_F;
+  class Heli_Light_01_unarmed_base_F: Heli_Light_01_base_F
+  {
+  	ace_fastroping_enabled = 1;
+  	ace_fastroping_friesAttachmentPoint[] = {0.583, 0.79, -0.01};
+  	ace_fastroping_ropeOrigins[] = {[1.116, 0.79, -0.01],[-1.116, 0.79, -0.01]};
+  };
+  class Heli_Attack_02_base_F;
+  class RHS_Mi24_base: Heli_Attack_02_base_F
+  {
+    ace_fastroping_enabled = 1;
+  };
+  class Heli_Light_02_base_F;
+  class RHS_Mi8_base: Heli_Light_02_base_F
+  {
+    ace_fastroping_enabled = 1;
   };
 };
