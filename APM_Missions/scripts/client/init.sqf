@@ -312,11 +312,6 @@ player addEventHandler ["GetInMan", {
 	if (_veh isKindOf "Air") then {
 		setViewDistance APM_air_vd;
 	};
-	if !(APM_TFAR_LR_Settings isEqualTo []) then {
-		[call TFAR_fnc_activeLrRadio, APM_TFAR_LR_Settings select 4] call TFAR_fnc_setLrRadioCode;
-	} else {
-		[call TFAR_fnc_activeLrRadio, "APM"] call TFAR_fnc_setLrRadioCode;
-	};
 }];
 
 player addEventHandler ["GetOutMan", {
