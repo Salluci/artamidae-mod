@@ -286,12 +286,6 @@ _ts = parseText "Teamspeak IP: 74.91.115.227";
 _dis = parseText "Be sure to join our <a href='https://discord.gg/fxeATZR'>Discord (Click Me!)</a> if you are interested in learning more about our unit.";
 _arsenal = parseText "The Arsenal can be accessed by ACE Self Interaction > APM Arsenal.";
 "Welcome to APM!" hintC [_ts, _dis, _arsenal];
-hintC_arr_EH = findDisplay 72 displayAddEventHandler ["unload", {
-	0 = _this spawn {
-		_this select 0 displayRemoveEventHandler ["unload", hintC_arr_EH];
-		hintSilent "";
-	};
-}];
 
 //Clear PD variable to ensure no issues on rejoin
 [{missionNamespace setVariable [format ["PD_%1", getPlayerUID player], nil, true]}, []] call cba_fnc_execNextFrame;
