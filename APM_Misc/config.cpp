@@ -109,6 +109,40 @@ class cfgVehicles
 				};
 			};
 		};
+		class ACE_SelfActions
+		{
+			/*class TFAR_Radio
+			{
+				class APM_loadSR
+				{
+					displayName = "Load SW Radio Settings";
+					icon = "";
+					condition = "!isNil {call TFAR_fnc_activeSwRadio}";
+					statement = "call apm_radio_fnc_loadSettingsSR";
+				};
+				class APM_loadLR
+				{
+					displayName = "Load LR Radio Settings";
+					icon = "";
+					condition = "!isNil {call TFAR_fnc_activeLrRadio}";
+					statement = "call apm_radio_fnc_loadSettingsLR";
+				};
+				class APM_saveSR
+				{
+					displayName = "Save Active SW Radio Settings";
+					icon = "";
+					condition = "!isNil {call TFAR_fnc_activeSwRadio}";
+					statement = "call apm_radio_fnc_saveSettingsSR";
+				};
+				class APM_saveLR
+				{
+					displayName = "Save Active LR Radio Settings";
+					icon = "";
+					condition = "!isNil {call TFAR_fnc_activeLrRadio}";
+					statement = "call apm_radio_fnc_saveSettingsLR";
+				};
+			};*/
+		};
 	};
 };
 class CfgBrains //Turrets accuracy decrease

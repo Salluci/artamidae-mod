@@ -17,7 +17,7 @@ fob_saveFOB = compile preprocessFileLineNumbers "scripts\client\fob_system\fn_sa
 
 addMissionEventHandler ["Map", {
 	params ["_opened"];
-	
+
 	if (_opened) then [{
 		//Opened code
 		_Fob_markers = allMapMarkers select {["APM_fob", _x] call BIS_fnc_inString};
@@ -66,12 +66,3 @@ _objects = (allMissionObjects "All") select {_x getVariable ["APM_save_object", 
 	_code = _x getVariable ["object_init", {}];
 	_x call _code;
 } foreach _objects;
-
-/*Eng zeus interaction
-_action = ["Eng_zeus_findObjects", "Locate FOB Objects", "", {
-	_objects = (allMissionObjects "All") select {_x getVariable ["APM_save_object", false]};
-	[(getAssignedCuratorLogic player), [_objects, false]] remoteExec ["addCuratorEditableObjects", 0];
-	[(getAssignedCuratorLogic player), [allUnits, true]] remoteExec ["removeCuratorEditableObjects", 0];
-}, {true}] call ace_interact_menu_fnc_createAction;
-
-[["ACE_ZeusActions"], _action] call ace_interact_menu_fnc_addActionToZeus;*/

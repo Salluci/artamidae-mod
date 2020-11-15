@@ -21,13 +21,6 @@ class CfgDebriefing
 		subtitle = "";
 		description = "You have been banned from the server.";
 	};
-	class head_punch
-	{
-		title = "Headpunch Mod loaded";
-		subtitle = "";
-		description = "You currently have the ""Knock People Unconcious"" mod loaded. Please unload this mod and rejoin. We currently have it implemented into the mission file.";
-		pictureBackground = "";
-	};
 	class Zeus
 	{
 		title =	"Unauthorized";
@@ -39,7 +32,7 @@ class CfgDebriefing
 	{
 		title = "Database Failure";
 		subtitle = "";
-		description = "Database Failure! You have been returned to the lobby. Try rejoining. If that doesn't work, leave server then rejoin. If no luck still, restart Arma. If all else fails, contact ACO. Boatwright on Discord.";
+		description = "Database Failure! You have been returned to the lobby. Try rejoining. If that doesn't work, try reconnecting. If no luck still, restart Arma. If all else fails, contact SRC. Ghost on Discord.";
 	};
 };
 

@@ -53,13 +53,12 @@ _repeat_action = ["fob_repeat_build", "Repeat Build: ", "", {
 	[(player getVariable ["Current_fob", "NONE"]), _budget] call fob_fnc_setSupply;
 	//Create Object behind vehicle
 	_object = FOB_last_classname createVehicle [0,0,0];
-	_dist = abs ((boundingBox _object) # 1 # 1);
-	_dist2 = abs ((boundingBox previous_fob_truck) # 0 # 1);
+	_dist = abs ((boundingBox _object) select 1 select 1);
+	_dist2 = abs ((boundingBox previous_fob_truck) select 0 select 1);
 	_dist = _dist + _dist2;
 	_pos = previous_fob_truck modelToWorld [0, - _dist - 1, 0];
 	_object setDir (getDir previous_fob_truck);
 	_object setPos _pos;
-
 	//Give R3F to object hopefully
 	[_object] execVM "R3F_LOG\heliporteur\heliporteur_init.sqf";
 

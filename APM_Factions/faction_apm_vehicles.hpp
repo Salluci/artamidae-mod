@@ -91,7 +91,11 @@ class B_APM_HEMTT_FOB: B_Truck_01_box_F
 	vehicleClass = "apm_class_generic_FOB";
 	class EventHandlers: DefaultEventHandlers
 	{
-		init = "_this call fob_truck_init; [_this select 0] call apm_arsenal_fnc_initBoxResupply;";
+		init = "[_this select 0] call apm_arsenal_fnc_initBoxResupply;";
+		class APM_EventHandlers
+		{
+			init = "[_this select 0] call fob_truck_init;";
+		};
 	};
 };
 class B_APM_BadgerIFV: B_APC_Wheeled_01_cannon_F

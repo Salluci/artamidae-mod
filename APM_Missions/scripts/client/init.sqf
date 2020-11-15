@@ -276,7 +276,6 @@ player setVariable ["APM_Ready", true, true];
 
 //Additional INITs
 [] execVM "scripts\client\vehicle_shop\shop_init.sqf";
-[] execVM "scripts\client\ace_tfar_save_load.sqf";
 [] execVM "scripts\client\teleports_init.sqf";
 [] execVM "scripts\client\zeus_tfar_fix.sqf";
 [] execVM "scripts\client\fob_system\fob_system_init.sqf";
