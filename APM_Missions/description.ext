@@ -32,7 +32,7 @@ class CfgDebriefing
 	{
 		title = "Database Failure";
 		subtitle = "";
-		description = "Database Failure! You have been returned to the lobby. Try rejoining. If that doesn't work, leave server then rejoin. If no luck still, restart Arma. If all else fails, contact ACO. Boatwright on Discord.";
+		description = "Database Failure! You have been returned to the lobby. Try rejoining. If that doesn't work, leave server then rejoin. If no luck still, restart Arma. If all else fails, contact a DB Admin on Discord.";
 	};
 };
 
