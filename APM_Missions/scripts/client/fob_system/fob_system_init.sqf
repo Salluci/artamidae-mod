@@ -6,7 +6,6 @@ fn_create_FOB = compile preprocessFileLineNumbers "scripts\client\fob_system\fn_
 fn_delete_FOB = compile preprocessFileLineNumbers "scripts\client\fob_system\fn_delete_FOB.sqf";
 fob_menu = compile preprocessFileLineNumbers "scripts\client\fob_system\fob_menu.sqf";
 fob_veh_shop = compile preprocessFileLineNumbers  "scripts\client\fob_system\fn_openShop.sqf";
-fob_create_zeus = compile preprocessFileLineNumbers "scripts\client\fob_system\fob_create_zeus.sqf";
 fob_refresh_list = compile preprocessFileLineNumbers "scripts\client\fob_system\fob_refresh_list.sqf";
 fob_loadFOB = compile preprocessFileLineNumbers "scripts\client\fob_system\fn_load_fob.sqf";
 fob_saveFOB = compile preprocessFileLineNumbers "scripts\client\fob_system\fn_save_fob.sqf";

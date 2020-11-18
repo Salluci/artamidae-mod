@@ -32,7 +32,7 @@ class CfgDebriefing
 	{
 		title = "Database Failure";
 		subtitle = "";
-		description = "Database Failure! You have been returned to the lobby. Try rejoining. If that doesn't work, try reconnecting. If no luck still, restart Arma. If all else fails, contact SRC. Ghost on Discord.";
+		description = "Database Failure! You have been returned to the lobby. Try rejoining. If that doesn't work, leave server then rejoin. If no luck still, restart Arma. If all else fails, contact ACO. Boatwright on Discord.";
 	};
 };
 
@@ -57,14 +57,6 @@ class cfgNotifications
 		duration = 7;
 		priority = 0;
 	};
-};
-
-class Extended_PreInit_EventHandlers
-{
-	class APM_HC_Blackist
-  {
-      init = "call compile preprocessfilelinenumbers 'APM_HC_Script.sqf'";
-  };
 };
 
 enableDebugConsole[] =

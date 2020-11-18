@@ -41,14 +41,14 @@ class CfgVehicles
         displayName = "Black";
         textures[] =
         {
-          "x\APM\addons\vehicles\data\hmmvv\a_exterior_black.paa",
-          "x\APM\addons\vehicles\data\hmmvv\b_interior_black.paa",
-          "x\APM\addons\vehicles\data\hmmvv\c_a2_black.paa",
-          "x\APM\addons\vehicles\data\hmmvv\d_wheels_black.paa",
-          "x\APM\addons\vehicles\data\hmmvv\e_mainbody_black.paa",
-          "x\APM\addons\vehicles\data\hmmvv\f_gratting_black.paa",
-          "x\APM\addons\vehicles\data\hmmvv\g_camo1_tile_black.paa",
-          "x\APM\addons\vehicles\data\hmmvv\h_camo2_m1025_black.paa",
+          "x\APM\addons\vehicles\data\hmmwv\a_exterior_black.paa",
+          "x\APM\addons\vehicles\data\hmmwv\b_interior_black.paa",
+          "x\APM\addons\vehicles\data\hmmwv\c_a2_black.paa",
+          "x\APM\addons\vehicles\data\hmmwv\d_wheels_black.paa",
+          "x\APM\addons\vehicles\data\hmmwv\e_mainbody_black.paa",
+          "x\APM\addons\vehicles\data\hmmwv\f_gratting_black.paa",
+          "x\APM\addons\vehicles\data\hmmwv\g_camo1_tile_black.paa",
+          "x\APM\addons\vehicles\data\hmmwv\h_camo2_m1025_black.paa",
           ""
         };
         factions[] = {};
@@ -77,15 +77,15 @@ class CfgVehicles
         displayName = "Black";
         textures[] =
         {
-          "x\APM\addons\vehicles\data\hmmvv\a_exterior_black.paa",
-          "x\APM\addons\vehicles\data\hmmvv\b_interior_black.paa",
-          "x\APM\addons\vehicles\data\hmmvv\c_a2_black.paa",
-          "x\APM\addons\vehicles\data\hmmvv\d_wheels_black.paa",
-          "x\APM\addons\vehicles\data\hmmvv\e_mainbody_black.paa",
-          "x\APM\addons\vehicles\data\hmmvv\f_gratting_black.paa",
-          "x\APM\addons\vehicles\data\hmmvv\g_camo1_tile_black.paa",
-          "x\APM\addons\vehicles\data\hmmvv\h_camo2_m1025_black.paa",
-          "x\APM\addons\vehicles\data\hmmvv\mk64mount_w_co.paa"
+          "x\APM\addons\vehicles\data\hmmwv\a_exterior_black.paa",
+          "x\APM\addons\vehicles\data\hmmwv\b_interior_black.paa",
+          "x\APM\addons\vehicles\data\hmmwv\c_a2_black.paa",
+          "x\APM\addons\vehicles\data\hmmwv\d_wheels_black.paa",
+          "x\APM\addons\vehicles\data\hmmwv\e_mainbody_black.paa",
+          "x\APM\addons\vehicles\data\hmmwv\f_gratting_black.paa",
+          "x\APM\addons\vehicles\data\hmmwv\g_camo1_tile_black.paa",
+          "x\APM\addons\vehicles\data\hmmwv\h_camo2_m1025_black.paa",
+          "x\APM\addons\vehicles\data\hmmwv\mk64mount_w_co.paa"
         };
         factions[] = {};
       };
@@ -113,15 +113,15 @@ class CfgVehicles
         displayName = "Black";
         textures[] =
         {
-          "x\APM\addons\vehicles\data\hmmvv\a_exterior_black.paa",
-          "x\APM\addons\vehicles\data\hmmvv\b_interior_black.paa",
-          "x\APM\addons\vehicles\data\hmmvv\c_a2_black.paa",
-          "x\APM\addons\vehicles\data\hmmvv\d_wheels_black.paa",
-          "x\APM\addons\vehicles\data\hmmvv\e_mainbody_black.paa",
-          "x\APM\addons\vehicles\data\hmmvv\f_gratting_black.paa",
-          "x\APM\addons\vehicles\data\hmmvv\g_camo1_tile_black.paa",
-          "x\APM\addons\vehicles\data\hmmvv\h_camo2_m1025_black.paa",
-          "x\APM\addons\vehicles\data\hmmvv\mk64mount_w_co.paa"
+          "x\APM\addons\vehicles\data\hmmwv\a_exterior_black.paa",
+          "x\APM\addons\vehicles\data\hmmwv\b_interior_black.paa",
+          "x\APM\addons\vehicles\data\hmmwv\c_a2_black.paa",
+          "x\APM\addons\vehicles\data\hmmwv\d_wheels_black.paa",
+          "x\APM\addons\vehicles\data\hmmwv\e_mainbody_black.paa",
+          "x\APM\addons\vehicles\data\hmmwv\f_gratting_black.paa",
+          "x\APM\addons\vehicles\data\hmmwv\g_camo1_tile_black.paa",
+          "x\APM\addons\vehicles\data\hmmwv\h_camo2_m1025_black.paa",
+          "x\APM\addons\vehicles\data\hmmwv\mk64mount_w_co.paa"
         };
         factions[] = {};
       };

@@ -51,3 +51,16 @@ _action = ["APM_loadSR", "Load SW Radio", ["x\APM\addons\misc\Data\UI\sr.paa", "
 
 _action = ["APM_loadLR", "Load LR Radio", ["x\APM\addons\misc\Data\UI\lr.paa", "#FFFFAB"],{call apm_radio_fnc_loadSettingsLR},{!isNil {call TFAR_fnc_activeLrRadio}}] call ace_interact_menu_fnc_createAction;
 [player, 1, ["ACE_SelfActions", "TFAR_Radio", "SettingsMenu"], _action] call ace_interact_menu_fnc_addActionToObject;
+
+_action = ["APM_MedicalVehicle", "Make Medical Vehicle", "\z\ace\addons\medical_gui\ui\cross.paa",{_target setVariable ["ace_medical_isMedicalVehicle", true]}, {((call APM_ACE_base_condition) and !(_target call ace_medical_treatment_fnc_isMedicalVehicle) || (_player getVariable ["Ace_medical_medicClass",0]) == 2) and !(_target call ace_medical_treatment_fnc_isMedicalVehicle)}] call ace_interact_menu_fnc_createAction;
+["LandVehicle", 0, ["ACE_MainActions"],_action,true] call ace_interact_menu_fnc_addActionToClass;
+["Helicopter", 0, ["ACE_MainActions"],_action,true] call ace_interact_menu_fnc_addActionToClass;
+["Ship", 0, ["ACE_MainActions"],_action,true] call ace_interact_menu_fnc_addActionToClass;
+
+private _statement = {{_x setvariable ["acex_headless_blacklist",false,true];} forEach (curatorSelected select 0);};
+_action = ["zeus_HC_disable","Enable Headless Client Transfer for Selected","",_statement,{true}] call ace_interact_menu_fnc_createAction;
+[["ACE_ZeusActions", "ZeusUnits"], _action] call ace_interact_menu_fnc_addActionToZeus;
+
+_statement = {{_x setvariable ["acex_headless_blacklist",true,true];} forEach (curatorSelected select 0);};
+_action = ["zeus_HC_disable","Disable Headless Client Transfer for Selected","",_statement,{true}] call ace_interact_menu_fnc_createAction;
+[["ACE_ZeusActions", "ZeusUnits"], _action] call ace_interact_menu_fnc_addActionToZeus;

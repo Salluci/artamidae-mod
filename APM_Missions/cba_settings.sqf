@@ -501,6 +501,29 @@ credits_display_option = true;
 credits_xpos = 1;
 credits_ypos = 1;
 
+// Enhanced Movement Rework
+force emr_main_allowMidairClimbing = true;
+force emr_main_blacklistStr = "";
+force emr_main_climbingEnabled = true;
+force emr_main_climbOnDuty = 0;
+force emr_main_climbOverDuty = 0;
+force emr_main_dropDuty = 0;
+force emr_main_enableWalkableSurface = false;
+force emr_main_enableWeightCheck = false;
+force emr_main_jumpDuty = 0;
+force emr_main_jumpingEnabled = true;
+force emr_main_jumpingLoadCoefficient = 0;
+force emr_main_jumpVelocity = 4.0;
+force emr_main_maxClimbHeight = 2.6;
+force emr_main_maxDropHeight = 5.5;
+force emr_main_maxWeightClimb1 = 100;
+force emr_main_maxWeightClimb2 = 85;
+force emr_main_maxWeightClimb3 = 60;
+force emr_main_maxWeightJump = 100;
+force emr_main_preventHighVaulting = false;
+force emr_main_staminaCoefficient = 0;
+force emr_main_whitelistStr = "";
+
 // GRAD Trenches
 force grad_trenches_functions_allowBigEnvelope = true;
 force grad_trenches_functions_allowCamouflage = true;

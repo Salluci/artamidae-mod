@@ -86,10 +86,11 @@ FPS_Marker_loop = [] spawn {
 		if ((_FPS >= 10) and (_FPS <30)) then {FPS_Marker setMarkerColor "ColorYellow"};
 		if (_FPS >= 30) then {FPS_Marker setMarkerColor "ColorGreen"};
 
-		//Delete missing HC markers incase they are DCed
-		if (isNil "HC1") then {deleteMarker "HC1 FPS: %1"};
-		if (isNil "HC2") then {deleteMarker "HC2 FPS: %1"};
-		if (isNil "HC3") then {deleteMarker "HC3 FPS: %1"};
 		sleep 0.5;
 	};
 };
+
+//Delete missing HC markers incase they are DCed
+if !(alive HC1) then {deleteMarker "HC1 FPS: %1"};
+if !(alive HC2) then {deleteMarker "HC2 FPS: %1"};
+if !(alive HC3) then {deleteMarker "HC3 FPS: %1"};

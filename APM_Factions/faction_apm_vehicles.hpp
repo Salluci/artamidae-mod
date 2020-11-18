@@ -60,6 +60,7 @@ class B_APM_HMMWV: rhsusf_m1025_w
 	displayName = "HMMWV (Unarmed)";
 	faction = "B_faction_APM";
 	crew = "B_Contractor_APM_Grenadier1";
+	textureList[] = {"Black",1};
 };
 class B_APM_HMMWV_M2: rhsusf_m1025_w_m2
 {
@@ -80,6 +81,7 @@ class B_APM_HMMWV_MK19: rhsusf_m1025_w_mk19
 	side = 1;
 	faction = "B_faction_APM";
 	crew = "B_Contractor_APM_Rifleman1";
+	textureList[] = {"Black",1};
 };
 class B_APM_HEMTT_FOB: B_Truck_01_box_F
 {
@@ -91,10 +93,10 @@ class B_APM_HEMTT_FOB: B_Truck_01_box_F
 	vehicleClass = "apm_class_generic_FOB";
 	class EventHandlers: DefaultEventHandlers
 	{
-		init = "[_this select 0] call apm_arsenal_fnc_initBoxResupply;";
+		init = "_this select 0 call apm_arsenal_fnc_initBoxResupply;";
 		class APM_EventHandlers
 		{
-			init = "[_this select 0] call fob_truck_init;";
+			init = "_this#0 call fob_truck_init;";
 		};
 	};
 };

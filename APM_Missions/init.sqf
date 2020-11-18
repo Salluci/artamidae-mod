@@ -1,7 +1,7 @@
 //Declare which INIT to run
 
 if (isServer) then {
-	_diag = "extDB3" callExtension "9:RESET";
+	private _diag = "extDB3" callExtension "9:RESET";
 	diag_log "extDB3 reset for preprocess";
 	diag_log _diag;
 	[] call compile preprocessFileLineNumbers "scripts\server\init.sqf";

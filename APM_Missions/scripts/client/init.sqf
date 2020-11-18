@@ -238,19 +238,19 @@ APM_Gear_shop_blacklist =
 	"NWTS_goggle_human_simple"
 ];
 
-_APM_ACE_Arsenal_menu = ["APMArsenalMenu", "APM Arsenal", ["APM_Misc\Data\UI\ui_arsenal.paa"], {
+_APM_ACE_Arsenal_menu = ["APMArsenalMenu", "APM Arsenal", ["x\APM\addons\Misc\Data\UI\ui_arsenal.paa"], {
 	//hintSilent "Contains options to:\n - View Full Arsenal\n - View Favorite Items Arsenal\nPort BIS to ACE arsenal";
 }, APM_ACE_base_condition, {}, nil, nil, nil, [nil, nil, nil, true, nil]] call ace_interact_menu_fnc_createAction;
 [player, 1, ["ACE_SelfActions"], _APM_ACE_Arsenal_menu] call ace_interact_menu_fnc_addActionToObject;
 
-_action = ["APM_Arsenal", "Open Full Arsenal", ["APM_Misc\Data\UI\ui_arsenal.paa","#FFABAB"], {
-	call apm_arsenal_fnc_openFullArsenal;
+_action = ["APM_Arsenal", "Open Full Arsenal", ["x\APM\addons\Misc\Data\UI\ui_arsenal.paa","#FFABAB"], {
+	[player, false] call apm_arsenal_fnc_openFullArsenal;
 }, APM_ACE_base_condition] call ace_interact_menu_fnc_createAction;
 
 [player, 1, ["ACE_SelfActions", "APMArsenalMenu"], _action] call ace_interact_menu_fnc_addActionToObject;
 
-_action = ["APM_Arsenal", "Open Favorite Arsenal", ["APM_Misc\Data\UI\ui_arsenal.paa","#ABABFF"], {
-	call apm_arsenal_fnc_openFavoritesArsenal;
+_action = ["APM_Arsenal", "Open Favorite Arsenal", ["x\APM\addons\Misc\Data\UI\ui_arsenal.paa","#ABABFF"], {
+	[player, false] call apm_arsenal_fnc_openFavoritesArsenal;
 }, APM_ACE_base_condition] call ace_interact_menu_fnc_createAction;
 
 [player, 1, ["ACE_SelfActions", "APMArsenalMenu"], _action] call ace_interact_menu_fnc_addActionToObject;
@@ -261,10 +261,10 @@ _action = ["APM_Arsenal", "Open Resupply Arsenal", ["\A3\ui_f\data\igui\cfg\simp
 
 [player, 1, ["ACE_SelfActions", "APMArsenalMenu"], _action] call ace_interact_menu_fnc_addActionToObject;
 
-/*_action = ["APM_Port_arsenal", "Port BIS Loadouts to ACE", ["APM_Misc\Data\UI\ui_arsenal.paa", "#ABFFAB"], {
+_action = ["APM_Port_arsenal", "Port BIS Loadouts to ACE", ["x\APM\addons\Misc\Data\UI\ui_arsenal.paa", "#ABFFAB"], {
 	call apm_arsenal_fnc_portLoadouts;
 }, APM_ACE_base_condition] call ace_interact_menu_fnc_createAction;
-[player, 1, ["ACE_SelfActions", "APMArsenalMenu"], _action] call ace_interact_menu_fnc_addActionToObject;*/
+[player, 1, ["ACE_SelfActions", "APMArsenalMenu"], _action] call ace_interact_menu_fnc_addActionToObject;
 
 //Configs to player variable
 _all_configs = ("true" configClasses (configFile >> "CfgPatches")) apply {configName _x};
@@ -286,6 +286,12 @@ _ts = parseText "Teamspeak IP: 74.91.115.227";
 _dis = parseText "Be sure to join our <a href='https://discord.gg/fxeATZR'>Discord (Click Me!)</a> if you are interested in learning more about our unit.";
 _arsenal = parseText "The Arsenal can be accessed by ACE Self Interaction > APM Arsenal.";
 "Welcome to APM!" hintC [_ts, _dis, _arsenal];
+hintC_arr_EH = findDisplay 72 displayAddEventHandler ["unload", {
+	0 = _this spawn {
+		_this select 0 displayRemoveEventHandler ["unload", hintC_arr_EH];
+		hintSilent "";
+	};
+}];
 
 //Clear PD variable to ensure no issues on rejoin
 [{missionNamespace setVariable [format ["PD_%1", getPlayerUID player], nil, true]}, []] call cba_fnc_execNextFrame;
@@ -296,6 +302,8 @@ _action = ["DeleteGroundHolder", "Delete Trash", "", {
 }, {true}] call ace_interact_menu_fnc_createAction;
 
 ["GroundWeaponHolder", 0, ["ACE_MainActions"], _action, false] call ace_interact_menu_fnc_addActionToClass;
+["Default", 0, ["ACE_MainActions"], _action, false] call ace_interact_menu_fnc_addActionToClass;
+["WeaponHolderSimulated", 0, ["ACE_MainActions"], _action, false] call ace_interact_menu_fnc_addActionToClass;
 
 //View Distance Event handlers
 player addEventHandler ["GetInMan", {

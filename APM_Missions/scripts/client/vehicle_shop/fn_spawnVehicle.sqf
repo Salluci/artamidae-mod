@@ -1,6 +1,6 @@
 params ["_class", "", "_price", "_cat", "_code"];
 
-private _pos = switch _cat do {
+_pos = switch _cat do {
 	case 0 : {[[] call APM_fnc_findRoadSpawn, getDir player]};
 	case 1 : {[[] call APM_fnc_findRoadSpawn, getDir player]};
 	case 2 : {[[] call APM_fnc_findWaterSpawn, getDir player]};
@@ -10,7 +10,7 @@ private _pos = switch _cat do {
 	default {[[[position player, 5, 5, 0, false], true] call CBA_fnc_randPosArea, getDir player]};
 };
 
-private _vehicle = _class createVehicle (_pos select 0);
+_vehicle = _class createVehicle (_pos select 0);
 _vehicle setDir (_pos select 1);
 
 //code check
@@ -29,10 +29,10 @@ if (_code isEqualType "") then {
 
 [_vehicle, _cat] spawn {
 	params ["_vehicle", "_cat"];
-
+	
 	//Black screen open
 	"TP" cuttext ["Moving to Vehicle", "BLACK", 1, true, true];
-
+	
 	//Move in/to vehicle
 	switch _cat do {
 		case 0;
@@ -45,7 +45,7 @@ if (_code isEqualType "") then {
 		case 2 : {player moveInDriver _vehicle};
 		case 3 : {"TP" cutFadeOut 0};
 	};
-
+	
 	//Fade blackscreen
 	"TP" cutFadeOut 2;
 };
