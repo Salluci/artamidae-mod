@@ -84,7 +84,7 @@ if(isServer) then {
     GET_PARAM_BOOL(KP_liberation_arsenalUsePreset, "ArsenalUsePreset", 1);
     GET_PARAM_BOOL(KP_liberation_mapmarkers, "MapMarkers", 1);
     GET_PARAM_BOOL(KP_liberation_mobilerespawn, "MobileRespawn", 1);
-    GET_PARAM(KP_liberation_respawn_cooldown, "RespawnCooldown", 900);
+    GET_PARAM(KP_liberation_respawn_cooldown, "RespawnCooldown", 300);
     GET_PARAM_BOOL(KP_liberation_mobilearsenal, "MobileArsenal", 1);
     GET_PARAM_BOOL(KPLIB_respawnOnAttackedSectors, "AttackedSectorRespawn", 0);
     GET_PARAM_BOOL(KP_liberation_ailogistics, "AiLogistics", 1);
@@ -104,8 +104,8 @@ if(isServer) then {
     ["--- Technical Options ---", "PARAM"] call KPLIB_fnc_log;
     GET_PARAM_BOOL(GRLIB_permissions_param, "Permissions", 1);
     GET_PARAM(GRLIB_cleanup_vehicles, "CleanupVehicles", 2);
-    GET_PARAM_BOOL(GRLIB_introduction, "Introduction", 1);
-    GET_PARAM_BOOL(GRLIB_deployment_cinematic, "DeploymentCinematic", 1);
+    GET_PARAM_BOOL(GRLIB_introduction, "Introduction", 0);
+    GET_PARAM_BOOL(GRLIB_deployment_cinematic, "DeploymentCinematic", 0);
     GET_PARAM_BOOL(GRLIB_use_whitelist, "Whitelist", 0);
     GET_PARAM(KP_liberation_restart, "ServerRestart", 0);
 

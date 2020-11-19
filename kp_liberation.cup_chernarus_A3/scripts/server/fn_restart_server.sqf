@@ -23,6 +23,8 @@ if (_param > 0) then {
 	_hint remoteExec ["systemChat", 0];
 } forEach allPlayers;
 
+call KPLIB_fnc_doSave;
+
 //Restart server
 "Server Restarting" remoteExec ["systemChat", 0];
 
