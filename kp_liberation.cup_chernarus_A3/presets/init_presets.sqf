@@ -315,6 +315,8 @@ KPLIB_typeAirClasses   = +KPLIB_b_air_classes;
 // Military alphabet used for FOBs and convois
 military_alphabet = ["Alpha", "Bravo", "Charlie", "Delta", "Echo", "Foxtrot", "Golf", "Hotel", "India", "Juliet", "Kilo", "Lima", "Mike", "November", "Oscar", "Papa", "Quebec", "Romeo", "Sierra", "Tango", "Uniform", "Victor", "Whiskey", "X-Ray", "Yankee", "Zulu"];
 
+fob_alphabet = ["Timber", "Spartan", "Reprisal", "Titan", "Arbiter", "Mayhem", "Metal", "Willow", "Sovereign", "Unity", "Mickey"];
+
 // Misc variables
 markers_reset = [99999,99999,0];
 zeropos = [0,0,0];
