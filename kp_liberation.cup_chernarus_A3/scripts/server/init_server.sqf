@@ -189,3 +189,12 @@ _param = ["save_interval", 15] call bis_fnc_getParamValue;
 if (_param > 0) then {
 	[fnc_save_world, [_param], _param * 60] call CBA_fnc_waitAndExecute;
 };
+addMissionEventHandler ["HandleDisconnect",
+{
+  params ["_unit", "_id", "_uid", "_name"];
+	if (_unit in [HC1, HC2, HC3]) exitWith
+	{
+		private _marker = format ["fpsmarker%1",vehicleVarName _unit];
+		deleteMarker _marker;
+	};
+}];
