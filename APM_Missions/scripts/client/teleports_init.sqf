@@ -1,7 +1,7 @@
 apm_teleport_action = {
 	if ((_this isKindOf "ModuleRespawnPositionWest_F") or (_this isKindOf "ModuleRespawnPosition_F") or (_this isKindOf "Land_ClutterCutter_small_F")) exitWith {
-		_pos = [_this, 5] call CBA_fnc_randPos;
-		player setPos _pos;
+		_pos = getPosASL _this;
+		player setPosASL _pos;
 	};
 	if (_this isKindOf "LandVehicle") exitWith {
 		player moveInAny _this;
@@ -33,7 +33,7 @@ _APM_ACE_Tele_Menu = ["APMTeleMenu", "Teleport To:", "res\ace_icons\portal_blue_
 			private _action_id = format ["ACE_TP_%1", _x];
 			private _name = _x getVariable ["name", ""];
 			private _location = (nearestLocations [position _x, ["Name", "NameCity", "NameCityCapital", "NameLocal"], 1000, _x]) select 0;
-			private _veh_type = getText (configFile >> "CfgVehicles" >> 
+			private _veh_type = getText (configFile >> "CfgVehicles" >>
 			typeOf _x >> "displayName");
 			private _action_title = format ["%4 %1 %2 %3", text _location , mapGridPosition _x, _veh_type, _name];
 			private _action = [_action_id, _action_title, "res\ace_icons\portal_orange_ca.paa", _action_code, {true}, {}, _x] call ace_interact_menu_fnc_createAction;

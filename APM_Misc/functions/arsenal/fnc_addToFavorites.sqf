@@ -18,29 +18,40 @@
 params ["_ctrl"];
 
 //Display hooks
-_idc = ctrlIDC _ctrl;
-_display = findDisplay 1127001;
-_left_lb = _display displayCtrl 13;
-_right_lb = _display displayCtrl 14;
-_right_lnb = _display displayCtrl 15;
+private _idc = ctrlIDC _ctrl;
+private _display = findDisplay 1127001;
+private _leftTab = _display displayCtrl 13;
+private _rightTabWeapon = _display displayCtrl 14;
+private _rightTabInventory = _display displayCtrl 15;
 
 //Get Favorites Array
-_favorites = profileNamespace getVariable ["APM_arsenal_favorites", []];
+private _favorites = profileNamespace getVariable ["APM_arsenal_favorites", []];
 
 //Left button code
 
-if (_idc == 123123) exitWith {
-	_selection = lbCurSel _left_lb;
-	_classname = _left_lb lbData _selection;
+if (_idc == 123123) exitWith
+{
+	private _selection = lbCurSel _leftTab;
+	private _classname = _leftTab lbData _selection;
 
 	//Catch for TFAR instanced radios
-	if (["TFAR_", _classname] call bis_fnc_inString) then {
+	if (["TFAR_", _classname] call bis_fnc_inString) then
+	{
 		_classname = _classname splitString "_";
-		_classname deleteAt ((count _classname) - 1);
-		_classname = _classname joinString "_";
+		if (count _classname == 2) exitwith
+		{
+			_classname = _classname joinString "_";
+			_classname
+		};
+		if (count _classname != 2) exitWith
+		{
+			_classname deleteAt ((count _classname) - 1);
+			_classname = _classname joinString "_";
+			_classname
+		};
 	};
 
-	_result = _favorites pushBackUnique _classname;
+	private _result = _favorites pushBackUnique _classname;
 	if (_result == -1) then [{
 		systemChat format ["ERROR: %1 is already in favorites.", _classname];
 	}, {
@@ -51,15 +62,21 @@ if (_idc == 123123) exitWith {
 
 //Right button code
 
-//Determin that LB vs LNB open
-_lb_open = ctrlEnabled _right_lb;
-_lnb_open = ctrlEnabled _right_lnb;
-if (_lb_open) exitWith {
-	_selection = lbCurSel _right_lb;
-	_classname = _right_lb lbData _selection;
+//Determine that LB vs LNB open
+private _weaponOpen = ctrlEnabled _rightTabWeapon;
+private _inventoryOpen = ctrlEnabled _rightTabInventory;
+
+if (_inventoryOpen) exitWith //Needs to be checked first because ACE doesn't disable the weapon control (Why?)
+{
+	private _selection = lnbCurSelRow _rightTabInventory;
+	private _classname = _rightTabInventory lnbData [(_selection),0];
+
 	if (_classname == "") exitWith {systemChat "No Item Selected!"};
-	_result = _favorites pushBackUnique _classname;
-	if (_result == -1) then [{
+
+	private _result = _favorites pushBackUnique _classname;
+
+	if (_result == -1) then
+	[{
 		systemChat format ["ERROR: %1 is already in favorites.", _classname];
 	}, {
 		systemChat format ["%1 added to favorites.", _classname];
@@ -67,14 +84,20 @@ if (_lb_open) exitWith {
 	}];
 };
 
-if (_lnb_open) exitWith {
-	_selection = lbCurSel _right_lnb;
-	_classname = _right_lnb lbData _selection;
+if (_weaponOpen) exitWith
+{
+	private _selection = lbCurSel _rightTabWeapon;
+	private _classname = _rightTabWeapon lbData _selection;
+
 	if (_classname == "") exitWith {systemChat "No Item Selected!"};
-	_result = _favorites pushBackUnique _classname;
-	if (_result == -1) then [{
+
+	private _result = _favorites pushBackUnique _classname;
+
+	if (_result == -1) then
+	[{
 		systemChat format ["ERROR: %1 is already in favorites.", _classname];
-	}, {
+	},
+	{
 		systemChat format ["%1 added to favorites.", _classname];
 		profileNamespace setVariable ["APM_arsenal_favorites", _favorites];
 	}];

@@ -30,17 +30,14 @@ private _blacklistMission = missionNamespace getVariable ["APM_GearShop_Blacklis
 	waitUntil {!isNull (findDisplay 1127001)};
 
 	private _display = findDisplay 1127001;
-	private _leftLB = _display displayCtrl 13;
-	private _rightLB = _display displayCtrl 14;
-	private _rightLNB = _display displayCtrl 15;
 
 	//Create Left Button
 	private _leftButton = _display ctrlCreate ["RscButton", 123123];
 
-	_x_pos = -5 * ((safezoneW - 2 * (93 * (pixelW * pixelGridNoUIScale * 0.25)))/ 100)+ 0 * (((safezoneW - 2 * (93 * (pixelW * pixelGridNoUIScale * 0.25)))- 6 * ((safezoneW - 2 * (93 * (pixelW * pixelGridNoUIScale * 0.25)))/ 100)) / 5);
-	_y_pos = arsenal_additional_buttons * safeZoneH;
-	_w_pos = (((safezoneW - 2 * (93 * (pixelW * pixelGridNoUIScale * 0.25)))- 6 * ((safezoneW - 2 * (93 * (pixelW * pixelGridNoUIScale * 0.25)))/ 100)) / 5);
-	_h_pos = 7 * (pixelH * pixelGridNoUIScale * 0.25);
+	private _x_pos = -5 * ((safezoneW - 2 * (93 * (pixelW * pixelGridNoUIScale * 0.25)))/ 100)+ 0 * (((safezoneW - 2 * (93 * (pixelW * pixelGridNoUIScale * 0.25)))- 6 * ((safezoneW - 2 * (93 * (pixelW * pixelGridNoUIScale * 0.25)))/ 100)) / 5);
+	private _y_pos = arsenal_additional_buttons * safeZoneH;
+	private _w_pos = (((safezoneW - 2 * (93 * (pixelW * pixelGridNoUIScale * 0.25)))- 6 * ((safezoneW - 2 * (93 * (pixelW * pixelGridNoUIScale * 0.25)))/ 100)) / 5);
+	private _h_pos = 7 * (pixelH * pixelGridNoUIScale * 0.25);
 
 	_leftButton ctrlSetPosition [_x_pos, _y_pos, _w_pos, _h_pos];
 	_leftButton ctrlSetText "< Add to Favorites";

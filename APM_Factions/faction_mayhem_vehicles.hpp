@@ -4,6 +4,11 @@ class I_Mayhem_Offroad: I_G_Offroad_01_F
 	textureList[] = {"Green",1};
 	crew="I_Contractor_Mayhem_Rifleman1";
 	animationList[] = {"HideDoor1",0,"HideDoor2",0,"HideBumper1",1,"HideBumper2",0,"HideBackpacks",0,"HideConstruction",0,"HideDoor3",0};
+	hiddenSelectionsTextures[] =
+	{
+		"\a3\Soft_F_Enoch\Offroad_01\Data\offroad_01_ext_grn_CO.paa",
+		"\a3\Soft_F_Enoch\Offroad_01\Data\offroad_01_ext_grn_CO.paa"
+	};
 };
 class I_Mayhem_Offroad_M2: I_G_Offroad_01_armed_F
 {
@@ -11,6 +16,11 @@ class I_Mayhem_Offroad_M2: I_G_Offroad_01_armed_F
 	textureList[] = {"Green",1};
 	crew="I_Contractor_Mayhem_AR1";
 	animationList[] = {"HideDoor1",0,"HideDoor2",0,"HideBumper1",1,"HideBumper2",0,"HideBackpacks",0,"HideConstruction",0,"HideDoor3",0,"Hide_Shield",0,"Hide_Rail",0};
+	hiddenSelectionsTextures[] =
+	{
+		"\a3\Soft_F_Enoch\Offroad_01\Data\offroad_01_ext_grn_CO.paa",
+		"\a3\Soft_F_Enoch\Offroad_01\Data\offroad_01_ext_grn_CO.paa"
+	};
 };
 class I_Mayhem_Offroad_AT: I_G_Offroad_01_AT_F
 {
@@ -18,6 +28,11 @@ class I_Mayhem_Offroad_AT: I_G_Offroad_01_AT_F
 	textureList[] = {"Green",1};
 	crew="I_Contractor_Mayhem_AT1";
 	animationList[] = {"HideDoor1",0,"HideDoor2",0,"HideBumper1",1,"HideBumper2",0,"HideBackpacks",0,"HideConstruction",0,"HideDoor3",0};
+	hiddenSelectionsTextures[] =
+	{
+		"\a3\Soft_F_Enoch\Offroad_01\Data\offroad_01_ext_grn_CO.paa",
+		"\a3\Soft_F_Enoch\Offroad_01\Data\offroad_01_ext_grn_CO.paa"
+	};
 };
 class I_Mayhem_TIGR: rhs_tigr_m_vdv
 {
@@ -97,6 +112,13 @@ class I_Mayhem_FV510: I_APC_tracked_03_cannon_F
 	crew="I_Contractor_Mayhem_Rifleman2";
 	textureList[] = {"OliveGreen",1};
 	animationList[] = {"ShowSLATHull",0.5,"ShowTools",1};
+	hiddenSelectionsTextures[] =
+	{
+		"x\APM\addons\Vehicles\data\apc_tracked_03\apc_tracked_03_ext_charcoal_co.paa",
+		"x\APM\addons\Vehicles\data\apc_tracked_03\apc_tracked_03_ext2_charcoal_co.paa",
+		"a3\Armor_F\Data\camonet_NATO_Green_CO.paa",
+		"x\APM\addons\Vehicles\data\cage_charcoal.paa"
+	};
 };
 class I_Mayhem_Merkava: B_MBT_01_TUSK_F
 {
@@ -104,6 +126,13 @@ class I_Mayhem_Merkava: B_MBT_01_TUSK_F
 	crew = "I_Contractor_Mayhem_AT1";
 	side = 2;
 	textureList[] = {"Olive",1};
+	hiddenSelectionsTextures[] =
+	{
+		"A3\Armor_F_Exp\MBT_01\data\MBT_01_body_olive_CO.paa",
+		"A3\Armor_F_Exp\MBT_01\data\MBT_01_tow_olive_CO.paa",
+		"A3\Armor_F_Exp\MBT_01\data\mbt_addons_olive_CO.paa",
+		"a3\Armor_F\Data\camonet_NATO_Green_CO.paa"
+	};
 };
 class I_Mayhem_M2A3: RHS_M2A3_BUSKIII_wd
 {
@@ -113,6 +142,14 @@ class I_Mayhem_M2A3: RHS_M2A3_BUSKIII_wd
 	textureList[] = {"Olive",1};
 	editorSubcategory = "EdSubcat_APCs";
 	vehicleClass = "Armored";
+	hiddenSelectionsTextures[] =
+	 {
+		 "\rhsusf\addons\rhsusf_a2port_armor\m2a2_bradley\data\woodland\m6_base_co.paa",
+		 "\rhsusf\addons\rhsusf_a2port_armor\m2a2_bradley\data\woodland\m6_a3_co.paa",
+		 "\rhsusf\addons\rhsusf_a2port_armor\m2a2_bradley\data\woodland\ultralp_co.paa",
+		 "\rhsusf\addons\rhsusf_a2port_armor\m2a2_bradley\data\woodland\BUSKIII_co.paa",
+		 "\rhsusf\addons\rhsusf_m1a1\duke\data\duke_antennae_wd_co.paa"
+	 };
 };
 class I_Mayhem_MH6M: RHS_MELB_MH6M
 {

@@ -28,6 +28,12 @@ class CfgDebriefing
 		description = "You are not an authorized Zeus. If this is an error, please contact a database admin.";
 		pictureBackground = "";
 	};
+	class knock
+	{
+		title = "Knock People Unconscious Loaded";
+		subtitle = "";
+		description = "You have the ""Knock People Unconscious"" mod currently loaded. It is currently part of the Artamidae Mod. Please unload it and reconnect to the server.";
+	};
 	class DBfail
 	{
 		title = "Database Failure";

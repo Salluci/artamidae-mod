@@ -18,21 +18,22 @@
 params ["_ctrl"];
 
 //Display hooks
-_idc = ctrlIDC _ctrl;
-_display = findDisplay 1127001;
-_left_lb = _display displayCtrl 13;
-_right_lb = _display displayCtrl 14;
-_right_lnb = _display displayCtrl 15;
+private _idc = ctrlIDC _ctrl;
+private _display = findDisplay 1127001;
+private _leftTab = _display displayCtrl 13;
+private _rightTabWeapon = _display displayCtrl 14;
+private _rightTabInventory = _display displayCtrl 15;
 
 //Get Favorites Array
-_favorites = profileNamespace getVariable ["APM_arsenal_favorites", []];
+private _favorites = profileNamespace getVariable ["APM_arsenal_favorites", []];
 
 //Left button code
 
-if (_idc == 123123) exitWith {
-	_selection = lbCurSel _left_lb;
+if (_idc == 123123) exitWith
+{
+	private _selection = lbCurSel _leftTab;
 	if (_selection <= 0) exitWith {systemChat "No Item Selected!"};
-	_classname = _left_lb lbData _selection;
+	private _classname = _leftTab lbData _selection;
 	_favorites = _favorites - [_classname];
 	systemChat "Item removed, will be corrected on re-opening of arsenal.";
 	profileNamespace setVariable ["APM_arsenal_favorites", _favorites];
@@ -41,21 +42,28 @@ if (_idc == 123123) exitWith {
 //Right button code
 
 //Determin that LB vs LNB open
-_lb_open = ctrlShown _right_lb;
-_lnb_open = ctrlShown _right_lnb;
-if (_lb_open) exitWith {
-	_selection = lbCurSel _right_lb;
-	if (_selection <= 0) exitWith {systemChat "No Item Selected!"};
-	_classname = _right_lb lbData _selection;
+private _weaponOpen = ctrlEnabled _rightTabWeapon;
+private _inventoryOpen = ctrlEnabled _rightTabInventory;
+
+if (_inventoryOpen) exitWith //Needs to be checked first because ACE doesn't disable the weapon control (Why?)
+{
+	private _selection = lnbCurSelRow _rightTabInventory;
+	private _classname = _rightTabInventory lnbData [(_selection),0];
+
+	if (_classname == "") exitWith {systemChat "No Item Selected!"};
+
 	_favorites = _favorites - [_classname];
 	systemChat "Item removed, will be corrected on re-opening of arsenal.";
 	profileNamespace setVariable ["APM_arsenal_favorites", _favorites];
 };
 
-if (_lnb_open) exitWith {
-	_selection = lbCurSel _right_lnb;
-	if (_selection <= 0) exitWith {systemChat "No Item Selected!"};
-	_classname = _right_lnb lbData _selection;
+if (_weaponOpen) exitWith
+{
+	private _selection = lbCurSel _rightTabWeapon;
+	private _classname = _rightTabWeapon lbData _selection;
+
+	if (_classname == "") exitWith {systemChat "No Item Selected!"};
+	
 	_favorites = _favorites - [_classname];
 	systemChat "Item removed, will be corrected on re-opening of arsenal.";
 	profileNamespace setVariable ["APM_arsenal_favorites", _favorites];

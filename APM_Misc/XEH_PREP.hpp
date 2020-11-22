@@ -20,3 +20,7 @@
 ["x\APM\addons\Misc\functions\radio\fnc_loadSettingsSR.sqf", "apm_radio_fnc_loadSettingsSR"] call CBA_fnc_compileFunction;
 ["x\APM\addons\Misc\functions\radio\fnc_loadSettingsLR.sqf", "apm_radio_fnc_loadSettingsLR"] call CBA_fnc_compileFunction;
 ["x\APM\addons\Misc\functions\fnc_flattenArray.sqf", "apm_fnc_flattenArray"] call CBA_fnc_compileFunction;
+["x\APM\addons\Misc\functions\modules\fnc_moduleAddApmArsenal.sqf", "apm_modules_fnc_moduleAddApmArsenal"] call CBA_fnc_compileFunction;
+["x\APM\addons\Misc\functions\modules\fnc_moduleAddResupplyArsenal.sqf", "apm_modules_fnc_moduleAddResupplyArsenal"] call CBA_fnc_compileFunction;
+["x\APM\addons\Misc\functions\modules\fnc_moduleAC130.sqf", "apm_modules_fnc_moduleAC130"] call CBA_fnc_compileFunction;
+["x\APM\addons\Misc\functions\modules\fnc_moduleDebugMedical.sqf", "apm_modules_fnc_moduleDebugMedical"] call CBA_fnc_compileFunction;

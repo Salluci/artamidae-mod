@@ -30,7 +30,6 @@ if (_dist <= 4.5) then
     {
       _player playActionNow "PutDown";
       [_target, "BRIDGE_PunchSound"] remoteExec ["say3D", 0, false];
-      [_target, "head", 0, objNull, "punch", 0, 0.1] call ace_medical_fnc_handleDamage_advanced;
       if (isPlayer _target) then
       {
         [_target, true, apm_knockout_time_player, true] call ace_medical_fnc_setUnconscious;

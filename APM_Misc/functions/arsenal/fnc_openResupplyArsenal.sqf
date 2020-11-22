@@ -11,7 +11,7 @@
  * Public: Yes
 */
 
-_items = localNamespace getVariable ["resupply_arsenal_items",[]];
+private _items = profileNamespace getVariable ["resupply_arsenal_items",[]];
 
 [player, true, false] call ace_arsenal_fnc_removeVirtualItems;
 [player, _items, false] call ace_arsenal_fnc_addVirtualItems;

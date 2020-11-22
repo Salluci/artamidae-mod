@@ -17,7 +17,7 @@ while {true} do {
             _marker setMarkerTypeLocal "b_hq";
             _marker setMarkerSizeLocal [1.2, 1.2];
             _marker setMarkerPosLocal (GRLIB_all_fobs select _idx);
-            _marker setMarkerTextLocal format ["FOB %1",military_alphabet select _idx];
+            _marker setMarkerTextLocal format ["FOB %1",fob_alphabet select _idx];
             _marker setMarkerColorLocal "ColorYellow";
             _markers pushback _marker;
             _marker = createMarkerLocal [format ["APM_FOB_%1", _idx], markers_reset];

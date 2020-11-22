@@ -4,7 +4,11 @@ class CfgPatches
 	{
 		units[]=
 		{
-			"APM_large_box"
+			"APM_large_box",
+			"APM_moduleAC130",
+			"APM_moduleAddAPMArsenal",
+			"APM_moduleAddResupplyArsenal",
+			"APM_moduleDebugMedical"
 		};
 		weapons[]={};
 		requiredVersion=1.4;
@@ -15,12 +19,15 @@ class CfgPatches
 			"ace_ballistics",
 			"ace_advanced_ballistics",
 			"ace_interaction",
-			"ace_interact_menu"
+			"ace_interact_menu",
+			"ace_zeus",
+			"zen_modules"
 		};
 		author="LinkIsParking";
 		name="APM Scripting & Misc";
 	};
 };
+class CBA_Extended_EventHandlers_base;
 class Extended_PreInit_EventHandlers
 {
   class apm_functions
@@ -110,6 +117,48 @@ class cfgVehicles
 			};
 		};
 	};
+	class Module_F;
+	class APM_moduleBase: Module_F
+	{
+		author = "LinkIsParking";
+		category = "APM_Modules";
+		function = "";
+		scope = 1;
+		scopeCurator = 2;
+		class EventHandlers
+		{
+			init = "_this call zen_modules_fnc_initModule";
+			class CBA_Extended_EventHandlers: CBA_Extended_EventHandlers_base {};
+		};
+	};
+	class APM_moduleAddAPMArsenal: APM_moduleBase
+	{
+		curatorCanAttach = 1;
+		displayName = "Add APM Arsenal";
+		function = "apm_modules_fnc_moduleAddApmArsenal";
+		icon = "\a3\ui_f\data\logos\a_64_ca.paa";
+	};
+	class APM_moduleAddResupplyArsenal: APM_moduleBase
+	{
+		curatorCanAttach = 1;
+		displayName = "Add Resupply Arsenal";
+		function = "apm_modules_fnc_moduleAddResupplyArsenal";
+		icon = "\a3\ui_f\data\logos\a_64_ca.paa";
+	};
+	class APM_moduleAC130: APM_moduleBase
+	{
+		curatorCanAttach = 1;
+		displayName = "Make AC130";
+		function = "apm_modules_fnc_moduleAC130";
+		icon = "\a3\Modules_F_Curator\Data\portraitCASGun_ca.paa";
+	};
+	class APM_moduleDebugMedical: APM_moduleBase
+	{
+		curatorCanAttach = 1;
+		displayName = "Show Medical Debug Monitor";
+		function = "apm_modules_fnc_moduleDebugMedical";
+		icon = "\z\ace\addons\medical_gui\ui\cross.paa";
+	};
 };
 class CfgBrains //Turrets accuracy decrease
 {
@@ -126,6 +175,16 @@ class CfgBrains //Turrets accuracy decrease
 };
 
 class Mode_SemiAuto;
+
+class cfgFactionClasses
+{
+	class APM_Modules
+	{
+		displayName = "APM Modules";
+		priority = 2;
+		side = 7;
+	};
+};
 
 class cfgWeapons
 {

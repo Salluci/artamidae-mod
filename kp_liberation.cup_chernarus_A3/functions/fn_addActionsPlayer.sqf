@@ -23,21 +23,6 @@ if !(isPlayer _player) exitWith {["No player given"] call BIS_fnc_error; false};
 
 if (isNil "KP_liberation_resources_global") then {KP_liberation_resources_global = false;};
 
-// Tutorial
-_player addAction [
-    ["<t color='#80FF80'>", localize "STR_TUTO_ACTION", "</t>"] joinString "",
-    {howtoplay = 1;},
-    nil,
-    -700,
-    false,
-    true,
-    "",
-    "
-        alive _originalTarget
-        && {_originalTarget getVariable ['KPLIB_isNearStart', false]}
-    "
-];
-
 // Redeploy
 _player addAction [
     ["<t color='#80FF80'>", localize "STR_DEPLOY_ACTION", "</t><img size='2' image='res\ui_redeploy.paa'/>"] joinString "",
