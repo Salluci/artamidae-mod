@@ -64,7 +64,7 @@ if ("BRIDGE_punchMOD" in cba_common_addons) exitWith {
       	"Welcome to APM!" hintC [_ts, _discord, _arsenal];
       };
 
-      [{(getUnitLoadout player) isNotEqualTo (_this select 0)}, {if (isNil "ace_arsenal_center" then {player setUnitLoadout (_this select 0)}}, [_loadout], 60] call CBA_fnc_waitUntilAndExecute;
+      [{(getUnitLoadout player) isNotEqualTo (_this select 0)}, {if (isNil "ace_arsenal_center") then {player setUnitLoadout (_this select 0)}}, [_loadout], 60] call CBA_fnc_waitUntilAndExecute;
   }] call CBA_fnc_execNextFrame;
 }, nil, 15, {
 	systemChat "DB variable failure. Please reconnect from lobby. If this continues, contact a Server Admin on Discord.";
