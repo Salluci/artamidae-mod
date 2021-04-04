@@ -65,7 +65,7 @@ _action = ["apm_openShop", "Open Vehicle Shop", "res\ace_icons\vic_shop_ca.paa",
 
 //Delete Trash/Hide Body
 _action = ["DeleteGroundHolder", "Delete Trash", "", {
-	if (!isNil "ALIVE_sys_logistics") then {
+	if (APM_isALiVE) then {
 		[ALIVE_sys_logistics, "removeObject", [_target]] call ALIVE_fnc_logistics;
 	};
 	[{deleteVehicle _this}, _target, 5] call CBA_fnc_waitAndExecute;

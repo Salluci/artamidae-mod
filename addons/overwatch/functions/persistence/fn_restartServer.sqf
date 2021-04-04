@@ -8,7 +8,7 @@ _hint remoteExec ["systemChat", 0];
 //Save world/
 private _result = call apm_missions_fnc_saveWorld;
 
-if (_result && {!isNil "GRLIB_save_key"}) then {
+if (_result && {APM_isLiberation}) then {
 	_result = call KPLIB_fnc_doSave;
 };
 
@@ -30,5 +30,5 @@ if (!_result) exitWith {
 //Restart server
 "Server Restarting" remoteExec ["systemChat", 0];
 [{
-	APM_Serverpass serverCommand (["#restartserver", "#reassign"] select ("Dev" in missionName));
+	APM_Serverpass serverCommand (["#reassign", "#restartServer"] select (APM_isLiberation || APM_isALiVE || APM_isDev));
 }, nil, 5] call CBA_fnc_waitAndExecute;

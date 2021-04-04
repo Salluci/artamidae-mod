@@ -34,7 +34,7 @@ if !(isNil "ALiVE_sys_data") then {
 	call apm_missions_fnc_saveWorldALiVE;
 };
 //Save Lib stuff
-if (!isNil "GRLIB_save_key") then {
+if (APM_isLiberation) then {
 	call KPLIB_fnc_doSave;
 };
 

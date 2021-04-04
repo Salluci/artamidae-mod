@@ -21,6 +21,11 @@ switch true do {
 //Server mods variable for Admin Menu
 missionNamespace setVariable ["server_addons", cba_common_addons, true];
 
+//Handle special gamemodes/dev profile
+APM_isLiberation = "Liberation" in serverName;
+APM_isDev = "Dev" in missionName;
+APM_isAliVE = !isNil "ALIVE_sys_logistics";
+
 //Persistence key (Change manually for campaigns)
 //Ex: APM_Key = "Ghost_OpRoot"
 //By default, key is map's classname _ server profile name

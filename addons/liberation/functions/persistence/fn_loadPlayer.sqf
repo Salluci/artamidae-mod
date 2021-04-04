@@ -19,14 +19,13 @@ if ((_data select 1) isNotEqualTo []) then [{
 	"extDB3" callExtension format ["0:apm:createPlayerData:%1:%2", _uid, _name];
 }];
 
-private _liberation = !isNil "GRLIB_save_key";
 _data params ["_isAdmin", ["_isZeus", 0], "_isBanned", "_isMedic", "_isENG", "_isFixed", "_isRotor", "_isCrew", "_isEOD", "_rank", "_loadout", "_positions"];
 
 //Set Position
 if (APM_PersistentPosition && {_positions isNotEqualTo ""}) then {
   _positions = createHashMapFromArray _positions;
   private _pos = _positions get (missionNamespace getVariable "APM_Key");
-  if (_liberation && !isNil "_pos") then {
+  if (APM_isLiberation && !isNil "_pos") then {
     [{missionNamespace getVariable ["GRLIB_force_redeploy", true] isEqualTo false && {_player distance (markerPos GRLIB_respawn_marker) > 50}}, {
       _player setPosATL _pos;
     }] call CBA_fnc_waitUntilAndExecute;
