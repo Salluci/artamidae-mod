@@ -1,0 +1,4 @@
+- Added Snow & Woodland Ghillies for NATO and CSAT.
+- Switched top textures on VSM Crye G3 Tee variants for more fitting ones.
+- Added more expanded assault pack variants.
+- Updated Tactical Pack (Green) textures.

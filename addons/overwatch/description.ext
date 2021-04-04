@@ -1,0 +1,83 @@
+#include "R3F_LOG\desc_include.h"
+#include "res\defines.hpp"
+#include "res\dialogs.hpp"
+#include "VAM_GUI\VAM_GUI_controls.hpp"
+#include "VAM_GUI\VAM_GUI_classes.hpp"
+#include "cfgParameters.hpp"
+#include "cfgDebriefing.hpp"
+#include "cfgFunctions.hpp"
+
+respawnOnStart = -1;
+kickduplicate = 0;
+cba_settings_hasSettingsFile = 1;
+allowProfileGlasses = 0;
+author = "AuburnAlumni & GhostIsSpooky";
+briefingName = "Operation Overwatch";
+missionName ="Operation Overwatch";
+OnLoadName = "Operation Overwatch";
+OnLoadMission = "US SOCOM and CIA assets assist Afghan Forces in Lythium.";
+
+class CfgSounds {
+	sounds[] = {prayer};
+	class prayer {
+		name = "prayer";
+		sound[] = {"CalltoPrayer\sounds\prayer.ogg", db+3.3, 1};
+		titles[] = {};
+	};
+};
+class CfgSFX
+{
+	sounds[] = {};
+
+
+	class sfxsound9
+	{
+		name = "news1";
+		sounds[]={sfxsound};
+		sfxsound[]={"sound\news1.ogg",15,1,18,1,1,1,0};
+		empty[]= {"",0,0,0,0,0,0,0};
+	};
+
+	class sfxsound12
+	{
+		name = "kunduznews";
+		sounds[]={sfxsound};
+		sfxsound[]={"sound\kunduznews.ogg",15,1,18,1,1,1,0};
+		empty[]= {"",0,0,0,0,0,0,0};
+	};
+
+	class sfxsound13
+	{
+		name = "SanginnewsBBC";
+		sounds[]={sfxsound};
+		sfxsound[]={"sound\SanginnewsBBC.ogg",15,1,18,1,1,1,0};
+		empty[]= {"",0,0,0,0,0,0,0};
+	};
+
+        class sfxsound14
+	{
+		name = "prayer2";
+		sounds[]={sfxsound};
+		sfxsound[]={"sound\prayer2.ogg",15,1,24,1,1,1,0};
+		empty[]= {"",0,0,0,0,0,0,0};
+	};
+
+	class sfxsound17
+	{
+		name = "IEDchatter";
+		sounds[]={sfxsound};
+		sfxsound[]={"sound\IEDchatter.ogg",10,1,12,1,1,1,0};
+		empty[]= {"",0,0,0,0,0,0,0};
+	};
+};
+enableDebugConsole[] =
+{
+	"76561198027717871", //Picker
+	"76561198146199462" //Link
+};
+enableTargetDebug = 0;
+admins[] =
+{
+	"76561198027717871", //Picker
+	"76561198146199462" //Link
+};
