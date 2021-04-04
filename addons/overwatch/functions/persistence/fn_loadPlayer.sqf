@@ -1,6 +1,7 @@
 params ["_player", "_didJIP"];
 
-if (_player in [HC1, HC2, HC3]) exitWith {};
+if (_player in [HC1, HC2, HC3]) exitWith {false};
+if (!isServer) exitWith {false};
 
 private _name = name _player;
 private _uid = getPlayerUID _player;
@@ -80,6 +81,9 @@ _player setUnitLoadout _loadout;
 
 //Set Data variable for clientside init
 _player setVariable ["APM_Data", _data, [2, owner _player]];
+
+//Callback EH
+["APM_PlayerCallBack", _data, _player] call CBA_fnc_targetEvent;
 
 //Ready _player for disconnect EH
 _player setVariable ["APM_Ready", true, true];

@@ -114,5 +114,5 @@ call apm_missions_fnc_zeusChat;
 ["APM_PlayerJoined", {
 	params ["_player", "_jip"];
 
-	[_player, _jip] call apm_missions_fnc_loadPlayer;
+	[{!local (_this select 0)}, {[_this select 0, _this select 1] call apm_missions_fnc_loadPlayer}, [_player, _jip], 10, {[_this select 0, _this select 1] call apm_missions_fnc_loadPlayer}] call CBA_fnc_waitUntilAndExecute;
 }] call CBA_fnc_addEventHandler;
