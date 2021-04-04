@@ -1,0 +1,141 @@
+class VSM_SMG_Bl: None
+{
+  author="LinkIsParking";
+  scope=2;
+  displayname="[VSM] Scarf (Black)";
+  model="x\APM\addons\Equipment\data\G_Shemagh.p3d";
+  picture = "\VSM_OGA\Data\Icons\VSM_OGA_Grey.paa";
+  hiddenSelections[]=
+  {
+    "camo"
+  };
+  hiddenSelectionsTextures[]=
+  {
+    "x\APM\addons\Equipment\Data\VSM_Shemagh_Black_co"
+  };
+  identityTypes[]=
+  {
+    "NoGlasses",
+    0,
+    "G_NATO_default",
+    0,
+    "G_NATO_casual",
+    0,
+    "G_NATO_pilot",
+    0,
+    "G_NATO_recon",
+    0,
+    "G_NATO_SF",
+    0,
+    "G_NATO_sniper",
+    0,
+    "G_NATO_diver",
+    0,
+    "G_IRAN_default",
+    0,
+    "G_IRAN_diver",
+    0,
+    "G_GUERIL_default",
+    0,
+    "G_HAF_default",
+    0,
+    "G_CIVIL_female",
+    0,
+    "G_CIVIL_male",
+    0
+  };
+};
+class VSM_SMG_OD: None
+{
+  author="LinkIsParking";
+  scope=2;
+  displayname="[VSM] Scarf (Olive)";
+  model="x\APM\addons\Equipment\data\G_Shemagh.p3d";
+  picture = "\VSM_OGA\Data\Icons\VSM_OGA_OD.paa";
+  hiddenSelections[]=
+  {
+    "camo"
+  };
+  hiddenSelectionsTextures[]=
+  {
+    "x\APM\addons\Equipment\Data\VSM_Shemagh_Olive_co"
+  };
+  identityTypes[]=
+  {
+    "NoGlasses",
+    0,
+    "G_NATO_default",
+    0,
+    "G_NATO_casual",
+    0,
+    "G_NATO_pilot",
+    0,
+    "G_NATO_recon",
+    0,
+    "G_NATO_SF",
+    0,
+    "G_NATO_sniper",
+    0,
+    "G_NATO_diver",
+    0,
+    "G_IRAN_default",
+    0,
+    "G_IRAN_diver",
+    0,
+    "G_GUERIL_default",
+    0,
+    "G_HAF_default",
+    0,
+    "G_CIVIL_female",
+    0,
+    "G_CIVIL_male",
+    0
+  };
+};
+class VSM_SMG_Coyote: None
+{
+  author="LinkIsParking";
+  scope=2;
+  displayname="[VSM] Scarf (Coyote)";
+  model="x\APM\addons\Equipment\data\G_Shemagh.p3d";
+  picture="\VSM_OGA\Data\Icons\VSM_OGA.paa";
+  hiddenSelections[]=
+  {
+    "camo"
+  };
+  hiddenSelectionsTextures[]=
+  {
+    "x\APM\addons\Equipment\Data\do_equip_co"
+  };
+  identityTypes[]=
+  {
+    "NoGlasses",
+    0,
+    "G_NATO_default",
+    0,
+    "G_NATO_casual",
+    0,
+    "G_NATO_pilot",
+    0,
+    "G_NATO_recon",
+    0,
+    "G_NATO_SF",
+    0,
+    "G_NATO_sniper",
+    0,
+    "G_NATO_diver",
+    0,
+    "G_IRAN_default",
+    0,
+    "G_IRAN_diver",
+    0,
+    "G_GUERIL_default",
+    0,
+    "G_HAF_default",
+    0,
+    "G_CIVIL_female",
+    0,
+    "G_CIVIL_male",
+    0
+  };
+};

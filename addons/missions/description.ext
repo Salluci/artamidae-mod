@@ -1,0 +1,34 @@
+#include "R3F_LOG\desc_include.h"
+#include "res\defines.hpp"
+#include "res\dialogs.hpp"
+#include "VAM_GUI\VAM_GUI_controls.hpp"
+#include "VAM_GUI\VAM_GUI_classes.hpp"
+#include "cfgParameters.hpp"
+#include "cfgDebriefing.hpp"
+#include "cfgFunctions.hpp"
+
+cba_settings_hasSettingsFile = 1;
+respawnonstart = -1;
+kickduplicate = 0;
+allowProfileGlasses = 0;
+briefingName = "APM Zeus";
+missionName ="APM Zeus";
+
+class Header
+{
+	gameType =  Zeus;			// Game type
+	minPlayers =  1;			// minimum number of players the mission supports
+	maxPlayers = 100;			// maximum number of players the mission supports
+};
+
+enableDebugConsole[] =
+{
+	"76561198027717871", //Picker
+	"76561198146199462" //Link
+};
+enableTargetDebug = 0;
+admins[] =
+{
+	"76561198027717871", //Picker
+	"76561198146199462" //Link
+};
