@@ -1,5 +1,5 @@
 params ["_ctrl", "_selection"];
-private _data = call compile (_ctrl lbData _selection);
+private _data = parseSimpleArray (_ctrl lbData _selection);
 if !(isNull preview_vehicle) then {
   deleteVehicle preview_vehicle;
 };

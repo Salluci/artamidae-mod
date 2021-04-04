@@ -5,7 +5,6 @@
 #include "VAM_GUI\VAM_GUI_classes.hpp"
 #include "cfgParameters.hpp"
 #include "cfgDebriefing.hpp"
-#include "cfgFunctions.hpp"
 
 cba_settings_hasSettingsFile = 1;
 respawnonstart = -1;
@@ -20,6 +19,12 @@ class Header
 	minPlayers =  1;			// minimum number of players the mission supports
 	maxPlayers = 100;			// maximum number of players the mission supports
 };
+
+class cfgFunctions
+{
+	#include "cfgFunctions.hpp"
+};
+
 
 enableDebugConsole[] =
 {

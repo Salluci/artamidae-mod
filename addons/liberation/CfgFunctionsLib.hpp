@@ -1,6 +1,6 @@
 class KPLIB {
     class functions {
-        file = "functions";
+        file = "functionsLib";
 
         class addActionsFob             {};
         class addActionsPlayer          {};
@@ -86,7 +86,7 @@ class KPLIB {
         class swapInventory             {};
     };
     class functions_curator {
-        file = "functions\curator";
+        file = "functionsLib\curator";
 
         class initCuratorHandlers       {
             postInit = 1;
@@ -94,7 +94,7 @@ class KPLIB {
         class requestZeus               {};
     };
     class functions_ui {
-        file = "functions\ui";
+        file = "functionsLib\ui";
 
         class overlayUpdateResources    {};
     };

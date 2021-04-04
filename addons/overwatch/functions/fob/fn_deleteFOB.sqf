@@ -17,4 +17,11 @@ publicVariable "APM_fobObjects";
 
 deleteVehicle _center;
 
+{
+  private _name = _x getVariable ["APM_fobName", ""];
+  private _index = APM_fobList findIf {_x select 2 == _name};
+  if (_index == -1 || {_name == ""}) then {continue};
+  _x setVariable ["APM_fobIndex", _index, true];
+} forEach APM_fobObjects;
+
 true

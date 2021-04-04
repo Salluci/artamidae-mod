@@ -57,14 +57,14 @@ if ("BRIDGE_punchMOD" in cba_common_addons) exitWith {
   		[player, 1, ["ACE_SelfActions"], _action] call ace_interact_menu_fnc_addActionToObject;
   	};
 
-    if ((player getVariable "APM_Rank") < 3) then {
-    	private _ts = parseText "<a href='ts3server://74.91.115.227'>Teamspeak IP: 74.91.115.227 (Click Me!)</a>";
-    	private _discord = parseText "Be sure to join our <a href='https://discord.gg/fxeATZR'>Discord (Click Me!)</a> if you are interested in learning more about our unit.";
-    	private _arsenal = parseText "The Arsenal can be accessed by ACE Self Interaction > APM Arsenal.";
-    	"Welcome to APM!" hintC [_ts, _discord, _arsenal];
-    };
+      if (isNil "GRLIB_save_key" && {player getVariable ["APM_Rank", 0] < 3}) then {
+        private _ts = parseText "<a href='ts3server://74.91.115.227'>Teamspeak IP: 74.91.115.227 (Click Me!)</a>";
+      	private _discord = parseText "Be sure to join our <a href='https://discord.gg/fxeATZR'>Discord (Click Me!)</a> if you are interested in learning more about our unit.";
+      	private _arsenal = parseText "The Arsenal can be accessed by ACE Self Interaction > APM Arsenal.";
+      	"Welcome to APM!" hintC [_ts, _discord, _arsenal];
+      };
 
-    [{(getUnitLoadout player) isNotEqualTo (_this select 0)}, {player setUnitLoadout (_this select 0)}, [_loadout], 60] call CBA_fnc_waitUntilAndExecute;
+      [{(getUnitLoadout player) isNotEqualTo (_this select 0)}, {if (isNil "ace_arsenal_center" then {player setUnitLoadout (_this select 0)}}, [_loadout], 60] call CBA_fnc_waitUntilAndExecute;
   }] call CBA_fnc_execNextFrame;
 }, nil, 15, {
 	systemChat "DB variable failure. Please reconnect from lobby. If this continues, contact a Server Admin on Discord.";

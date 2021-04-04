@@ -5,7 +5,6 @@
 #include "VAM_GUI\VAM_GUI_classes.hpp"
 #include "cfgParameters.hpp"
 #include "cfgDebriefing.hpp"
-#include "cfgFunctions.hpp"
 
 respawnOnStart = -1;
 kickduplicate = 0;
@@ -70,6 +69,12 @@ class CfgSFX
 		empty[]= {"",0,0,0,0,0,0,0};
 	};
 };
+
+class cfgFunctions
+{
+	#include "cfgFunctions.hpp"
+};
+
 enableDebugConsole[] =
 {
 	"76561198027717871", //Picker
