@@ -1,6 +1,8 @@
 private _name = "";
 private _pos = -1;
 
+if (hasInterface && isServer) exitWith {};
+
 switch true do {
   case (isDedicated) : {
     _name = "Server";
@@ -26,7 +28,7 @@ if (_pos isEqualTo -1) exitWith {
 };
 
 private _marker = createMarkerLocal [format ["fpsmarker%1", _name], [0, 0 + (75 * _pos)]];
-_marker setMarkerTypeLocal "mil_start";
+_marker setMarkerTypeLocal "mil_start_noShadow";
 _marker setMarkerSize [0.8, 0.8];
 
 [{

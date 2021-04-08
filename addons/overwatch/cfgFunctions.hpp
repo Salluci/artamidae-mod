@@ -7,8 +7,15 @@ class apm_missions
     class loadWorld {};
     class savePlayer {};
     class loadPlayer {};
+    class saveVehicle {};
+    class loadVehicle {};
+    class loadIconMarkers {};
+    class loadLineMarkers {};
+    class saveMarkers {};
+    class initMarkerSystem {preInit = 1};
     class restartServer {};
     class saveWorldALiVE {};
+    class createVehicleUID {};
   };
   class fob
   {
@@ -64,5 +71,7 @@ class apm_missions
     class zeusChat {};
     class teleport {};
     class budgetHandler {};
+    class paycheck {};
+    class displayPrettyNumber {};
   };
 };

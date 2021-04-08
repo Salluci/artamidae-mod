@@ -72,7 +72,6 @@ _action = ["DeleteGroundHolder", "Delete Trash", "", {
 }, {true}] call ace_interact_menu_fnc_createAction;
 
 ["GroundWeaponHolder", 0, ["ACE_MainActions"], _action, false] call ace_interact_menu_fnc_addActionToClass;
-["Default", 0, ["ACE_MainActions"], _action, false] call ace_interact_menu_fnc_addActionToClass;
 ["WeaponHolderSimulated", 0, ["ACE_MainActions"], _action, false] call ace_interact_menu_fnc_addActionToClass;
 ["Weapon_Empty", 0, ["ACE_MainActions"], _action, false] call ace_interact_menu_fnc_addActionToClass;
 

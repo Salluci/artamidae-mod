@@ -16,15 +16,18 @@ if (_level == -1) then {
 _center setVariable ["APM_fobLevel", _level, true];
 
 private _name = _center getVariable ["APM_fobName", ""];
-private _type = ["Patrol Base", "Camp", "Outpost", "FOB"] select _level;
+private _type = APM_fobTypes select _level;
 _name = _type + " " + _name;
+_center setVariable ["APM_fobDisplayName", _name, true];
 
 private _marker = _center getVariable ["APM_fobMarker", ""];
 _marker setMarkerText _name;
 
 private _hasRespawn = [false, true] select (_level > 2);
 if (_hasRespawn && {!(_center getVariable ["apm_fobHasRespawn", false])}) then {
-  [west, "Land_ClutterCutter_small_F" createVehicle getPosATL (_center), _name] call BIS_fnc_addRespawnPosition;
+  private _point = "Land_ClutterCutter_small_F" createVehicle getPosATL _center;
+  _point setVariable ["Name", _name, true];
+  [west, _point, _name] call BIS_fnc_addRespawnPosition;
   _center setVariable ["apm_fobHasRespawn", true, true];
 };
 

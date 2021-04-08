@@ -5,47 +5,69 @@
 ["CAManBase", "Init", {
   params ["_unit"];
 
-  if (!local _unit || isPlayer _unit) exitWith {};
+  if (local _unit && {!isPlayer _unit}) then {
+    private _cfg = configOf _unit;
+    private _ids = call apm_misc_fnc_getServerIds;
 
-  private _cfg = configOf _unit;
+    private _loadout = getText (_cfg >> "apm_loadout");
 
-  private _loadout = getText (_cfg >> "apm_loadout");
+    if (_loadout isNotEqualTo "") then {
+      _loadout = (_loadout splitString "'") select 0;
+      _loadout = parseSimpleArray _loadout;
 
-  if (_loadout isEqualTo "") exitWith {
-    _unit setVariable ["acex_headless_loadout", getUnitLoadout _unit, true];
-  };
+      _unit setUnitLoadout _loadout;
 
-  _loadout = (_loadout splitString "'") select 0;
-  _loadout = parseSimpleArray _loadout;
+      _unit setVariable ["acex_headless_loadout", _loadout, _ids];
+    };
 
-  _unit setUnitLoadout _loadout;
+    private _insignia = getText (_cfg >> "apm_insignia");
 
-  _unit setVariable ["acex_headless_loadout", _loadout, true];
+    if (_insignia isNotEqualTo "") then {
+      [_unit, _insignia] call apm_fnc_setUnitInsignia;
+    };
 
-  private _insignia = getText (_cfg >> "apm_insignia");
-
-  if (_insignia isNotEqualTo "") then {
-    [_unit, _insignia] call apm_fnc_setUnitInsignia;
-  };
-
-  if (!isNil "GRLIB_save_key") then {
-    [{_this setUnitLoadout (_this getVariable "acex_headless_loadout")}, _unit, 5] call CBA_fnc_waitAndExecute;
+    _unit setVariable ["acex_headless_loadout", getUnitLoadout _unit, _ids];
   };
 }, true, nil, true] call CBA_fnc_addClassEventHandler;
 
-["AllVehicles", "InitPost", {
+["All", "InitPost", {
   params ["_vehicle"];
 
   if (!isNil {_vehicle getVariable "APM_save_object"}) then {
     private _code = _vehicle getVariable ["object_init", {}];
 
     if (_code isEqualType "") then {
-      _code = compile _code;
+      if (isNil _code) then {
+        _code = compile _code;
+      } else {
+        _code = missionNamespace getVariable _code;
+      };
     };
-
     _vehicle call _code;
   };
 }, true, ["Man"], true] call CBA_fnc_addClassEventHandler;
+
+["CAManBase", "InitPost", {
+  params ["_unit"];
+
+  if (local _unit && {!isPlayer _unit} && {!isNil "GRLIB_save_key"}) then {
+    private _cfg = configOf _unit;
+    private _ids = call apm_misc_fnc_getServerIds;
+
+    _unit setVariable ["acex_headless_loadout", getUnitLoadout _unit, _ids];
+
+    private _loadout = getText (_cfg >> "apm_loadout");
+
+    if (_loadout isNotEqualTo "") then {
+      _loadout = (_loadout splitString "'") select 0;
+      _loadout = parseSimpleArray _loadout;
+
+      _unit setUnitLoadout _loadout;
+
+      _unit setVariable ["acex_headless_loadout", _loadout, _ids];
+    };
+  };
+}, true, nil, true] call CBA_fnc_addClassEventHandler;
 
 if (isServer) then {
   ["APM_requestOwnership",

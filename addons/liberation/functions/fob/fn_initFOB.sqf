@@ -39,6 +39,7 @@ if (isServer) then {
 	APM_fobObjects = [];
 	publicVariable "APM_fobObjects";
 	APM_fobNames = ["Arbiter", "Spartan", "Arrowhead", "Titan", "Requiem", "Amsterdam", "Berlin", "Sentinel", "Bucca", "Eden", "Dragon", "Grizzly", "Sabre", "Falcon", "Sherman", "Magpie", "Steel", "Fate", "Cuba", "Havana", "New York", "Washington", "Bear", "Carbon", "Menace", "Phantom", "Hope", "Empire", "Beskar", "Sykes", "Thor", "Hellsing", "Lincoln", "Sierra", "Apache", "Hyrule", "Thunder", "Vanguard"];
+	APM_fobTypes = ["Patrol Base", "Camp", "Outpost", "FOB"];
 	APM_fobUsedNames = [];
 	APM_fobRange = 150;
 	publicVariable "APM_fobRange";

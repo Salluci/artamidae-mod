@@ -117,14 +117,18 @@ _action = ["Zeus_Budget", "Set Budget", "", {
 //Teleports
 private _apmTeleportMenu = ["APMTeleMenu", "Teleport To:", "res\ace_icons\portal_blue_ca.paa", {
 }, APM_ACE_base_condition, {
-	private _modules = ([] call BIS_fnc_getRespawnPositions) select {if (_x isEqualType objNull) then {alive _x} else {true}};;
+	private _modules = ([] call BIS_fnc_getRespawnPositions) select {
+		if (_x isEqualType objNull) then {
+			[alive _x && {!(_x isKindOf "LandVehicle")} && {!(_x isKindOf "Air")} && {!(_x isKindOf "Ship")}, alive _x] select (isNull objectParent ACE_Player)
+		} else {true}
+	};
 	private _actions = [];
 	private _code = {(_this select 2) call apm_missions_fnc_teleport};
 	{
 		private _id = format ["ACE_TP_%1", _x];
 		private _name = _x getVariable ["name", ""];
 		private _nearLocation = nearestLocations [position _x, ["Name", "NameCity", "NameCityCapital", "NameLocal"], 1000, _x];
-		if (typeOf _x isKindOf "Module_F") then
+		if (_x isKindOf "Module_F" || _name != "") then
 		{
 			if (count _nearLocation == 0) then
 			{
@@ -138,8 +142,7 @@ private _apmTeleportMenu = ["APMTeleMenu", "Teleport To:", "res\ace_icons\portal
 				_actions pushBack [_action, [], player];
 			};
 		} else {
-			private _type = getText (configFile >> "CfgVehicles" >>
-			typeOf _x >> "displayName");
+			private _type = getText (configOf _x >> "displayName");
 			if (count _nearLocation == 0) then
 			{
 				private _title = format ["%2 Grid: %1", mapGridPosition _x, _type];

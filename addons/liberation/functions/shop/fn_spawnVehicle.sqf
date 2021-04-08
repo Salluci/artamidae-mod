@@ -31,21 +31,14 @@ if (getNumber (_config >> "ace_dragging_canCarry") == 1) then {
 
 private _condition = {!(ACE_Player getVariable "ace_dragging_isCarrying")};
 
-if (_cat != 3) exitWith {
+if (_cat == 3) then {
 	clearMagazineCargoGlobal _vehicle;
 	clearItemCargoGlobal _vehicle;
 	clearWeaponCargoGlobal _vehicle;
 	clearBackpackCargoGlobal _vehicle;
-	[_condition, {_vehicle setDamage 0}] call CBA_fnc_waitUntilAndExecute;
-	_vehicle
 };
 
 
-private _open = {
-	_vehicle setDamage 0;
-	[] call APM_missions_fnc_openShop;
-};
-
-[_condition, _open] call CBA_fnc_waitUntilAndExecute;
+[_condition, {_vehicle setDamage 0}] call CBA_fnc_waitUntilAndExecute;
 
 _vehicle

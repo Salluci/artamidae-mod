@@ -81,18 +81,8 @@ minPlayerDistance = 400;
 allowFunctionsLog = 1;
 allowFunctionsRecompile = 1;
 
-disableChannels[] = {0,2};
+disableChannels[] = {0};
 disabledAI = 1;
-
-disableRandomization[] = {};
-forceRotorLibSimulation = 0;
-
-joinUnassigned = 1;
-skipLobby = 0;
-
-showMap = 1;
-
-unsafeCVL = 1;
 
 
 /*

@@ -23,7 +23,11 @@ switch true do {
      }, _target] call CBA_fnc_execNextFrame;
   };
   default {
-    private _pos = [_target, 5] call CBA_fnc_randPos;
-    vehicle player setPosATL _pos;
+    private _pos = [_target, 0, 25, boundingBox (vehicle player) select 2] call BIS_fnc_findSafePos;
+    if (count _pos == 2) exitWith {
+      _pos append [0];
+      vehicle player setPosATL _pos;
+    };
+    systemChat "No safe position to teleport found.";
   };
 };

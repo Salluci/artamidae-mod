@@ -26,24 +26,8 @@ nvg_state = 0;
 	params ["_dialog", "_name_box"];
 	while {!isNull _dialog} do
 	{
-		private _credits = missionNamespace getVariable ["APM_Budget", 0];
-		_credits = _credits toFixed 0;
-		_credits = _credits splitString "";
-		reverse _credits;
-		private _cnt = 0;
-		private _new_numb = [];
-		{
-			_cnt = _cnt + 1;
-			_new_numb pushBack _x;
-			if ((_cnt == 3) and (_forEachIndex != (count _credits -1))) then
-			{
-				_new_numb pushBack ",";
-				_cnt = 0;
-			};
-		} forEach _credits;
-		reverse _new_numb;
-		_new_numb = _new_numb joinString "";
-		_name_box ctrlSetText format ["Budget: %1 Credits", _new_numb];
+		private _credits = [APM_Budget] call apm_missions_fnc_displayPrettyNumber;
+		_name_box ctrlSetText format ["Budget: %1 Credits", _credits];
 		sleep 1;
 	};
 };

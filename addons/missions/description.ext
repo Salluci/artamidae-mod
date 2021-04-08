@@ -11,11 +11,11 @@ respawnonstart = -1;
 kickduplicate = 0;
 allowProfileGlasses = 0;
 briefingName = "APM Zeus";
-missionName ="APM Zeus";
+missionName = "APM Zeus";
 
 class Header
 {
-	gameType =  Zeus;			// Game type
+	gameType = Zeus;			// Game type
 	minPlayers =  1;			// minimum number of players the mission supports
 	maxPlayers = 100;			// maximum number of players the mission supports
 };

@@ -1,22 +1,5 @@
-//Prepare database
-private _diag = "extDB3" callExtension "9:RESET";
-diag_log "extDB3 reset for preprocess";
-diag_log _diag;
-
-switch true do {
-	case (isDedicated) : {
-		est_db = "extDB3" callExtension "9:ADD_DATABASE:DedicatedAPMNew";
-		if (parseSimpleArray est_db select 0 == 0) exitWith {endMission "DBfail"};
-		est_db_prot = "extDB3" callExtension "9:ADD_DATABASE_PROTOCOL:DedicatedAPMNew:SQL_CUSTOM:apm:sql_APM_dev.ini";
-		est_db_sql = "extDB3" callExtension "9:ADD_DATABASE_PROTOCOL:DedicatedAPMNew:SQL:SQL:NULL";
-	};
-	case (hasInterface) : {
-		est_db = "extDB3" callExtension "9:ADD_DATABASE:LocalAPMNew";
-		if (parseSimpleArray est_db select 0 == 0) exitWith {endMission "DBfail"};
-		est_db_prot = "extDB3" callExtension "9:ADD_DATABASE_PROTOCOL:LocalAPMNew:SQL_CUSTOM:apm:sql_APM_dev.ini";
-		est_db_sql = "extDB3" callExtension "9:ADD_DATABASE_PROTOCOL:LocalAPMNew:SQL:SQL:NULL";
-	};
-};
+//Setup InterceptDB
+APM_db = dbCreateConnection (["remotedb", "localdb"] select isDedicated);
 
 //Server mods variable for Admin Menu
 missionNamespace setVariable ["server_addons", cba_common_addons, true];
@@ -28,14 +11,38 @@ APM_isAliVE = !isNil "ALIVE_sys_logistics";
 
 //Persistence key (Change manually for campaigns)
 //Ex: APM_Key = "Ghost_OpRoot"
-//By default, key is map's classname _ server profile name
-
-APM_Key = format ["%1_%2", worldName, profileName];
+//By default, key is "Default"
+APM_Key = "Default";
 publicVariable "APM_Key";
 
-//Enable/Disable FOB System
-APM_useFobSystem = true;
-publicVariable "APM_useFobSystem";
+//EventHandlers
+["APM_RestartServer", {
+  params [["_admin", objNull]];
+
+  [_admin] call apm_missions_fnc_restartServer;
+}] call CBA_fnc_addEventHandler;
+
+["APM_banPlayer", {
+  params ["_admin", "_player"];
+
+  [_admin, _player] call apm_missions_fnc_banPlayer;
+}] call CBA_fnc_addEventHandler;
+
+["APM_PlayerJoined", {
+	params ["_player", "_jip"];
+
+	[{!local (_this select 0)}, {[_this select 0, _this select 1] call apm_missions_fnc_loadPlayer}, [_player, _jip], 5, {[_this select 0, _this select 1] call apm_missions_fnc_loadPlayer}] call CBA_fnc_waitUntilAndExecute;
+}] call CBA_fnc_addEventHandler;
+
+["APM_updateCerts", {
+	params ["_data"];
+	private _updateCertsQuery = dbPrepareQueryConfig ["updatePlayerCerts", _data];
+	APM_db dbExecuteAsync _updateCertsQuery;
+}] call CBA_fnc_addEventHandler;
+
+//TODO Enable/Disable FOB System
+/*APM_useFobSystem = true;
+publicVariable "APM_useFobSystem";*/
 
 //Handle Parameters
 APM_Debug_level = ["apm_debugger", 0] call bis_fnc_getParamValue;
@@ -58,14 +65,14 @@ if (["real_time", 0] call bis_fnc_getParamValue isEqualTo 1) then {
 if (["fps_marker", 1] call bis_fnc_getParamValue isEqualTo 1) then {
 	call apm_missions_fnc_fpsmarker;
 };
-if (["budget_reward", 0] call bis_fnc_getParamValue isEqualTo 1) then {
+if (["budget_reward", 1] call bis_fnc_getParamValue isEqualTo 1) then {
 	call apm_missions_fnc_budgetHandler;
 };
 private _param = ["save_interval", 15] call bis_fnc_getParamValue;
 if (_param isNotEqualTo 0) then {
 	[apm_missions_fnc_saveWorld, [_param], _param * 60] call CBA_fnc_waitAndExecute;
 };
-private _param = ["paycheck_timer", 0] call bis_fnc_getParamValue;
+private _param = ["paycheck_timer", 15] call bis_fnc_getParamValue;
 if (_param isNotEqualTo 0) then {
 	[apm_missions_fnc_paycheck, [_param], _param * 60] call CBA_fnc_waitAndExecute;
 };
@@ -92,7 +99,7 @@ addMissionEventHandler ["HandleDisconnect", {
 }];
 
 //Start Vehicle Shop
-[] spawn apm_missions_fnc_updateShop;
+call apm_missions_fnc_updateShop;
 
 //Scripting password
 APM_Serverpass = "peterbuilt12";
@@ -103,22 +110,5 @@ missionNamespace setVariable ["cTab_encryptionKey_guer", "i", true];
 //Start Zeus Chat
 call apm_missions_fnc_zeusChat;
 
-//EventHandlers
-
-["APM_RestartServer", {
-  params [["_admin", objNull]];
-
-  [_admin] call apm_missions_fnc_restartServer;
-}] call CBA_fnc_addEventHandler;
-
-["APM_banPlayer", {
-  params ["_admin", "_player"];
-
-  [_admin, _player] call apm_missions_fnc_banPlayer;
-}] call CBA_fnc_addEventHandler;
-
-["APM_PlayerJoined", {
-	params ["_player", "_jip"];
-
-	[{!local (_this select 0)}, {[_this select 0, _this select 1] call apm_missions_fnc_loadPlayer}, [_player, _jip], 10, {[_this select 0, _this select 1] call apm_missions_fnc_loadPlayer}] call CBA_fnc_waitUntilAndExecute;
-}] call CBA_fnc_addEventHandler;
+//Start client init events.
+missionNamespace setVariable ["APM_serverInit", true, true];

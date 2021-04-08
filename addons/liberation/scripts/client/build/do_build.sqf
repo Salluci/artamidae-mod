@@ -107,11 +107,10 @@ while { true } do {
             _vehicle enableSimulationGlobal false;
             _vehicle setVariable ["KP_liberation_preplaced", true, true];
 
-            _dist = 0.6 * (sizeOf _classname);
+            _dist = 0.6 * ((boundingBoxReal _vehicle) select 2);
             if (_dist < 3.5) then { _dist = 3.5 };
-            _dist = _dist + 1;
 
-            for [{_i=0}, {_i<5}, {_i=_i+1}] do {
+            for "_i" from 0 to 5 do {
                 _vehicle setObjectTextureGlobal [_i, '#(rgb,8,8,3)color(0,1,0,0.8)'];
             };
 
@@ -171,7 +170,7 @@ while { true } do {
                 private _remove_objects = [];
                 {
                     private _typeOfX = typeOf _x;
-                    if ((_x isKindOf "Animal") || ((toLower (typeOf _vehicle)) in KPLIB_crates) || (_typeOfX isKindOf "CAManBase") || (isPlayer _x) || (_x == _vehicle) || ((toLower (typeOf _vehicle)) in KPLIB_b_static_classes) || isObjectHidden _x) then {
+                    if (_x == _vehicle || {_x isKindOf "Man"} || {toLower _typeOfX in KPLIB_crates} || {toLower _typeOfX in KPLIB_b_static_classes} || {isObjectHidden _x} || {_x isKindOf "Sign_Sphere100cm_F"}) then {
                         _remove_objects pushback _x;
                     };
                 } foreach _near_objects;
@@ -179,7 +178,7 @@ while { true } do {
                 private _remove_objects_25 = [];
                 {
                     private _typeOfX = typeOf _x;
-                    if ((_x isKindOf "Animal") || ((toLower (typeOf _vehicle)) in KPLIB_crates) || (_typeOfX isKindOf "CAManBase") || (isPlayer _x) || (_x == _vehicle) || ((toLower (typeOf _vehicle)) in KPLIB_b_static_classes) || isObjectHidden _x) then {
+                    if (_x == _vehicle || {_x isKindOf "Man"} || {toLower _typeOfX in KPLIB_crates} || {toLower _typeOfX in KPLIB_b_static_classes} || {isObjectHidden _x} || {_x isKindOf "Sign_Sphere100cm_F"}) then {
                         _remove_objects_25 pushback _x;
                     };
                 } foreach _near_objects_25;

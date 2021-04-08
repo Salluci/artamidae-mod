@@ -18,8 +18,7 @@
 params [["_player", player, [player]], ["_target", objNull, [objNull]]];
 
 private _result = ["Are you sure you wish to knock this person out?", "Knock out?", "Yes", "No"] call BIS_fnc_guiMessage;
-if (!_result) exitWith
-{};
+if (!_result) exitWith {};
 _player playActionNow "PutDown";
 [_target, "BRIDGE_PunchSound"] remoteExec ["say3D", -2, false];
 private _time = [apm_knockout_time_AI, apm_knockout_time_player] select (isPlayer _target);

@@ -48,10 +48,13 @@ private _index = APM_fobList pushBack _data;
 _center setVariable ["APM_fobIndex", _index, true];
 
 createMarkerLocal [_markerName, _pos];
-private _type = ["Patrol Base", "Camp", "Outpost", "FOB"] select _level;
+private _type = APM_fobTypes select _level;
 _name = _type + " " + _name;
+_center setVariable ["APM_fobDisplayName", _name, true];
 if (_hasRespawn) then {
-  [west, "Land_ClutterCutter_small_F" createVehicle getPosATL (_center), _name] call BIS_fnc_addRespawnPosition;
+  private _point = "Land_ClutterCutter_small_F" createVehicle getPosATL _center;
+  _point setVariable ["Name", _name, true];
+  [west, _point, _name] call BIS_fnc_addRespawnPosition;
   _center setVariable ["apm_fobHasRespawn", true, true];
 };
 _markerName setMarkerShapeLocal "ICON";

@@ -2,3 +2,12 @@
 addons/missions/mission.sqm
 *.pbo
 *.bat
+addons/missions_legacy
+addons/missions_legacy/
+addons/missions_legacy/*
+PREFIX
+addons/missions_newDB
+addons/missions_newDB/
+addons/missions_newDB/*
+addons/runtimes
+*.exe

@@ -42,6 +42,13 @@ class Params
 		texts[] = {"Off", "On"};
 		default = 0;
 	};
+	class persistent_markers
+	{
+		title = "Save/Load Player Map Markers";
+		values[] = {0, 1};
+		texts[] = {"Off", "On"};
+		default = 1;
+	};
 	class budget_reward
 	{
 		title = "Budget Reward for Kills";
@@ -54,6 +61,6 @@ class Params
 		title = "Paycheck Timer";
 		values[] = {0, 15, 30, 60};
 		texts[] = {"Off", "15min", "30min", "60min"};
-		default = 15;
+		default = 30;
 	};
 };

@@ -30,7 +30,7 @@ class cfgVehicles
 			class APM_knockout
 			{
 				displayName = "Punch";
-				condition = "[APM_canPunch_AI, APM_canPunch_Player] select (isPlayer _target)";
+				condition = "alive _target && {[APM_canPunch_AI, APM_canPunch_Player] select (isPlayer _target)}";
 				icon = "x\APM\addons\Misc\Data\UI\knock.paa";
 				statement = "[_player, _target] spawn apm_knockout_fnc_punchHead";
 				distance = 4.5;
@@ -42,7 +42,7 @@ class cfgVehicles
 				{
 					displayName = "Punch Passenger";
 					icon = "x\APM\addons\Misc\Data\UI\knock.paa";
-					condition = "(isNull (objectParent _target)) && {[APM_canPunch_AI, APM_canPunch_Player] select (isPlayer _target)}";
+					condition = "alive _target && {!isNull (objectParent _target)} && {[APM_canPunch_AI, APM_canPunch_Player] select (isPlayer _target)}";
 					statement = "[_player, _target] spawn apm_knockout_fnc_punchHead";
 				};
 			};

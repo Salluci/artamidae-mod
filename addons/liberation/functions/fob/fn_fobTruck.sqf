@@ -35,7 +35,7 @@ private _upgradeCond = {
 private _upgradeAction = ["APM_upgradeFOB", "Upgrade FOB", "", {
 	_target call apm_missions_fnc_currentFOB params ["_center", "_level", "", "_supply"];
 	private _cost = [5000, 7500, 10000] select _level;
-	private _hint = "Upgrade FOB to Level " + str (_level + 1) + "? This will cost " + str _cost + " supplies. New total: " + str (_suppy - _cost);
+	private _hint = "Upgrade FOB to Level " + str (_level + 1) + "? This will cost " + str _cost + " supplies. New total: " + str (_supply - _cost);
 	[_hint, _target, _center, _level, _cost] spawn {
 		private _result = [_this select 0, "Upgrade FOB", "Confirm", "Cancel"] call BIS_fnc_guiMessage;
 		if (_result) then {

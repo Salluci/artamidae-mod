@@ -103,15 +103,16 @@ _bn_commit ctrlAddEventHandler ["ButtonClick", {
 	private _crewman = lbCurSel _lb_crew;
 	private _eod = lbCurSel _lb_eod;
 
-	private _plugin_args = format ["0:apm:updatePlayerCerts:%1:%2:%3:%4:%5:%6:%7:%8", _n_medic, _n_eng, _fixed, _rotor, _crewman, _eod, _n_rank, _uid];
-	["extDB3", _plugin_args] remoteExec ["callExtension", 2];
+	private _data = [_n_medic, _n_eng, _fixed, _rotor, _crewman, _eod, _n_rank, _uid];
+	["APM_updateCerts", [_data]] call CBA_fnc_serverEvent;
 
 	//Reset Dialog
 	_display closeDisplay 0;
 
-	hint format ["%1 certs have been updated.", name apm_target];
+	systemChat format ["%1's certs have been updated.", name apm_target];
 	[apm_missions_fnc_adminMenu] call cba_fnc_execNextFrame;
 }];
+
 _bn_temp ctrlAddEventHandler ["ButtonClick", {
 	_display = findDisplay 33564;
 	_lb_medic = _display displayCtrl 151564;
@@ -143,6 +144,6 @@ _bn_temp ctrlAddEventHandler ["ButtonClick", {
 	//Reset Dialog
 	_display closeDisplay 0;
 
-	hint format ["%1 certs have temporarily assigned", name apm_target];
+	systemChat format ["%1's certs have been temporarily assigned.", name apm_target];
 	[apm_missions_fnc_adminMenu] call cba_fnc_execNextFrame;
 }];

@@ -24,7 +24,7 @@ class R3F_LOG_dlg_liste_objects
 	name = "R3F_LOG_dlg_liste_objects";
 	movingEnable = false;
 
-	onUnload = "call compile preprocessFile ""r3fAdvLog\R3F_LOG\creation_factory\store_dlg_list_objects.sqf"";";
+	onUnload = "call compileScript [""r3fAdvLog\R3F_LOG\creation_factory\store_dlg_list_objects.sqf""];";
 
 	controlsBackground[] = {R3F_LOG_dlg_LO_titre_fond};
 	objects[] = {};

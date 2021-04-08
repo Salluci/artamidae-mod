@@ -55,22 +55,8 @@ nvg_state = 0;
 [_display, _time_box, _name_box] spawn {
 	params ["_dialog", "_time_box", "_name_box"];
 	while {!isNull _dialog} do {
-		_credits = (ACE_Player call apm_missions_fnc_currentFOB) select 3;
-		_credits = _credits toFixed 0;
-		_credits = _credits splitString "";
-		reverse _credits;
-		_cnt = 0;
-		_new_numb = [];
-		{
-		_cnt = _cnt + 1;
-		_new_numb pushBack _x;
-		if ((_cnt == 3) and (_forEachIndex != (count _credits -1))) then {
-		_new_numb pushBack ",";
-		_cnt = 0;
-		};
-		} forEach _credits;
-		reverse _new_numb;
-		_new_numb = _new_numb joinString "";
+		private _credits = (ACE_Player call apm_missions_fnc_currentFOB) select 3;
+		_credits = _credits call apm_missions_fnc_displayPrettyNumber;
 		_name = name player;
 		date params ["_year", "_month", "_day", "_hour", "_minute"];
 		switch _month do {
@@ -135,7 +121,6 @@ nvg_state = 0;
 		if (_minute < 10) then { _minute = "0" + (str _minute)};
 		_time_box ctrlSetText format ["%1:%2", _hour, _minute];
 		sleep 1;
-
 	};
 };
 

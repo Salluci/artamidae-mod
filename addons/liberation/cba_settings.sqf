@@ -1,4 +1,4 @@
-// /Artamidae Mod
+//Artamidae Mod
 force ace_medical_bloodPressureThresholdCoefficient = 0.7;
 force ace_medical_bloodVolumeThreshold = 4.2;
 force ace_medical_const_bloodlossknockoutthreshold = 1;
@@ -641,7 +641,7 @@ force VCM_AISNIPERS = false;
 force VCM_AISUPPRESS = true;
 force VCM_ARTYDELAY = 45;
 force VCM_ARTYENABLE = true;
-force VCM_ARTYSIDES = [WEST,EAST,GUER];
+//force VCM_ARTYSIDES = [WEST,EAST,GUER];
 force VCM_CARGOCHNG = true;
 force VCM_ClassSteal = true;
 force VCM_Debug = false;
@@ -657,7 +657,7 @@ force VCM_MINEENABLED = false;
 force Vcm_PlayerAISkills = true;
 force VCM_RAGDOLL = false;
 force VCM_RAGDOLLCHC = 100;
-force VCM_SIDEENABLED = [WEST,EAST,GUER];
+//force VCM_SIDEENABLED = [WEST,EAST,GUER];
 force VCM_SKILLCHANGE = false;
 force Vcm_SmokeGrenadeChance = 0;
 force VCM_STATICARMT = 300;
