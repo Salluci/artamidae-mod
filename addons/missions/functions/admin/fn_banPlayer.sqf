@@ -1,5 +1,7 @@
 params ["_admin", "_target"];
 
+if (!isServer) exitWith {};
+
 private _uid = getPlayerUID _target;
 private _name = name _target;
 private _result = APM_Serverpass serverCommand format ["#kick %1", _name];

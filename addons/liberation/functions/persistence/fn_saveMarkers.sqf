@@ -1,3 +1,5 @@
+if (!isServer) exitWith {};
+
 private _markersArray = [[],[]];
 private _lineMarkers = APM_lineMarkers;
 private _iconMarkers = APM_iconMarkers;

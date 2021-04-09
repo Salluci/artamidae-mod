@@ -1,5 +1,9 @@
 params [["_minutes", 15, [0]]];
 
+if (!isServer) exitWith {};
+
+private _result = false;
+
 //FOB Stuff
 private _fob = format ["%1_APM_worldSave_fob", APM_Key];
 profileNamespace setVariable [_fob, APM_fobList];
@@ -30,12 +34,13 @@ if (APM_isLiberation) then {
 };
 
 saveProfileNamespace;
+_result = true;
 
 //Save all player data
 {
-	[_x] call apm_missions_fnc_savePlayer;
+	[_x, getPlayerUID _x] call apm_missions_fnc_savePlayer;
 } forEach allPlayers - [HC1, HC2, HC3];
 
 [apm_missions_fnc_saveWorld, [_minutes], _minutes * 60] call CBA_fnc_waitAndExecute;
 
-true
+_result

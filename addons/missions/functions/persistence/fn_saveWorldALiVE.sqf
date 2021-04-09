@@ -1,6 +1,8 @@
 private _uid = "";
 private _id = "";
 
+if (!isServer) exitWith {};
+
 if !(isNil "ALiVE_sys_data") then {
   ["ALiVE SYS DATA PNS Autosave - Server Data OPD"] call ALIVE_fnc_dump;
   [_id, "__SERVER__", _uid] call ALIVE_fnc_data_onPlayerDisconnected;

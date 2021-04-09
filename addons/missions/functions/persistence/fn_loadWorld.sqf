@@ -1,3 +1,5 @@
+if (!isServer) exitWith {};
+
 APM_Budget = profileNamespace getVariable [format ["APM_Budget_%1", APM_Key], 0];
 missionNamespace setVariable ["APM_Budget", APM_Budget, true];
 diag_log format ["APM: Budget loaded, $%1", APM_Budget];

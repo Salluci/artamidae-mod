@@ -10,7 +10,9 @@ params [
   ["_customs","[[],[]]",[""]],
   ["_supply",0,[0]],
   ["_medicalVehicle", false, [false]],
-  ["_aceFuel", -1, [0]]
+  ["_aceFuel", -1, [0]],
+  ["_ammo", [], [[]]],
+  ["_inventory", [], [[]]]
 ];
 _damage params ["_overall", "_hitpoints"];
 _hitpoints params ["_hitpoints", "", "_amount"];
@@ -40,7 +42,7 @@ _object setDamage _overall;
 
 _object setFuel _fuel;
 
-if (_customs isNotEqualTo "[[],[]]") then { //TODO look at how this handles with no customization
+if (_customs isNotEqualTo "[[],[]]") then {
   _customs = parseSimpleArray _customs;
   [_object, _customs select 0, _customs select 1] call BIS_fnc_initVehicle;
 };
@@ -54,8 +56,33 @@ if (_medicalVehicle) then {
 if (_aceFuel != -1) then {
   [_object, _aceFuel] call call ace_refuel_fnc_setFuel;
 };
+if (_ammo isNotEqualTo []) then {
+  _object setVehicleAmmo 0;
+  {
+  	_object addMagazineTurret _x;
+  } foreach _ammo;
+};
 
 clearMagazineCargoGlobal _object;
 clearItemCargoGlobal _object;
 clearWeaponCargoGlobal _object;
 clearBackpackCargoGlobal _object;
+
+if (_inventory isNotEqualTo []) then {
+  _inventory params ["_weapons", "_magazines", "_items", "_backpacks"];
+  {
+    _object addWeaponWithAttachmentsCargoGlobal [_x, 1];
+  } forEach _weapons;
+  {
+    _x params ["_type", "_ammo"];
+    _object addMagazineAmmoCargo [_type, 1, _ammo];
+  } forEach _magazines;
+  {
+    _object addItemCargoGlobal [_x, 1];
+  } forEach _items;
+  {
+    _object addBackpackCargoGlobal [_x, 1];
+  } forEach _backpacks;
+};
+
+_object

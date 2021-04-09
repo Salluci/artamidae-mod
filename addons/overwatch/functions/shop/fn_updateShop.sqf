@@ -1,6 +1,8 @@
 //Call Database
 //TODO OPTRE shit.
 
+if (!isServer) exitWith {};
+
 _vehShopQuery = dbPrepareQueryConfig "getVehShop";
 private _resAsyncVeh = APM_db dbExecuteAsync _vehShopQuery;
 _resAsyncVeh dbBindCallback [{
