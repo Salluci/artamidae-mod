@@ -8,11 +8,6 @@ _vehicle setDir (_pos select 1);
 private _config = configOf _vehicle;
 
 //code check
-
-if (_code isEqualType "") then {
-	_code = compile _code;
-};
-
 _vehicle setVariable ["object_init", _code, true];
 
 //Add flag to save vehicle

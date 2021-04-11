@@ -4,7 +4,7 @@ if (!isServer) exitWith {false};
 
 private _headlessClients = entities "HeadlessClient_F";
 private _humanPlayers = allPlayers - _headlessClients;
-private _increase = (count _humanPlayers) * 2500;
+private _increase = (count _humanPlayers) * 1000;
 
 
 APM_Budget = ceil (APM_Budget + _increase);

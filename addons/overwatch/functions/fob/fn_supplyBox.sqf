@@ -16,3 +16,16 @@ _action = ["APM_fobUnpackBox", "Unpack Supplies", "res\ace_icons\unpack_box.paa"
 	_target setVariable ["APM_fobSupply", 0, true];
 }, _cond] call ace_interact_menu_fnc_createAction;
 [_box, 0, ["ACE_MainActions"], _action] call ace_interact_menu_fnc_addActiontoObject;
+
+private _action = ["apm_loadContainer", "Load Container", "", {
+  private _truck = nearestObjects [getPosATL _target, ["Truck_01_flatbed_base_F"], 20, true] select {_x canVehicleCargo _target isEqualTo [true, true]};
+  if (_truck isEqualTo []) exitWith {systemChat "No compatible vehicle nearby!"};
+  _truck = _truck select 0;
+  _truck setVehicleCargo _target;
+}, {isNull (isVehicleCargo _target)}] call ace_interact_menu_fnc_createAction;
+[_box, 0, ["ACE_MainActions"], _action] call ace_interact_menu_fnc_addActionToObject;
+
+_action = ["apm_unloadedContainer", "Unload Container", "", {
+  objNull setVehicleCargo _target;
+}, {!isNull (isVehicleCargo _target)}] call ace_interact_menu_fnc_createAction;
+[_box, 0, ["ACE_MainActions"], _action] call ace_interact_menu_fnc_addActionToObject;

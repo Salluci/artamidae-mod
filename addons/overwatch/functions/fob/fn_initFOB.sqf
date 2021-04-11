@@ -26,27 +26,31 @@ if (hasInterface) then {
 	}];
 
 	//Vehicle shop at FOB
-	private _action = ["apm_openShopFOB", "Open Vehicle Shop (FOB)", "res\ace_icons\vic_shop_ca.paa", {
+	private _actionShop = ["apm_openShopFOB", "Open Vehicle Shop (FOB)", "res\ace_icons\vic_shop_ca.paa", {
 		[] call APM_missions_fnc_openShop;
 	}, {(ACE_Player call apm_missions_fnc_currentFOB) select 1 >= 3}] call ace_interact_menu_fnc_createAction;
+	private _actionBuild = ["apm_openMenuFOB", "Open Build Menu (FOB)", "", {
+		call apm_missions_fnc_menuFOB;
+	}, {(ACE_Player call apm_missions_fnc_currentFOB) select 1 >= 1}] call ace_interact_menu_fnc_createAction;
 
-	[{alive player && {local player}}, {[player, 1, ["ACE_SelfActions"], _this] call ace_interact_menu_fnc_addActionToObject;}, _action] call CBA_fnc_waitUntilAndExecute;
+	[{alive player && {local player}}, {
+		[player, 1, ["ACE_SelfActions"], _this select 0] call ace_interact_menu_fnc_addActionToObject;
+		[player, 1, ["ACE_SelfActions"], _this select 1] call ace_interact_menu_fnc_addActionToObject;
+	}, [_actionShop, _actionBuild]] call CBA_fnc_waitUntilAndExecute;
 };
 
 if (isServer) then {
 
 	APM_fobList = [];
-	APM_fobObjects = [];
-	publicVariable "APM_fobObjects";
 	APM_fobNames = ["Arbiter", "Spartan", "Arrowhead", "Titan", "Requiem", "Amsterdam", "Berlin", "Sentinel", "Bucca", "Eden", "Dragon", "Grizzly", "Sabre", "Falcon", "Sherman", "Magpie", "Steel", "Fate", "Cuba", "Havana", "New York", "Washington", "Bear", "Carbon", "Menace", "Phantom", "Hope", "Empire", "Beskar", "Sykes", "Thor", "Hellsing", "Lincoln", "Sierra", "Apache", "Hyrule", "Thunder", "Vanguard"];
 	APM_fobTypes = ["Patrol Base", "Camp", "Outpost", "FOB"];
 	APM_fobUsedNames = [];
-	APM_fobRange = 150;
-	publicVariable "APM_fobRange";
-	APM_fobLargestSize = 150;
-	publicVariable "APM_fobLargestSize";
-	APM_fobMarkers = [];
-	publicVariable "APM_fobMarkers";
+
+	missionNamespace setVariable ["APM_fobObjects", [], true];
+	missionNamespace setVariable ["APM_fobRange", 150, true];
+	missionNamespace setVariable ["APM_fobLargestSize", 150, true];
+	missionNamespace setVariable ["APM_fobMarkers", [], true];
+
 
  	["APM_createFOB", {
 		params ["_pos", ["_size", APM_fobRange], ["_name", ""], ["_supplies", 0], ["_level", 0], ["_hasRespawn", false]];
@@ -61,8 +65,11 @@ if (isServer) then {
 	}] call CBA_fnc_addEventHandler;
 
 	["APM_deleteFOB", {
-		params ["_name"];
+		params ["_name", "_truck"];
 
+		private _supplyTruck = _truck getVariable ["APM_fobSupply", 0];
+		private _supplyFob = _truck call apm_missions_fnc_currentFob select 3;
+		_truck setVariable ["APM_fobSupply", _supplyTruck + _supplyFob, true];
 		_name call apm_missions_fnc_deleteFOB;
 	}] call CBA_fnc_addEventHandler;
 

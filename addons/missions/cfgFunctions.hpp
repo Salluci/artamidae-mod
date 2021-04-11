@@ -31,6 +31,7 @@ class apm_missions
     class refreshListFOB {};
     class saveFOB {};
     class supplyBox {};
+    class fobContainer {};
   };
   class shop
   {
@@ -73,5 +74,6 @@ class apm_missions
     class budgetHandler {};
     class paycheck {};
     class displayPrettyNumber {};
+    class addToVehicleShop {};
   };
 };

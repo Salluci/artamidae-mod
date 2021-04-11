@@ -1,6 +1,6 @@
 params [["_minutes", 15, [0]]];
 
-if (!isServer) exitWith {};
+if (!isServer) exitWith {false};
 
 private _result = false;
 

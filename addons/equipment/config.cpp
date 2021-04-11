@@ -91,25 +91,25 @@ class cfgVehicles
 	{
 	  author = "LinkIsParking";
 	  displayName = "[VSM] APM (Crye - Tan Pants)";
-	  hiddenSelectionsTextures[] = {"x\APM\addons\Equipment\Data\apm_odtan_co.paa"};
-	  hiddenSelectionsMaterials[] = {"VSM_ProjectHonor\Data\VSM_ARD.RVMAT"};
+	  hiddenSelectionsTextures[] = {"x\APM\addons\Equipment\Data\apm_odtan_co"};
+	  hiddenSelectionsMaterials[] = {"VSM_ProjectHonor\Data\VSM_ARD"};
 	};
 	class B_APMMilBlack_soldier_F: VSM_OGA_Crye_Grey_Uniform
 	{
 	  displayName = "[VSM] APM (Crye - Black Pants)";
-	  hiddenSelectionsTextures[] = {"x\APM\addons\Equipment\Data\apm_odblack_co.paa"};
-	  hiddenSelectionsMaterials[] = {"VSM_ProjectHonor\Data\VSM_ARD.RVMAT"};
+	  hiddenSelectionsTextures[] = {"x\APM\addons\Equipment\Data\apm_odblack_co"};
+	  hiddenSelectionsMaterials[] = {"VSM_ProjectHonor\Data\VSM_ARD"};
 	};
 	class B_APMMilTan_soldier_SS_F: VSM_OGA_Crye_SS_Grey_Uniform
 	{
 	  author = "LinkIsParking";
 	  displayName = "[VSM] APM (Crye SS - Tan Pants)";
-	  hiddenSelectionsTextures[] = {"x\APM\addons\Equipment\Data\apm_odtan_co.paa"};
+	  hiddenSelectionsTextures[] = {"x\APM\addons\Equipment\Data\apm_odtan_co"};
 	};
 	class B_APMMilBlack_soldier_SS_F: VSM_OGA_Crye_SS_Grey_Uniform
 	{
 	  displayName = "[VSM] APM (Crye SS - Black Pants)";
-	  hiddenSelectionsTextures[] = {"x\APM\addons\Equipment\Data\apm_odblack_co.paa"};
+	  hiddenSelectionsTextures[] = {"x\APM\addons\Equipment\Data\apm_odblack_co"};
 	};
 };
 class cfgMagazines
@@ -117,7 +117,7 @@ class cfgMagazines
 	class CA_Magazine;
 	class 7Rnd_408_Mag: CA_Magazine
 	{
-		picture="x\APM\addons\equipment\Data\ui\icon_mag_408.paa";
+		picture="x\APM\addons\equipment\Data\ui\icon_mag_408";
 	};
 };
 class cfgGlasses

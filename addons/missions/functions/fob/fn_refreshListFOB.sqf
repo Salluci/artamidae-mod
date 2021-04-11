@@ -19,18 +19,17 @@ _categories sort true;
 
 {
 	_x params ["_classname", "_displayname", "_price", "_required", "_code", "_tooltip", ["_cat", "Misc", [""]]];
-	if (_required <= _level) then {
-		if (_displayname == "") then {
-			_displayname = getText (configFile >> "CfgVehicles" >> _classname >> "displayname");
-		};
-		_price_str =":   " + (_price toFixed 0) + " Su";
-		_displayname = _displayname + _price_str;
-		_cat_belong = _categories find _cat;
-		_created_index = _tv_list tvAdd [[_cat_belong], _displayname];
-		_tv_list tvSetData [[_cat_belong, _created_index], str _x];
-		_tv_list tvSetTooltip [[_cat_belong, _created_index], _tooltip];
+	if (_required > _level) then {continue};
+	if (!isClass (configFile >> "CfgVehicles" >> _classname)) then {continue};
+	if (_displayname == "") then {
+		_displayname = getText (configFile >> "CfgVehicles" >> _classname >> "displayname");
 	};
-
+	_price_str =":   " + (_price call apm_missions_fnc_displayPrettyNumber) + " Supplies";
+	_displayname = _displayname + _price_str;
+	_cat_belong = _categories find _cat;
+	_created_index = _tv_list tvAdd [[_cat_belong], _displayname];
+	_tv_list tvSetData [[_cat_belong, _created_index], str _x];
+	_tv_list tvSetTooltip [[_cat_belong, _created_index], _tooltip];
 } forEach APM_fob_shop;
 
 {

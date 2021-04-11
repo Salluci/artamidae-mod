@@ -1,4 +1,5 @@
 #include "dialogs\shop_laptop.hpp"
+#include "dialogs\shop_fob.hpp"
 #include "dialogs\APM_Admin_Panel.hpp"
 #include "dialogs\APM_Admin_Player.hpp"
 #include "..\ui\defines.hpp"

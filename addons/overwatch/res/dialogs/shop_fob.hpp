@@ -24,10 +24,10 @@ class laptop_fob_shop
 			w = safeZoneW * 0.10881406;
 			h = safeZoneH * 0.02213542;
 			style = 0;
-			text = "Confirm Purchase";
+			text = "";
 			colorBackground[] = {0,0,0,0};
 			colorText[] = {1,1,1,1};
-			font = "TahomaB";
+			font = "RobotoCondensed";
 			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.7);
 
 		};
@@ -43,7 +43,7 @@ class laptop_fob_shop
 			text = "Back";
 			colorBackground[] = {0,0,0,0};
 			colorText[] = {1,1,1,1};
-			font = "TahomaB";
+			font = "RobotoCondensed";
 			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.7);
 
 		};
@@ -59,6 +59,7 @@ class laptop_fob_shop
 			colorBackground[] = {0,0,0,0};
 			colorBackgroundActive[] = {0,0,0,0};
 			text = "";
+			font = "RobotoCondensed";
 			tooltip = "Click to confirm purchase";
 
 		};
@@ -73,7 +74,7 @@ class laptop_fob_shop
 			colorFocused[] = {0,0,0,0};
 			colorBackground[] = {0,0,0,0};
 			colorBackgroundActive[] = {0,0,0,0};
-			text = "Back";
+			text = "";
 			action = "closeDialog 6392";
 			tooltip = "Click to Cancel";
 

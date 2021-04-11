@@ -28,7 +28,7 @@ private _count = count (allPlayers - [HC1, HC2, HC3]);
 	[_x, getPlayerUID _x] call apm_missions_fnc_savePlayer;
 	private _hint = format ["%1: Data Saved.", name _x];
 	_hint remoteExec ["systemChat", 0];
-	if (_forEachIndex == (_count -1)) then {breakWith APM_restartDone = true};
+	if (_forEachIndex == (_count -1)) then {APM_restartDone = true; breakWith true};
 } forEach allPlayers - [HC1, HC2, HC3];
 
 //Restart server

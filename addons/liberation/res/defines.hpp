@@ -39,7 +39,7 @@ class name_box
 	w = safeZoneW*0.3726208;
 	h = safeZoneH*0.02213542;
 	style = 0;
-	text = "Name : Credits";
+	text = "Name: Credits";
 	font = "RobotoCondensed";
 	colorBackground[] = {0.5294,0.6118,0.9451,0};
 	colorText[] = {1,1,1,1};
@@ -55,7 +55,7 @@ class time_box
 	w = safeZoneW*0.3726208;
 	h = safeZoneH*0.02213542;
 	style = 0;
-	text = "00:00";
+	text = "";
 	font = "RobotoCondensed";
 	colorBackground[] = {0.5294,0.6118,0.9451,0};
 	colorText[] = {1,1,1,1};

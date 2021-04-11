@@ -2,12 +2,17 @@ params [["_truck", objNull]];
 
 if (isNull _truck) exitWith {false};
 
+if (isNil {_truck getVariable "APM_fobSupply"}) then {
+	_truck setVariable ["APM_fobSupply", 5000, true];
+};
+
 private _cond = {
 	alive _target && {(_target call apm_missions_fnc_currentFOB) select 1 == -1} && {!(call APM_ACE_base_condition)}
 };
 
 private _action = ["APM_createFOB", "Create FOB Here", "", {
-	["APM_createFOB", [getPosATL _target, APM_fobRange, "", 5000, 0, false]] call CBA_fnc_serverEvent;
+	["APM_createFOB", [getPosATL _target, APM_fobRange, "", (_target getVariable ["APM_fobSupply", 0]), 0, false]] call CBA_fnc_serverEvent;
+	_target setVariable ["APM_fobSupply", 0, true];
 }, _cond] call ace_interact_menu_fnc_createAction;
 [_truck, 0, ["ACE_MainActions"], _action] call ace_interact_menu_fnc_addActionToObject;
 
@@ -15,27 +20,32 @@ _cond = {
 	alive _target && {(_target call apm_missions_fnc_currentFOB) select 1 >= 0}
 };
 
-_action = ["APM_deleteFOB", "Delete This FOB", "", {
-	["APM_deleteFOB", [(_target call apm_missions_fnc_currentFOB) select 2]] call CBA_fnc_serverEvent;
+_action = ["APM_deleteFOB", "Package this FOB", "", {
+	[_target] spawn {
+		private _result = ["This will remove all upgrades. Any remaining supplies will be added back to this object.", "Package FOB", "Confirm", "Cancel"] call BIS_fnc_guiMessage;
+		if (_result) then {
+			["APM_deleteFOB", [(_this select 0 call apm_missions_fnc_currentFOB) select 2, _this select 0]] call CBA_fnc_serverEvent;
+		};
+	};
 }, _cond] call ace_interact_menu_fnc_createAction;
 [_truck, 0, ["ACE_MainActions"], _action] call ace_interact_menu_fnc_addActionToObject;
 
-private _build_action = ["APM_fobBuild", "Open FOB Menu", "", {
-	_this call apm_missions_fnc_menuFOB;
+private _build_action = ["APM_fobBuild", "Open Build Menu", "", {
+	call apm_missions_fnc_menuFOB;
 }, _cond] call ace_interact_menu_fnc_createAction;
 [_this, 0, ["ACE_MainActions"], _build_action] call ace_interact_menu_fnc_addActionToObject;
 
 private _upgradeCond = {
 	_target call apm_missions_fnc_currentFOB params ["", "_level", "", "_supply"];
-	if (_level == -1 || {!alive _target}) exitWith {false};
-	private _cost = [5000, 7500, 10000, 10000] select _level;
+	if (_level == -1 || {!alive _target} || _level >= 3) exitWith {false};
+	private _cost = [5000, 7500, 10000] select _level;
 
-	_supply >= _cost && {_level < 3} && {0 <= _level}
+	_supply >= _cost
 };
 private _upgradeAction = ["APM_upgradeFOB", "Upgrade FOB", "", {
 	_target call apm_missions_fnc_currentFOB params ["_center", "_level", "", "_supply"];
 	private _cost = [5000, 7500, 10000] select _level;
-	private _hint = "Upgrade FOB to Level " + str (_level + 1) + "? This will cost " + str _cost + " supplies. New total: " + str (_supply - _cost);
+	private _hint = "Upgrade FOB to Level " + str (_level + 1) + "? This will cost " + str _cost + " supplies. New total: " + str (_supply - _cost) + " supplies.";
 	[_hint, _target, _center, _level, _cost] spawn {
 		private _result = [_this select 0, "Upgrade FOB", "Confirm", "Cancel"] call BIS_fnc_guiMessage;
 		if (_result) then {
@@ -70,7 +80,6 @@ private _repeat_action = ["fob_repeat_build", "Repeat Build: ", "", {
 
 }, _repeat_cond, nil, nil, nil, nil, nil, _repeat_mod] call ace_interact_menu_fnc_createAction;
 
-//[[_this, 0, ["ACE_MainActions"], _repeat_action], ace_interact_menu_fnc_addActionToObject] remoteExec ["call", 0, true];
 [_this, 0, ["ACE_MainActions"], _repeat_action] call ace_interact_menu_fnc_addActionToObject;
 
 //FOB Save/Load options
