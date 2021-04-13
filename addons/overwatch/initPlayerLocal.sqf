@@ -38,6 +38,22 @@ APM_idCallBack = ["APM_PlayerCallBack", {
     endMission "banned";
   };
 
+  if (_rank > 0 && {"RemoveStamina_ACE3" in cba_common_addons || {"RemoveStamina" in cba_common_addons}}) exitWith {
+    endMission "stamina";
+  };
+
+  if (_rank > 0 && {"ArmaZeusCache" in cba_common_addons}) exitWith {
+    endMission "ZeusCache";
+  };
+
+  if (_rank > 0 && {"achilles_functions_f_achilles" in cba_common_addons}) exitWith {
+    endMission "Achilles";
+  };
+
+  if (_rank > 0 && {"dzn_ZeusSearchPatch" in cba_common_addons}) exitWith {
+    endMission "ZeusSearch";
+  };
+
   //Zeus Kick
   if ((player in [Zeus_Slot_1, Zeus_Slot_2, Zeus_Slot_3]) && (!_isZeus)) exitWith {
     endMission "Zeus";

@@ -14,7 +14,7 @@ private _c_rotor = [0,1] select (apm_target getVariable ["APM_rotor", false]);
 private _c_fixed = [0,1] select (apm_target getVariable ["APM_fixed", false]);
 private _c_crew = [0,1] select (apm_target getVariable ["APM_crewman", false]);
 private _cfg_patches = apm_target getVariable ["all_configs", ["Error: Not defined"]];
-private _ranks = ["Candidate/Pub", "RCT", "C1", "C2", "C3", "SRC", "CC", "SBCO", "FCO", "ACO", "SCO", "CMDR"];
+private _ranks = ["Candidate/Pub", "RCT", "C1", "C2", "C3", "SRC", "FDR", "CC", "SBCO", "FCO", "ACO", "SCO", "CMDR"];
 
 //Create Dialog
 createDialog "APM_Admin_Player";

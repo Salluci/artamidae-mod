@@ -30,4 +30,28 @@ class CfgDebriefing
 		subtitle = "";
 		description = "You appear to be missing CBA_A3 or other mods. Disconnect and join the server from the Arma 3 Launcher to setup mods properly.";
 	};
+	class stamina
+	{
+		title = "Debug EGC21";
+		subtitle = "";
+		description = "Take a screenshot of this and put it in #bug-reports. Mention time, map, and modlist, and attach an HTML for your loaded mods from the launcher.";
+	};
+	class ZeusCache
+	{
+		title = "Debug EGC22";
+		subtitle = "";
+		description = "Take a screenshot of this and put it in #bug-reports. Mention time, map, and modlist, and attach an HTML for your loaded mods from the launcher.";
+	};
+	class Achilles
+	{
+		title = "Debug EGC23";
+		subtitle = "";
+		description = "Take a screenshot of this and put it in #bug-reports. Mention time, map, and modlist, and attach an HTML for your loaded mods from the launcher.";
+	};
+	class ZeusSearch
+	{
+		title = "Debug EGC24";
+		subtitle = "";
+		description = "Take a screenshot of this and put it in #bug-reports. Mention time, map, and modlist, and attach an HTML for your loaded mods from the launcher.";
+	};
 };
